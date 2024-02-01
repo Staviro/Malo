@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/main.css"/>
+    <link rel="stylesheet" href="/lib/css/malo.css"/>
+    <title>@ViewData["Title"] - Malo.Web</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-content">
+                MaloJS
+            </div>
+        </nav>
+    </header>
+    <div class="app-container">
+        <div class="app-sidebar">
+            <div class="sidebar-container">
+                <div class="sidebar-content">
+                    <div class="sidebar-items-li">
+                        <div class="sidebar-item">
+                            <div class="sidebar-item-header" onclick="toggleShortcutModal()">
+                                <img src="/icons/activity.svg" class="activity-icon" />
+                                <div>Shortcuts</div>
+                            </div>
+                        </div>
+                        <div class="sidebar-item">
+                            <div class="sidebar-item-header pages" onclick="toggleSidebarBody('pages')">
+                                <img src="/icons/arrow-down.svg" class="arrow-icon"/>
+                                <div>Pages</div>
+                            </div>
+                            <div class="sidebar-item-body pages">
+                                <a>about</a>
+                            </div>
+                        </div>
+                        <div class="sidebar-item">
+                            <div class="sidebar-item-header FAQ" onclick="toggleSidebarBody('FAQ')">
+                                <img src="/icons/arrow-down.svg" class="arrow-icon" />
+                                <div>FAQ</div>
+                            </div>
+                            <div class="sidebar-item-body FAQ">
+                                <a>Is This Good?</a>
+                                <a>Can I remove effects?</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="app-body">
+            @RenderBody()
+        </div>
+    </div>
+    <footer>
+        <div>
+            &copy; 2024 - Malo.Web - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <div class="shortcut-modal">
+        <div class="shortcut-modal-content">
+            <div class="shortcut-modal-header">
+                <div>Shortcuts</div>
+                <img src="/icons/x.svg" class="close-icon" onclick="toggleShortcutModal()" alt="close" />
+            </div>
+            <div class="shortcut-modal-body">
+                <div>Property Name | Shorthand</div>
+                <div class="shortcuts-li">
+                    <div class="shortcut-item">
+                        <div class="shortcut-full">element</div>|
+                        <div class="shortcut-abrev">el</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/lib/js/malo.1.0.0.js"></script>
+    <script src="/js/startup.js"></script>
+    <script src="/js/shared.ui.js"></script>
+    <script src="/js/sidebar.ui.js"></script>
+</body>
+</html>

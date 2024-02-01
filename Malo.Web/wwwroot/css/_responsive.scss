@@ -1,0 +1,23 @@
+@media (min-width: 992px) {
+    .app-container {
+        display: flex;
+        gap: 10px;
+        padding: 10px;
+        justify-content: start;
+    }
+
+    .app-sidebar {
+        max-width: 280px;
+        width: -webkit-fill-available;
+    }
+}
+
+@media (max-width: 991px) {
+    .app-container {
+        display: block;
+    }
+
+    .app-sidebar {
+        display: none;
+    }
+}

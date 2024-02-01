@@ -1,0 +1,14 @@
+
+.note-container {
+    padding: 5px 0;
+}
+
+.note-content {
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+
+    &.success {
+        background-color: rgba(#1bbd1b, .3);
+    }
+}

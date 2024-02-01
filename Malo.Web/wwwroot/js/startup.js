@@ -1,0 +1,1 @@
+window.malo = new Malo(500);
