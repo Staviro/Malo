@@ -1,0 +1,116 @@
+.sidemenu-container {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+    background-color: rgba(black, .2);
+}
+.sidemenu-content {
+    border: 1px solid rgba(white, .2);
+    border-left-width: 0;   
+    background-color: #202020;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    height: 100%;
+    max-width: 350px;
+    z-index: 3;
+    overflow-y: auto;
+    display: none;
+    width: 100%;
+    border-radius: 0 10px 10px 0;
+}
+
+.sidemenu-items-li {
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.sidemenu-item {
+    width: -webkit-fill-available;
+    background-color: rgba(#2f2f2f, .1);
+    padding: 5px;
+    border-radius: 20px;
+    transition: all 150ms;
+
+    a {
+        display: block;
+    }
+
+    &:hover {
+        background-color: rgba(black, .1);
+    }
+}
+
+.sidemenu-item-header {
+    display: flex;
+    justify-content: start;
+    gap: 10px;
+    align-items: center;
+    img {
+        width: 24px;
+        padding: 5px;
+        filter: invert(1);
+        display:flex;
+        transition: all 500ms;
+
+        &.opened {
+            transform: rotate(180deg);
+        }
+    }
+}
+
+.sidemenu-item-header {
+    padding: 10px;
+    cursor: pointer;
+
+}
+
+.sidemenu-item-body {
+    padding: 10px;
+    padding-left: 35px;
+    display: none;
+    border-radius: 15px;
+    flex-direction: column;
+    background-color: rgba(#5f5f5f, .05);
+
+    a {
+        display: block;
+        padding: 10px;
+        cursor: pointer;
+        border-radius: 0px;
+        border-bottom: 1px solid transparent;
+        transition: all 150ms;
+
+        &:hover {
+            border-color: #333;
+        }
+    }
+}
+
+.shortcuts-li {
+    padding: 10px 0;
+}
+
+.sidemenu-header {
+    display: flex;
+    padding: 20px;
+    justify-content: space-between;
+    color: white;
+    font-size: 20px;
+    text-transform: uppercase;
+    align-items: center;
+    background-color: rgba(#5f5f5f, .1);
+
+    img {
+        display: flex;
+        filter: invert(1);
+        width: 28px;
+        background-color: rgba(#5f5f5f, .05);
+        border-radius: 50px;
+        padding: 5px;
+    }
+}

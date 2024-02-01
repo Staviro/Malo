@@ -11,51 +11,66 @@
     <header>
         <nav>
             <div class="nav-content">
-                MaloJS
+                <div class="nav-brand"><img src="~/images/Malo-Logo.png" width="120" /></div>
+                <div class="nav-links">
+                    <div class="nav-link hover" onclick="toggleSidemenu()">v1.0.0</div>
+                    <div class="nav-link hover" onclick="toggleSidemenu()">Documentation</div>
+                    <div class="nav-link hover" onclick="toggleSidemenu()">Menu</div>
+                    <div class="nav-link"><img src="/icons/list.svg" alt="list icon" /></div>
+                </div>
             </div>
         </nav>
     </header>
     <div class="app-container">
-        <div class="app-sidebar">
-            <div class="sidebar-container">
-                <div class="sidebar-content">
-                    <div class="sidebar-items-li">
-                        <div class="sidebar-item">
-                            <div class="sidebar-item-header" onclick="toggleShortcutModal()">
-                                <img src="/icons/activity.svg" class="activity-icon" />
-                                <div>Shortcuts</div>
-                            </div>
+        <div class="app-body">
+            @RenderBody()
+        </div>
+    </div>
+    <div class="app-sidemenu">
+        <div class="sidemenu-container">
+            <div class="sidemenu-content">
+                <div class="sidemenu-header">
+                    <div class="font-header">Menu</div>
+                    <img src="/icons/x.svg" onclick="toggleSidemenu()" alt="close" />
+                </div>
+                <div class="sidemenu-items-li">
+                    <div class="sidemenu-item">
+                        <div class="sidemenu-item-header" onclick="toggleShortcutModal()">
+                            <img src="/icons/activity.svg" class="activity-icon" />
+                            <div>Shortcuts</div>
                         </div>
-                        <div class="sidebar-item">
-                            <div class="sidebar-item-header pages" onclick="toggleSidebarBody('pages')">
-                                <img src="/icons/arrow-down.svg" class="arrow-icon"/>
-                                <div>Pages</div>
-                            </div>
-                            <div class="sidebar-item-body pages">
-                                <a>about</a>
-                            </div>
+                    </div>
+                    <div class="sidemenu-item">
+                        <div class="sidemenu-item-header pages" onclick="togglesidemenuBody('pages')">
+                            <img src="/icons/arrow-down.svg" class="arrow-icon" />
+                            <div>Pages</div>
                         </div>
-                        <div class="sidebar-item">
-                            <div class="sidebar-item-header FAQ" onclick="toggleSidebarBody('FAQ')">
-                                <img src="/icons/arrow-down.svg" class="arrow-icon" />
-                                <div>FAQ</div>
-                            </div>
-                            <div class="sidebar-item-body FAQ">
-                                <a>Is This Good?</a>
-                                <a>Can I remove effects?</a>
-                            </div>
+                        <div class="sidemenu-item-body pages">
+                            <a>about</a>
+                        </div>
+                    </div>
+                    <div class="sidemenu-item">
+                        <div class="sidemenu-item-header FAQ" onclick="togglesidemenuBody('FAQ')">
+                            <img src="/icons/arrow-down.svg" class="arrow-icon" />
+                            <div>FAQ</div>
+                        </div>
+                        <div class="sidemenu-item-body FAQ">
+                            <a>Is This Good?</a>
+                            <a>Can I remove effects?</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="app-body">
-            @RenderBody()
-        </div>
     </div>
     <footer>
-        <div>
-            &copy; 2024 - Malo.Web - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        <div class="footer-content">
+            <div class="footer-item">Privacy</div>
+            <div class="footer-item">South Africa</div>
+            <div class="footer-item">License</div>
+            <div class="footer-item">v1.0.0</div>
+            <div class="footer-item">Malo 2024</div>
+            <div>&copy;  Joseph Morukhuladi</div>
         </div>
     </footer>
     <div class="shortcut-modal">
@@ -78,6 +93,6 @@
     <script src="/lib/js/malo.1.0.0.js"></script>
     <script src="/js/startup.js"></script>
     <script src="/js/shared.ui.js"></script>
-    <script src="/js/sidebar.ui.js"></script>
+    <script src="/js/sidemenu.ui.js"></script>
 </body>
 </html>

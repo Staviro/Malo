@@ -1,11 +1,12 @@
 
 .note-container {
+    display: none;
     padding: 5px 0;
 }
 
 .note-content {
     padding: 10px;
-    border-radius: 10px;
+    border-radius: 2px;
     color: white;
 
     &.success {

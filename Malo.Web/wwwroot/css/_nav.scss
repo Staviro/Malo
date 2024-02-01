@@ -1,9 +1,37 @@
 
 nav {
-    background-color: rgba(#FAFAFA, .1);
+    background-color: rgba(#4f4f4f, .2);
 }
 
 .nav-content {
     padding: 20px;
-    box-shadow: 0 0 10px rgba(black, .1);
+    display: flex;
+    justify-content: space-between;
+    place-items: center;
+}
+
+.nav-links {
+    display: flex;
+    align-items: stretch;
+
+    img {
+        display: flex;
+        filter: invert(1);
+        width: 28px;
+        padding: 5px;
+        background-color: rgba(#9f9f9f, .1);
+        border-radius: 40px;
+    }
+
+    .nav-link {
+        padding: 5px 10px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        transition: all 0.15s;
+        text-transform: uppercase;
+        &.hover:hover {
+            letter-spacing: 2px;
+        }
+    }
 }

@@ -3,11 +3,16 @@
   src: url("/fonts/OpenSans-VariableFont_wdth,wght.ttf");
   font-display: swap;
 }
+@font-face {
+  font-family: "Header";
+  src: url("/fonts/OpenSans-VariableFont_wdth,wght.ttf");
+  font-display: swap;
+}
 body {
   margin: 0;
   font-family: "Primary", "sans-serif", "helvetica", "Arial", "Times", "Times New Roman";
   color: white;
-  background-image: linear-gradient(45deg, #073350, #0d1c40, #2f0c33);
+  background-color: #0f0f0f;
   background-repeat: no-repeat;
   min-height: 100vh;
 }
@@ -15,89 +20,160 @@ body button, body select, body textrea, body input {
   font-family: "Primary", "sans-serif", "helvetica", "Arial", "Times", "Times New Roman";
 }
 
-.sidebar-content {
-  padding: 5px;
-  border-radius: 15px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  background-color: rgba(255, 255, 255, 0.05);
+.sidemenu-container {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  display: none;
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
-.sidebar-items-li {
+.sidemenu-content {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-left-width: 0;
+  background-color: #202020;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  height: 100%;
+  max-width: 350px;
+  z-index: 3;
+  overflow-y: auto;
+  display: none;
+  width: 100%;
+  border-radius: 0 10px 10px 0;
+}
+
+.sidemenu-items-li {
   display: flex;
-  gap: 0px;
+  gap: 5px;
   flex-direction: column;
+  padding: 10px;
 }
 
-.sidebar-item {
+.sidemenu-item {
   width: -webkit-fill-available;
+  background-color: rgba(47, 47, 47, 0.1);
+  padding: 5px;
+  border-radius: 20px;
+  transition: all 150ms;
 }
-.sidebar-item a {
+.sidemenu-item a {
   display: block;
 }
+.sidemenu-item:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
 
-.sidebar-item-header {
+.sidemenu-item-header {
   display: flex;
   justify-content: start;
   gap: 10px;
   align-items: center;
 }
-.sidebar-item-header img {
+.sidemenu-item-header img {
+  width: 24px;
   padding: 5px;
   filter: invert(1);
-  border-radius: 5px;
   display: flex;
   transition: all 500ms;
 }
-.sidebar-item-header img.opened {
+.sidemenu-item-header img.opened {
   transform: rotate(180deg);
 }
 
-.sidebar-item-header {
+.sidemenu-item-header {
   padding: 10px;
   cursor: pointer;
-  border-radius: 10px;
-}
-.sidebar-item-header:hover {
-  background-color: rgba(0, 0, 0, 0.1);
 }
 
-.sidebar-item-body {
-  padding: 0;
+.sidemenu-item-body {
+  padding: 10px;
   padding-left: 35px;
   display: none;
-  padding-bottom: 0px;
+  border-radius: 15px;
   flex-direction: column;
+  background-color: rgba(95, 95, 95, 0.05);
 }
-.sidebar-item-body a {
+.sidemenu-item-body a {
   display: block;
   padding: 10px;
-  border-radius: 10px;
   cursor: pointer;
+  border-radius: 0px;
+  border-bottom: 1px solid transparent;
+  transition: all 150ms;
 }
-.sidebar-item-body a:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+.sidemenu-item-body a:hover {
+  border-color: #333;
 }
 
 .shortcuts-li {
   padding: 10px 0;
 }
 
+.sidemenu-header {
+  display: flex;
+  padding: 20px;
+  justify-content: space-between;
+  color: white;
+  font-size: 20px;
+  text-transform: uppercase;
+  align-items: center;
+  background-color: rgba(95, 95, 95, 0.1);
+}
+.sidemenu-header img {
+  display: flex;
+  filter: invert(1);
+  width: 28px;
+  background-color: rgba(95, 95, 95, 0.05);
+  border-radius: 50px;
+  padding: 5px;
+}
+
 nav {
-  background-color: rgba(250, 250, 250, 0.1);
+  background-color: rgba(79, 79, 79, 0.2);
 }
 
 .nav-content {
   padding: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  place-items: center;
+}
+
+.nav-links {
+  display: flex;
+  align-items: stretch;
+}
+.nav-links img {
+  display: flex;
+  filter: invert(1);
+  width: 28px;
+  padding: 5px;
+  background-color: rgba(159, 159, 159, 0.1);
+  border-radius: 40px;
+}
+.nav-links .nav-link {
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.15s;
+  text-transform: uppercase;
+}
+.nav-links .nav-link.hover:hover {
+  letter-spacing: 2px;
 }
 
 .note-container {
+  display: none;
   padding: 5px 0;
 }
 
 .note-content {
   padding: 10px;
-  border-radius: 10px;
+  border-radius: 2px;
   color: white;
 }
 .note-content.success {
@@ -106,6 +182,49 @@ nav {
 
 .section {
   padding: 10px;
+  margin-bottom: 10px;
+}
+.section:last-child {
+  margin-bottom: 0px;
+}
+.section.white {
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  background-color: rgba(79, 79, 79, 0.1);
+}
+.section .section-header {
+  font-family: "Header", "sans-serif", "helvetica", "Arial", "Times", "Times New Roman";
+  font-size: 24px;
+  font-weight: 700;
+  padding: 10px 0;
+}
+.section .section-body {
+  padding: 20px 0;
+}
+
+.font-header {
+  font-family: "Header", "sans-serif", "helvetica", "Arial", "Times", "Times New Roman";
+}
+
+.footer-content {
+  padding: 20px;
+  background-color: rgba(95, 95, 95, 0.2);
+}
+
+.footer-item {
+  padding: 5px;
+}
+
+.styled-ul {
+  list-style-position: inside;
+}
+.styled-ul li {
+  padding: 10px 15px;
+  border-radius: 10px;
+  background-color: rgba(90, 90, 90, 0.1);
+  margin-bottom: 10px;
+}
+.styled-ul li:last-child {
+  margin-bottom: 0px;
 }
 
 .shortcut-modal {
@@ -169,23 +288,42 @@ nav {
   border-radius: 40px;
 }
 
-@media (min-width: 992px) {
+@media (min-width: 1400px) {
   .app-container {
-    display: flex;
-    gap: 10px;
-    padding: 10px;
-    justify-content: start;
+    margin: auto;
+    max-width: 1400px;
+    padding: 10px 7%;
   }
-  .app-sidebar {
-    max-width: 280px;
-    width: -webkit-fill-available;
+}
+@media (max-width: 1339px) {
+  .app-container {
+    margin: auto;
+    max-width: 1024px;
+    padding: 10px;
+  }
+}
+@media (max-width: 1119px) {
+  .app-container {
+    max-width: 800px;
+  }
+}
+@media (max-width: 1023px) {
+  .app-container {
+    max-width: 800px;
   }
 }
 @media (max-width: 991px) {
   .app-container {
-    display: block;
+    max-width: 768px;
   }
-  .app-sidebar {
-    display: none;
+}
+@media (max-width: 767px) {
+  .app-container {
+    max-width: 580px;
+  }
+}
+@media (max-width: 579px) {
+  .app-container {
+    max-width: initial;
   }
 }
