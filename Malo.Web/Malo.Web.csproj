@@ -11,6 +11,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <_ContentIncludedByDefault Remove="wwwroot\fonts\Quicksand-VariableFont_wght.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="wwwroot\lib\css\archive\" />
     <Folder Include="wwwroot\lib\js\archive\" />
     <Folder Include="wwwroot\lib\release\" />

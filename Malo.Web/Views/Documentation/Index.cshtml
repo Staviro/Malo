@@ -1,0 +1,147 @@
+﻿
+
+<section class="section">
+    <div class="section-header">Documentation</div>
+    <div class="section-body">
+        <div class="note-container">
+            <div class="note-content">
+                <img  src="/icons/info-lg.svg" alt="info"/>
+                <div>Building the examples assuming that window.malo =  new Malo(1000, true)</div>
+            </div>
+        </div>
+        <div class="section-sub-header">
+            Frames
+        </div>
+        <div class="doc-li">
+            <div class="doc-list-item-container" id="frameFade">
+                <div class="doc-list-item-content">
+                    <div class="frame-identity">Fade</div>
+                    <div class="doc-item-name">malo.frame(operation, method, properties)</div>
+                    <div class="method-defiinition">
+                        <code>
+                            <span class="line"><span class="variable">malo</span>.<span class="method">frame</span>(<span class="param">MALOCONSTANTS.OPERATIONS.SHOW</span>, <span class="param">MALOCONSTANTS.METHODS.FADE</span>, <span class="param">{ element: '.sample-modal' , display: 'flex' }</span>);</span>
+                        </code>
+                    </div>
+                    <div class="doc-options">
+                        <button class="btn btn-run" onclick="malo.frame(MALOCONSTANTS.OPERATIONS.SHOW, MALOCONSTANTS.METHODS.FADE, { element: '.sample-modal' , display: 'flex' }); setFrameClose(MALOCONSTANTS.OPERATIONS.HIDE, MALOCONSTANTS.METHODS.FADE, { element: '.sample-modal' })">Run</button>
+                    </div>
+                </div>
+            </div>
+            <div class="doc-list-item-container" id="framePop">
+                <div class="doc-list-item-content">
+                    <div class="frame-identity">Pop</div>
+                    <div class="doc-item-name">malo.frame(operation, method, properties)</div>
+                    <div class="method-defiinition">
+                        <code>
+                            <span class="line"><span class="variable">malo</span>.<span class="method">frame</span>(<span class="param">MALOCONSTANTS.OPERATIONS.SHOW</span>, <span class="param">MALOCONSTANTS.METHODS.POP</span>, <span class="param">{ element: '.sample-modal' , display: 'flex' }</span>);</span>
+                        </code>
+                    </div>
+                    <div class="doc-options">
+                        <button class="btn btn-run" onclick="malo.frame(MALOCONSTANTS.OPERATIONS.SHOW, MALOCONSTANTS.METHODS.POP, { element: '.sample-modal' , display: 'flex' }); setFrameClose(MALOCONSTANTS.OPERATIONS.HIDE, MALOCONSTANTS.METHODS.POP, { element: '.sample-modal' })">Run</button>
+                    </div>
+                </div>
+            </div>
+            <div class="doc-list-item-container" id="frameBounce">
+                <div class="doc-list-item-content">
+                    <div class="frame-identity">BOUNCE</div>
+                    <div class="doc-item-name">malo.frame(operation, method, properties)</div>
+                    <div class="method-defiinition">
+                        <code>
+                            <span class="line"><span class="variable">malo</span>.<span class="method">frame</span>(<span class="param">MALOCONSTANTS.OPERATIONS.BOUNCE</span>, <span class="param">MALOCONSTANTS.METHODS.BOUNCE</span>, <span class="param">{ element: '.sample-modal' , display: 'flex' }</span>);</span>
+                        </code>
+                    </div>
+                    <div class="doc-options">
+                        <button class="btn btn-run" onclick="malo.frame(MALOCONSTANTS.OPERATIONS.SHOW, MALOCONSTANTS.METHODS.BOUNCE, { element: '.sample-modal' , display: 'flex' }); setFrameClose(MALOCONSTANTS.OPERATIONS.HIDE, MALOCONSTANTS.METHODS.BOUNCE, { element: '.sample-modal' })">Run</button>
+                    </div>
+                    <div class="note-container">
+                        <div class="note-content">
+                            <img src="/icons/info-lg.svg" alt="info" />
+                            <div>Bounce frame accepts "bounce" field inside the properties object, which accepts "double" as a value.</div>
+                        </div>
+                    </div>
+                    <div class="method-defiinition">
+                        <code>
+                            <span class="line"><span class="variable">malo</span>.<span class="method">frame</span>(<span class="param">MALOCONSTANTS.OPERATIONS.SHOW</span>, <span class="param">MALOCONSTANTS.METHODS.BOUNCE</span>, <span class="param">{ element: '.sample-modal' , display: 'flex', bounce: 'double' }</span>);</span>
+                        </code>
+                    </div>
+                    <div class="doc-options">
+                        <button class="btn btn-run" onclick="malo.frame(MALOCONSTANTS.OPERATIONS.SHOW, MALOCONSTANTS.METHODS.BOUNCE, { element: '.sample-modal' , display: 'flex',  bounce: 'double' }); setFrameClose(MALOCONSTANTS.OPERATIONS.HIDE, MALOCONSTANTS.METHODS.BOUNCE, { element: '.sample-modal', bounce: 'double' })">Run</button>
+                    </div>
+                </div>
+            </div>
+            <div class="doc-list-item-container" id="frameSlide">
+                <div class="doc-list-item-content">
+                    <div class="frame-identity">SLIDE</div>
+                    <div class="doc-item-name">malo.frame(operation, method, properties)</div>
+                    <div class="note-container">
+                        <div class="note-content">
+                            <img src="/icons/info-lg.svg" alt="info" />
+                            <div>Slide frame accepts "axis" field inside the properties object, which accepts "x" or "y" as a value.</div>
+                        </div>
+                    </div>
+                    <div class="method-defiinition">
+                        <code>
+                            <span class="line"><span class="variable">malo</span>.<span class="method">frame</span>(<span class="param">MALOCONSTANTS.OPERATIONS.SLIDE</span>, <span class="param">MALOCONSTANTS.METHODS.SLIDE</span>, <span class="param">{ element: '.sample-modal' , display: 'flex', axis: 'y' }</span>);</span>
+                        </code>
+                    </div>
+                    <div class="doc-options">
+                        <button class="btn btn-run" onclick="malo.frame(MALOCONSTANTS.OPERATIONS.SHOW, MALOCONSTANTS.METHODS.SLIDE, { element: '.sample-modal' , display: 'flex', axis: 'y' }); setFrameClose(MALOCONSTANTS.OPERATIONS.HIDE, MALOCONSTANTS.METHODS.SLIDE, { element: '.sample-modal', axis: 'y' })">Run</button>
+                    </div>
+                    <div class="method-defiinition">
+                        <code>
+                            <span class="line"><span class="variable">malo</span>.<span class="method">frame</span>(<span class="param">MALOCONSTANTS.OPERATIONS.SHOW</span>, <span class="param">MALOCONSTANTS.METHODS.SLIDE</span>, <span class="param">{ element: '.sample-modal' , display: 'flex', axis: 'x' }</span>);</span>
+                        </code>
+                    </div>
+                    <div class="doc-options">
+                        <button class="btn btn-run" onclick="malo.frame(MALOCONSTANTS.OPERATIONS.SHOW, MALOCONSTANTS.METHODS.SLIDE, { element: '.sample-modal' , display: 'flex' , axis: 'x' }); setFrameClose(MALOCONSTANTS.OPERATIONS.HIDE, MALOCONSTANTS.METHODS.SLIDE, { element: '.sample-modal', axis: 'x' })">Run</button>
+                    </div>
+                </div>
+            </div>
+            <div class="doc-list-item-container" id="frameFloat">
+                <div class="doc-list-item-content">
+                    <div class="frame-identity">FLOAT</div>
+                    <div class="doc-item-name">malo.frame(operation, method, properties)</div>
+                    <div class="note-container">
+                        <div class="note-content">
+                            <img src="/icons/info-lg.svg" alt="info" />
+                            <div>Float frame accepts "direction" field inside the properties object, which accepts "up" or "down" or "right" or "left" as a value.</div>
+                        </div>
+                    </div>
+                    <div class="method-defiinition">
+                        <code>
+                            <span class="line"><span class="variable">malo</span>.<span class="method">frame</span>(<span class="param">MALOCONSTANTS.OPERATIONS.FLOAT</span>, <span class="param">MALOCONSTANTS.METHODS.FLOAT</span>, <span class="param">{ element: '.sample-modal' , display: 'flex', direction: 'up' }</span>);</span>
+                        </code>
+                    </div>
+                    <div class="doc-options">
+                        <button class="btn btn-run" onclick="malo.frame(MALOCONSTANTS.OPERATIONS.SHOW, MALOCONSTANTS.METHODS.FLOAT, { element: '.sample-modal' , display: 'flex', direction: 'up' }); setFrameClose(MALOCONSTANTS.OPERATIONS.HIDE, MALOCONSTANTS.METHODS.FLOAT, { element: '.sample-modal', direction: 'up'  })">Run</button>
+                    </div>
+                    <div class="method-defiinition">
+                        <code>
+                            <span class="line"><span class="variable">malo</span>.<span class="method">frame</span>(<span class="param">MALOCONSTANTS.OPERATIONS.FLOAT</span>, <span class="param">MALOCONSTANTS.METHODS.FLOAT</span>, <span class="param">{ element: '.sample-modal' , display: 'flex', direction: 'down' }</span>);</span>
+                        </code>
+                    </div>
+                    <div class="doc-options">
+                        <button class="btn btn-run" onclick="malo.frame(MALOCONSTANTS.OPERATIONS.SHOW, MALOCONSTANTS.METHODS.FLOAT, { element: '.sample-modal' , display: 'flex', direction: 'down' }); setFrameClose(MALOCONSTANTS.OPERATIONS.HIDE, MALOCONSTANTS.METHODS.FLOAT, { element: '.sample-modal', direction: 'down'  })">Run</button>
+                    </div>
+                    <div class="method-defiinition">
+                        <code>
+                            <span class="line"><span class="variable">malo</span>.<span class="method">frame</span>(<span class="param">MALOCONSTANTS.OPERATIONS.FLOAT</span>, <span class="param">MALOCONSTANTS.METHODS.FLOAT</span>, <span class="param">{ element: '.sample-modal' , display: 'flex', direction: 'right' }</span>);</span>
+                        </code>
+                    </div>
+                    <div class="doc-options">
+                        <button class="btn btn-run" onclick="malo.frame(MALOCONSTANTS.OPERATIONS.SHOW, MALOCONSTANTS.METHODS.FLOAT, { element: '.sample-modal' , display: 'flex', direction: 'right' }); setFrameClose(MALOCONSTANTS.OPERATIONS.HIDE, MALOCONSTANTS.METHODS.FLOAT, { element: '.sample-modal', direction: 'right'  })">Run</button>
+                    </div>
+                    <div class="method-defiinition">
+                        <code>
+                            <span class="line"><span class="variable">malo</span>.<span class="method">frame</span>(<span class="param">MALOCONSTANTS.OPERATIONS.FLOAT</span>, <span class="param">MALOCONSTANTS.METHODS.FLOAT</span>, <span class="param">{ element: '.sample-modal' , display: 'flex', direction: 'left' }</span>);</span>
+                        </code>
+                    </div>
+                    <div class="doc-options">
+                        <button class="btn btn-run" onclick="malo.frame(MALOCONSTANTS.OPERATIONS.SHOW, MALOCONSTANTS.METHODS.FLOAT, { element: '.sample-modal' , display: 'flex', direction: 'left' }); setFrameClose(MALOCONSTANTS.OPERATIONS.HIDE, MALOCONSTANTS.METHODS.FLOAT, { element: '.sample-modal', direction: 'left'  })">Run</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>

@@ -1,13 +1,26 @@
 
 .note-container {
-    display: none;
     padding: 5px 0;
 }
 
 .note-content {
     padding: 10px;
-    border-radius: 2px;
-    color: white;
+    border-radius: 5px;
+    color: #555;
+    background-color: #eee;
+    border: 1px solid #dedede;
+    display: flex;
+    gap: 10px;
+    justify-content: start;
+    align-items: start;
+
+    img {
+        display: flex;
+        width: 14px;
+       padding: 4px;
+        background-color: rgba(#555, .3);
+        border-radius: 50px;
+    }
 
     &.success {
         background-color: rgba(#1bbd1b, .3);

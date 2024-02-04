@@ -1,0 +1,98 @@
+.doc-li {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.doc-list-item-container {
+    padding: 10px 20px;
+    border: 1px solid #eee;
+    border-radius: 20px;
+}
+
+.doc-list-item-content {
+    padding: 10px 0;
+    border-radius: 10px;
+}
+
+code {
+    padding: 15px;
+    background-color: white;
+    border-radius: 5px;
+    color: black;
+    display: block;
+    font-size: 16px;
+    box-shadow: 0 0 2px rgba(#ddd, .6);
+    overflow: auto;
+    max-width: 100%;
+}
+
+.indent {
+    &.one {
+        margin-left: 15px;
+    }
+
+    &.two {
+        margin-left: 30px;
+    }
+
+    &.three {
+        margin-left: 45px;
+    }
+
+    &.four {
+        margin-left: 60px;
+    }
+
+    &.five {
+        margin-left: 75px;
+    }
+
+    &.six {
+        margin-left: 90px;
+    }
+}
+
+.variable {
+    color: darken(aquamarine, 30%);
+}
+
+.method {
+    color: darken(yellow, 20%);
+}
+
+.param {
+    color: darken(burlywood, 20%);
+}
+
+.light {
+    .variable {
+        color: aquamarine;
+    }
+
+    .method {
+        color: yellow;
+    }
+
+    .param {
+        color: burlywood;
+    }
+}
+
+
+.doc-item-name {
+    font-weight: 600;
+}
+
+.frame-identity {
+    padding-bottom: 10px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.doc-options {
+    padding: 5px 0;
+    display: flex;
+    justify-content: start;
+    gap: 5px;
+}

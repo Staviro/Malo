@@ -17,3 +17,9 @@ function toggleShortcutModal() {
         });
     }
 }
+
+function setFrameClose(opr, mtd, props) {
+    document.getElementById("sampleModalClose").onclick = function () {
+        malo.frame(opr, mtd, props);
+    }
+}

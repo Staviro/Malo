@@ -1,0 +1,57 @@
+﻿<div class="app-sidemenu">
+    <div class="sidemenu-container">
+        <div class="sidemenu-content">
+            <div class="sidemenu-items-li">
+                <div class="sidemenu-item">
+                    <div class="sidemenu-item-header" onclick="toggleShortcutModal()">
+                        <img src="/icons/activity.svg" class="activity-icon" />
+                        <div>Shortcuts</div>
+                    </div>
+                </div>
+                <a class="sidemenu-item" href="/notes">
+                    <div class="sidemenu-item-header">
+                        <img src="/icons/activity.svg" class="activity-icon" />
+                        <div>Notes & Tips</div>
+                    </div>
+                </a>
+
+                <div class="sidemenu-item">
+                    <div class="sidemenu-item-header frames" onclick="togglesidemenuBody('frames')">
+                        <img src="/icons/arrow-down.svg" class="arrow-icon" />
+                        <div>Frames</div>
+                    </div>
+                    <div class="sidemenu-item-body frames">
+                        @await Html.PartialAsync("~/Views/Partials/V-1-0-0/Sidebar/_Frames.cshtml")
+                    </div>
+                </div>
+                <div class="sidemenu-item">
+                    <div class="sidemenu-item-header effects" onclick="togglesidemenuBody('effects')">
+                        <img src="/icons/arrow-down.svg" class="arrow-icon" />
+                        <div>Effects</div>
+                    </div>
+                    <div class="sidemenu-item-body effects">
+                        @await Html.PartialAsync("~/Views/Partials/V-1-0-0/Sidebar/_Effects.cshtml")
+                    </div>
+                </div>
+                <div class="sidemenu-item">
+                    <div class="sidemenu-item-header helpers" onclick="togglesidemenuBody('helpers')">
+                        <img src="/icons/arrow-down.svg" class="arrow-icon" />
+                        <div>Helpers</div>
+                    </div>
+                    <div class="sidemenu-item-body helpers">
+                        @await Html.PartialAsync("~/Views/Partials/V-1-0-0/Sidebar/_Helpers.cshtml")
+                    </div>
+                </div>
+                <div class="sidemenu-item">
+                    <div class="sidemenu-item-header operations" onclick="togglesidemenuBody('operations')">
+                        <img src="/icons/arrow-down.svg" class="arrow-icon" />
+                        <div>Operations</div>
+                    </div>
+                    <div class="sidemenu-item-body operations">
+                        @await Html.PartialAsync("~/Views/Partials/V-1-0-0/Sidebar/_Operations.cshtml")
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

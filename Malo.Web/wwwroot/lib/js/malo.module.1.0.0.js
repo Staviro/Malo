@@ -1,6 +1,7 @@
-/*
-    MaloJS  v1.0.0
-    Licensed under MIT (https://malojs.co.za/license)
+/*!
+    *MaloJS  v1.0.0
+    *Copyright: Joseph Morukhuladi
+    *Licensed under MIT (https://malojs.co.za/license)
 */
 class Malo {
     constructor(duration = 500, useAnimations = true) {
@@ -628,6 +629,21 @@ const MALOHELPERS = {
                 element.style.overflow = null;
             } else {
                 document.querySelector(element).style.overflow = null;
+            }
+        } catch (error) {
+            console.log(error);
+        }
+    },
+    display(element, value) {
+        if (value == "" || value == null || value == undefined) {
+            console.error('Invalid display value"');
+            return;
+        }
+        try {
+            if (typeof (element) == 'object') {
+                element.style.display = value;
+            } else {
+                document.querySelector(element).style.display = value;
             }
         } catch (error) {
             console.log(error);

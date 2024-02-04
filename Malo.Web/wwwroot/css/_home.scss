@@ -2,27 +2,114 @@
 
 @font-face {
     font-family: "Primary";
-    src: url('/fonts/OpenSans-VariableFont_wdth,wght.ttf');
+    src: url('/fonts/Quicksand-VariableFont_wght.ttf');
     font-display: swap;
 }
 
 @font-face {
     font-family: "Header";
-    src: url('/fonts/OpenSans-VariableFont_wdth,wght.ttf');
+    src: url('/fonts/Roboto-Medium.ttf');
     font-display: swap;
 }
 
+html {
+    scroll-behavior: smooth;
+    color: #555;
+    background-color: #fcfcfc;
+}
 
 body {
     margin: 0;
     font-family: $font-primary;
-    color: white;
-    background-color: #0f0f0f;
     background-repeat: no-repeat;
     min-height: 100vh;
-
+    font-weight: 500;
     button, select, textrea, input {
         font-family: $font-primary;
     }
 }
 
+::-webkit-scrollbar {
+    width: 5px;
+    height: 3px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #333;
+    padding: 5px;
+    border-radius: 5px;
+}
+::-webkit-scrollbar-track-piece {
+    background-color: rgba(white, .4);
+}
+
+
+
+html.dark {
+    color: white;
+    background-color: #1a1a1f;
+
+    nav {
+        background-color: #2a2a2f;
+        border-color: transparent;
+
+        .nav-link {
+            img {
+                filter: invert(1);
+            }
+        }
+    }
+
+    .sidemenu-content {
+        background-color: #2a2a2f;
+        border-color: transparent;
+
+
+        .sidemenu-item-body {
+            background-color: rgba(#3a3a3f, .2);
+
+            a {
+                color: white;
+
+                &:hover {
+                    background-color: rgba(#afaf5f, .2);
+                }
+            }
+        }
+
+        img {
+            filter: invert(1);
+        }
+    }
+
+    .note-content {
+        background-color: #2a2a2f;
+        color: white;
+        border-color: #2a2a2f;
+
+        img {
+            filter: invert(1);
+        }
+    }
+
+    .doc-list-item-container {
+        border-color: #2a2a2f;
+
+        code {
+            background-color: #2a2a2f;
+            color: white;
+            box-shadow: none;
+        }
+
+        .variable {
+            color: aquamarine;
+        }
+
+        .method {
+            color: yellow;
+        }
+
+        .param {
+            color: burlywood;
+        }
+    }
+}

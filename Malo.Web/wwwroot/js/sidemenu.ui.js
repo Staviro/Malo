@@ -16,15 +16,12 @@ function toggleSidemenu() {
     var sidemenuContent = document.querySelector(`.sidemenu-content`);
     var display = getComputedStyle(sidemenu).display;
     if (display == "none" && !MALOHELPERS.isAnimating(sidemenu)) {
-        malo.frame("show", 'fade', {
-            el: sidemenu, dr: 100, dp: "flex", cb: function () {
-                malo.frame("show", "float", { el: sidemenuContent, direction: "right" });
-            }
-        });
+        MALOHELPERS.display(sidemenu, "block");
+        malo.frame("show", "float", { el: sidemenuContent, direction: "right" });
     } else {
-        malo.frame("hide", 'float', {
-            el: sidemenuContent, dr: 500, direction: "right", cb: function () {
-                malo.frame("hide", "fade", { el: sidemenu, dr: 100 });
+        malo.frame("hide", "float", {
+            el: sidemenuContent, dr: 1000, direction: "right",  cb: function () {
+                MALOHELPERS.display(sidemenu, "none");
             }
         });
     }

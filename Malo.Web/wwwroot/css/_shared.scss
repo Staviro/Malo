@@ -7,6 +7,7 @@
     &:last-child {
         margin-bottom: 0px;
     }
+
     &.white {
         border: 1px solid rgba(white, .05);
         background-color: rgba(#4f4f4f, .1);
@@ -16,6 +17,13 @@
         font-family: $font-header;
         font-size: 24px;
         font-weight: 700;
+        padding: 10px 0;
+    }
+
+    .section-sub-header {
+        font-family: $font-header;
+        font-size: 18px;
+        font-weight: 600;
         padding: 10px 0;
     }
 
@@ -31,16 +39,23 @@
 .footer-content {
     padding: 20px;
     background-color: rgba(#5f5f5f, .2);
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+
+    .footer-item {
+        padding: 5px 10px;
+    }
 }
-.footer-item {
-    padding: 5px;
-}
+
 
 .styled-ul {
     list-style-position: inside;
     li {
         padding: 10px 15px;
-        border-radius: 10px;
+        border-radius: 0px;
         background-color: rgba(#5a5a5a, .1);
         margin-bottom: 10px;
         &:last-child {
