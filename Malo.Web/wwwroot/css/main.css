@@ -12,6 +12,7 @@ html {
   scroll-behavior: smooth;
   color: #555;
   background-color: #fcfcfc;
+  transition: all 0.15s;
 }
 
 body {
@@ -52,7 +53,7 @@ html.dark nav .nav-link img {
   filter: invert(1);
 }
 html.dark .sidemenu-content {
-  background-color: #2a2a2f;
+  background-color: transparent;
   border-color: transparent;
 }
 html.dark .sidemenu-content .sidemenu-item-body {
@@ -66,6 +67,7 @@ html.dark .sidemenu-content .sidemenu-item-body a:hover {
 }
 html.dark .sidemenu-content img {
   filter: invert(1);
+  opacity: 1;
 }
 html.dark .note-content {
   background-color: #2a2a2f;
@@ -92,11 +94,14 @@ html.dark .doc-list-item-container .method {
 html.dark .doc-list-item-container .param {
   color: burlywood;
 }
+html.dark .doc-list-item-container .comment {
+  color: #2db92d;
+}
 
 .sidemenu-container {
   max-height: 80vh;
   overflow: auto;
-  padding: 0 10px;
+  padding: 0 5px;
   position: sticky;
   top: 10px;
 }
@@ -104,7 +109,6 @@ html.dark .doc-list-item-container .param {
 .sidemenu-content {
   background-color: white;
   border-radius: 20px;
-  border: 1px solid #eee;
 }
 
 .sidemenu-items-li {
@@ -124,6 +128,9 @@ html.dark .doc-list-item-container .param {
 .sidemenu-item:hover {
   background-color: rgba(85, 85, 255, 0.1);
   border-radius: 20px;
+}
+.sidemenu-item[href] {
+  color: #5555ff;
 }
 
 .sidemenu-item-header {
@@ -152,7 +159,7 @@ html.dark .doc-list-item-container .param {
   display: none;
   border-radius: 15px;
   flex-direction: column;
-  background-color: white;
+  background-color: #5555ff;
   gap: 5px;
   box-shadow: 0 0 5px rgba(204, 204, 204, 0.1);
 }
@@ -162,7 +169,7 @@ html.dark .doc-list-item-container .param {
   cursor: pointer;
   border-radius: 15px;
   transition: all 150ms;
-  color: #111;
+  color: white;
   overflow: hidden;
   white-space: break-spaces;
   text-overflow: ellipsis;
@@ -174,6 +181,27 @@ html.dark .doc-list-item-container .param {
 
 .shortcuts-li {
   padding: 10px 0;
+}
+
+.sidemenu-header-icons {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+  justify-content: start;
+  align-items: center;
+  padding: 5px;
+  margin: 5px;
+  background-color: #5555ff;
+  border-radius: 15px;
+}
+.sidemenu-header-icons img {
+  width: 24px;
+  height: 24px;
+  padding: 10px;
+  filter: invert(1);
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  transition: all 0.15s;
 }
 
 nav {
@@ -231,7 +259,7 @@ nav {
   padding: 10px;
   border-radius: 5px;
   color: #555;
-  background-color: #eee;
+  background-color: #5555ff;
   border: 1px solid #dedede;
   display: flex;
   gap: 10px;
@@ -448,15 +476,19 @@ code {
 }
 
 .variable {
-  color: #00e598;
+  color: #00b276;
 }
 
 .method {
-  color: #999900;
+  color: #666600;
 }
 
 .param {
-  color: #c88937;
+  color: #a06d2c;
+}
+
+.comment {
+  color: #1e7b1e;
 }
 
 .light .variable {
@@ -484,6 +516,11 @@ code {
   display: flex;
   justify-content: start;
   gap: 5px;
+}
+
+.opr-name {
+  padding-bottom: 10px;
+  font-weight: bold;
 }
 
 .sample-modal {
@@ -536,17 +573,18 @@ code {
   padding-bottom: 0;
 }
 
-@media (min-width: 1399px) {
-  .app-container .app-sidemenu {
-    width: 20%;
-  }
-}
 @media (min-width: 992px) {
   .app-container {
     display: flex;
   }
   .app-container .app-sidemenu {
-    width: 25%;
+    width: 100%;
+    max-width: 25%;
+  }
+}
+@media (min-width: 1399px) {
+  .app-container .app-sidemenu {
+    width: 380px;
   }
 }
 @media (max-width: 991px) {

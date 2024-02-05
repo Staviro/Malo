@@ -1,14 +1,13 @@
 .sidemenu-container {
     max-height: 80vh;
     overflow: auto;
-    padding: 0 10px;
+    padding: 0 5px;
     position: sticky;
     top: 10px;
 }
 .sidemenu-content {
     background-color: white;
     border-radius: 20px;
-    border: 1px solid #eee;
 }
 
 .sidemenu-items-li {
@@ -29,6 +28,10 @@
     &:hover {
         background-color: rgba(#5555ff, .1);
         border-radius: 20px;
+    }
+
+    &[href] {
+        color: #5555ff;
     }
 }
 
@@ -60,7 +63,7 @@
     display: none;
     border-radius: 15px;
     flex-direction: column;
-    background-color: white;
+    background-color: #5555ff;
     gap: 5px;
     box-shadow: 0 0 5px rgba(#ccc, .1);
 
@@ -70,7 +73,7 @@
         cursor: pointer;
         border-radius: 15px;
         transition: all 150ms;
-        color: #111;
+        color: white;
         overflow: hidden;
         white-space: break-spaces;
         text-overflow: ellipsis;
@@ -84,4 +87,27 @@
 
 .shortcuts-li {
     padding: 10px 0;
+}
+
+.sidemenu-header-icons {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+    justify-content: start;
+    align-items: center;
+    padding: 5px;
+    margin: 5px;
+
+    background-color: #5555ff;
+    border-radius: 15px;
+
+    img {
+        width: 24px;
+        height: 24px;
+        padding: 10px;
+        filter: invert(1);
+        background-color: rgba(black, .1);
+        border-radius: 10px;
+        transition: all .15s;
+    }
 }

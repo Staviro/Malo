@@ -46,3 +46,10 @@ display
 
 ****
 content end
+
+Bugs
+Sort out flashing issue of slide method
+
+
+more
+Add tool tip>

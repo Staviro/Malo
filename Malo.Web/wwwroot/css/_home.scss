@@ -16,6 +16,7 @@ html {
     scroll-behavior: smooth;
     color: #555;
     background-color: #fcfcfc;
+    transition: all 0.15s;
 }
 
 body {
@@ -60,7 +61,7 @@ html.dark {
     }
 
     .sidemenu-content {
-        background-color: #2a2a2f;
+        background-color: transparent;
         border-color: transparent;
 
 
@@ -78,6 +79,7 @@ html.dark {
 
         img {
             filter: invert(1);
+            opacity: 1;
         }
     }
 
@@ -110,6 +112,10 @@ html.dark {
 
         .param {
             color: burlywood;
+        }
+
+        .comment {
+            color: darken(limegreen, 5%);
         }
     }
 }

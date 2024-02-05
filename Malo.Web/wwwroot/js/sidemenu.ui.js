@@ -12,17 +12,15 @@ function togglesidemenuBody(identifer) {
 }
 
 function toggleSidemenu() {
-    var sidemenu = document.querySelector(`.sidemenu-container`);
-    var sidemenuContent = document.querySelector(`.sidemenu-content`);
+    var sidemenu = document.querySelector(`.app-sidemenu`);
     var display = getComputedStyle(sidemenu).display;
     if (display == "none" && !MALOHELPERS.isAnimating(sidemenu)) {
-        MALOHELPERS.display(sidemenu, "block");
-        malo.frame("show", "float", { el: sidemenuContent, direction: "right" });
+        if (window.innerWidth < 1399) {
+            malo.frame("show", "slide", { el: sidemenu, axis: "x", maxWidth: '25%' });
+        } else {
+            malo.frame("show", "slide", { el: sidemenu, axis: "x", maxWidth: '380px' });
+        }
     } else {
-        malo.frame("hide", "float", {
-            el: sidemenuContent, dr: 1000, direction: "right",  cb: function () {
-                MALOHELPERS.display(sidemenu, "none");
-            }
-        });
+        malo.frame("hide", "slide", { el: sidemenu, axis: "x" });
     }
 }

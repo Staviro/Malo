@@ -54,15 +54,19 @@ code {
 }
 
 .variable {
-    color: darken(aquamarine, 30%);
+    color: darken(aquamarine, 40%);
 }
 
 .method {
-    color: darken(yellow, 20%);
+    color: darken(yellow, 30%);
 }
 
 .param {
-    color: darken(burlywood, 20%);
+    color: darken(burlywood, 30%);
+}
+
+.comment {
+    color: darken(limegreen, 20%);
 }
 
 .light {
@@ -77,6 +81,7 @@ code {
     .param {
         color: burlywood;
     }
+
 }
 
 
@@ -95,4 +100,10 @@ code {
     display: flex;
     justify-content: start;
     gap: 5px;
+}
+
+
+.opr-name {
+    padding-bottom: 10px;
+    font-weight: bold;
 }

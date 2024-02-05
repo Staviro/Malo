@@ -1,22 +1,25 @@
-@media (min-width: 1399px) {
-    .app-container {
-
-        .app-sidemenu {
-            width: 20%;
-        }
-    }
-}
-
+//min
 @media (min-width: 992px) {
     .app-container {
         display: flex;
 
         .app-sidemenu {
-            width: 25%;
+            width: 100%;
+            max-width: 25%;
         }
     }
 }
 
+@media (min-width: 1399px) {
+    .app-container {
+
+        .app-sidemenu {
+            width: 380px;
+        }
+    }
+}
+
+//max
 @media (max-width: 991px) {
     .app-container {
         display: block;

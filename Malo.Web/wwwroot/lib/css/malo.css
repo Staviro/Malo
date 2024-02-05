@@ -1,7 +1,6 @@
-﻿/*!
-    *MaloJS  v1.0.0
-    *Copyright: Joseph Morukhuladi
-    *Licensed under MIT (https://malojs.co.za/license)
+﻿/*
+    MaloJS  v1.0.0
+    Licensed under MIT (https://malojs.co.za/license)
 */
 .extend-animation-defaults, .malo-float-right-out, .malo-float-right-in, .malo-float-left-out, .malo-float-left-in, .malo-float-down-out, .malo-float-down-in, .malo-float-up-out, .malo-float-up-in, .malo-slide-y-out, .malo-slide-x-out, .malo-slide-y-in, .malo-slide-x-in, .malo-double-bounce-out, .malo-bounce-out, .malo-double-bounce-in, .malo-bounce-in, .malo-pop-out, .malo-pop-in, .malo-fade-out, .malo-fade-in {
   animation-duration: 500ms;
