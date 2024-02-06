@@ -18,7 +18,7 @@ function toggleOrSetTheme(isDark = false) {
 }
 
 window.onload = function () {
-    if (localStorage['isDarkMode']) {
+    if (localStorage['isDarkMode'] == 'true') {
         document.querySelector('html').classList.add('dark');
         document.getElementById('appMode').src = "/icons/brightness-high.svg";
     }

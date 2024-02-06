@@ -61,11 +61,11 @@
                     </div>
                     <div class="method-defiinition">
                         <code>
-                            <span class="line"><span class="variable">malo</span>.<span class="method">frame</span>(<span class="param">MALOCONSTANTS.OPERATIONS.SHOW</span>, <span class="param">MALOCONSTANTS.METHODS.BOUNCE</span>, <span class="param">{ element: '.sample-modal' , display: 'flex', bounce: 'double' }</span>);</span>
+                            <span class="line"><span class="variable">malo</span>.<span class="method">frame</span>(<span class="param">MALOCONSTANTS.OPERATIONS.SHOW</span>, <span class="param">MALOCONSTANTS.METHODS.BOUNCE</span>, <span class="param">{ element: '.sample-modal' , display: 'flex', bounce: 'double', duration: 1000 }</span>);</span>
                         </code>
                     </div>
                     <div class="doc-options">
-                        <button class="btn btn-run" onclick="malo.frame(MALOCONSTANTS.OPERATIONS.SHOW, MALOCONSTANTS.METHODS.BOUNCE, { element: '.sample-modal' , display: 'flex',  bounce: 'double' }); setFrameClose(MALOCONSTANTS.OPERATIONS.HIDE, MALOCONSTANTS.METHODS.BOUNCE, { element: '.sample-modal', bounce: 'double' })">Run</button>
+                        <button class="btn btn-run" onclick="malo.frame(MALOCONSTANTS.OPERATIONS.SHOW, MALOCONSTANTS.METHODS.BOUNCE, { element: '.sample-modal' , display: 'flex', bounce: 'double', duration: 1000 }); setFrameClose(MALOCONSTANTS.OPERATIONS.HIDE, MALOCONSTANTS.METHODS.BOUNCE, { element: '.sample-modal', bounce: 'double', duration: 1000 })">Run</button>
                     </div>
                 </div>
             </div>
@@ -144,7 +144,61 @@
         </div>
     </div>
 </section>
-<section class="section">
+
+<section id="effects" class="section">
+    <div class="section-sub-header">
+        Effects
+    </div>
+    <div class="section-body">
+        <div class="doc-li">
+            <div class="doc-list-item-container" id="effectBlink">
+                <div class="doc-list-item-content">
+                    <div class="frame-identity">BLINK</div>
+                    <div class="doc-item-name">malo.effect(effect, properties)</div>
+                    <div class="method-defiinition">
+                        <code>
+                            <span class="line"><span class="variable">malo</span>.<span class="method">effect</span>(<span class="param">MALOCONSTANTS.EFFECTS.BLINK</span>, <span class="param">{ element: '.sample-div.blink .sample-div-content' , iteration: 2, duration: 500 }</span>);</span>
+                        </code>
+                    </div>
+                    <div class="sample-div blink" onclick="malo.effect(MALOCONSTANTS.EFFECTS.BLINK, { element: '.sample-div.blink .sample-div-content' , iteration: 2, duration: 500 });">
+                        <div class="sample-div-content">Apply Effect Here</div>
+                    </div>
+                </div>
+            </div>
+            <div class="doc-list-item-container" id="effectJump">
+                <div class="doc-list-item-content">
+                    <div class="frame-identity">JUMP</div>
+                    <div class="doc-item-name">malo.effect(effect, properties)</div>
+                    <div class="method-defiinition">
+                        <code>
+                            <span class="line"><span class="variable">malo</span>.<span class="method">effect</span>(<span class="param">MALOCONSTANTS.EFFECTS.JUMP</span>, <span class="param">{ element: '.sample-div.jump .sample-div-content' , iteration: 1, duration: 1000 }</span>);</span>
+                        </code>
+                    </div>
+                    <div class="sample-div jump" onclick="malo.effect(MALOCONSTANTS.EFFECTS.JUMP, { element: '.sample-div.jump .sample-div-content' , iteration: 1, duration: 1000 });">
+                        <div class="sample-div-content">Apply Effect Here</div>
+                    </div>
+                </div>
+            </div>
+            <div class="doc-list-item-container" id="effectBounce">
+                <div class="doc-list-item-content">
+                    <div class="frame-identity">BOUNCE</div>
+                    <div class="doc-item-name">malo.effect(effect, properties)</div>
+                    <div class="method-defiinition">
+                        <code>
+                            <span class="line"><span class="variable">malo</span>.<span class="method">effect</span>(<span class="param">MALOCONSTANTS.EFFECTS.BOUNCE</span>, <span class="param">{ element: '.sample-div.bounce .sample-div-content' , iteration: 1, duration: 500 }</span>);</span>
+                        </code>
+                    </div>
+                    <div class="sample-div bounce" onclick="malo.effect(MALOCONSTANTS.EFFECTS.BOUNCE, { element: '.sample-div.bounce .sample-div-content' , iteration: 1, duration: 500 });">
+                        <div class="sample-div-content">Apply Effect Here</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section id="operations" class="section">
     <div class="section-sub-header">
         Operations
     </div>
@@ -164,6 +218,332 @@
                     <code>
                         <span class="line"><span class="variable">MALOCONSTANTS</span>.<span class="variable">OPERATIONS</span>.<span class="variable">SHOW</span>; <span class="comment">// Returns "show"</span></span>
                     </code>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="helpers" class="section">
+    <div class="section-sub-header">
+        Helpers
+    </div>
+    <div class="section-body">
+        <div class="doc-li">
+            <div class="doc-list-item-container" id="helper-convertToFullNamedProps">
+                <div class="doc-list-item-content">
+                    <div class="frame-identity">convertToFullNamedProps</div>
+                    <div class="doc-item-name">MALOHELPERS.convertToFullNamedProps(obj)</div>
+                    <div class="note-container">
+                        <div class="note-content">
+                            <img src="/icons/info-lg.svg" alt="info" />
+                            <div>
+                                Maps malo fields with aliases to full field names.
+                                <br />
+                                Accepts obj arguement, which is of type Object and is required.
+                                <br />
+                                Returns Object
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="doc-list-item-container" id="helper-isValidProp">
+                <div class="doc-list-item-content">
+                    <div class="frame-identity">isValidProp</div>
+                    <div class="doc-item-name">MALOHELPERS.isValidProp(obj, propNames)</div>
+                    <div class="note-container">
+                        <div class="note-content">
+                            <img src="/icons/info-lg.svg" alt="info" />
+                            <div>
+                                Checks if object has a specific field.
+                                <br />
+                                Accepts obj arguement, which is of type Object and is required.
+                                <br />
+                                propNames obj arguement, which is of type String or Arrary and is required.
+                                <br />
+                                Returns Boolean
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="doc-list-item-container" id="helper-isValidElement">
+                <div class="doc-list-item-content">
+                    <div class="frame-identity">isValidElement</div>
+                    <div class="doc-item-name">MALOHELPERS.isValidElement(el)</div>
+                    <div class="note-container">
+                        <div class="note-content">
+                            <img src="/icons/info-lg.svg" alt="info" />
+                            <div>
+                                Checks if HTLMElement exists.
+                                <br />
+                                Accepts el arguement, which is of type HTMLElement or String
+                                <br />
+                                Returns bool
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="doc-list-item-container" id="helper-prepAndStartFrame">
+                <div class="doc-list-item-content">
+                    <div class="frame-identity">prepAndStartFrame</div>
+                    <div class="doc-item-name">MALOHELPERS.prepAndStartFrame(element, clsName, duration, display)</div>
+                    <div class="note-container">
+                        <div class="note-content">
+                            <img src="/icons/info-lg.svg" alt="info" />
+                            <div>
+                                Prepares HTML element for malo effect.
+                                <br />
+                                Accepts element arguement, which is of type HTMLElement or string and is required.
+                                <br />
+                                Accepts clsName arguement, which is of type String and is required.
+                                <br />
+                                Accepts duration arguement, which is of type Number and is required.
+                                <br />
+                                Accepts display arguement, which is of type String and is required.
+                                <br />
+                                Returns void
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="doc-list-item-container" id="helper-endFrame">
+                <div class="doc-list-item-content">
+                    <div class="frame-identity">endFrame</div>
+                    <div class="doc-item-name">MALOHELPERS.endFrame(element, clsName)</div>
+                    <div class="note-container">
+                        <div class="note-content">
+                            <img src="/icons/info-lg.svg" alt="info" />
+                            <div>
+                                Marks completion of an animation.
+                                <br />
+                                Accepts element arguement, which is of type HTMLElement or string and is required.
+                                <br />
+                                Accepts clsName arguement, which is of type String and is required.
+                                <br />
+                                Returns void
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="doc-list-item-container" id="helper-isAnimating">
+                <div class="doc-list-item-content">
+                    <div class="frame-identity">isAnimating</div>
+                    <div class="doc-item-name">MALOHELPERS.isAnimating(element)</div>
+                    <div class="note-container">
+                        <div class="note-content">
+                            <img src="/icons/info-lg.svg" alt="info" />
+                            <div>
+                                Checks if specific HTML element is animating.
+                                <br />
+                                Accepts element arguement, which is of type HTMLElement and is required.
+                                <br />
+                                Returns Boolean
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="doc-list-item-container" id="helper-isUsingEffect">
+                <div class="doc-list-item-content">
+                    <div class="frame-identity">isUsingEffect</div>
+                    <div class="doc-item-name">MALOHELPERS.isUsingEffect(element)</div>
+                    <div class="note-container">
+                        <div class="note-content">
+                            <img src="/icons/info-lg.svg" alt="info" />
+                            <div>
+                                Checks if specific HTML element is using malo effect.
+                                <br />
+                                Accepts element arguement, which is of type HTMLElement or string and is required.
+                                <br />
+                                Returns Boolean
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="doc-list-item-container" id="helper-prepAndStartEffect">
+                <div class="doc-list-item-content">
+                    <div class="frame-identity">prepAndStartEffect</div>
+                    <div class="doc-item-name">MALOHELPERS.prepAndStartEffect(element, clsName, duration, display, iteration)</div>
+                    <div class="note-container">
+                        <div class="note-content">
+                            <img src="/icons/info-lg.svg" alt="info" />
+                            <div>
+                                Prepares HTML element for malo effect.
+                                <br />
+                                Accepts element arguement, which is of type HTMLElement or string and is required.
+                                <br />
+                                Accepts clsName arguement, which is of type String and is required.
+                                <br />
+                                Accepts duration arguement, which is of type Number and is required.
+                                <br />
+                                Accepts display arguement, which is of type String and is required.
+                                <br />
+                                Accepts iteration arguement, which is of type Interger and is required.
+                                <br />
+                                Returns void
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="doc-list-item-container" id="helper-removeAndResetEffect">
+                <div class="doc-list-item-content">
+                    <div class="frame-identity">removeAndResetEffect</div>
+                    <div class="doc-item-name">MALOHELPERS.removeAndResetEffect(element, clsName)</div>
+                    <div class="note-container">
+                        <div class="note-content">
+                            <img src="/icons/info-lg.svg" alt="info" />
+                            <div>
+                                Completes and resets malo effect from HTML element.
+                                <br />
+                                Accepts element arguement, which is of type HTMLElement or string and is required.
+                                <br />
+                                Accepts clsName arguement, which is of type String and is required.
+                                <br />
+                                Returns void
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="doc-list-item-container" id="helper-hasProperty">
+                <div class="doc-list-item-content">
+                    <div class="frame-identity">hasProperty</div>
+                    <div class="doc-item-name">MALOHELPERS.hasProperty(obj, name)</div>
+                    <div class="note-container">
+                        <div class="note-content">
+                            <img src="/icons/info-lg.svg" alt="info" />
+                            <div>
+                                Checks if an object has a specific field | property
+                                <br />
+                                obj element arguement, which is of type Object and is required.
+                                <br />
+                                Accepts name arguement, which is of type String and is required.
+                                <br />
+                                Returns Boolean
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="doc-list-item-container" id="helper-getElement">
+                <div class="doc-list-item-content">
+                    <div class="frame-identity">getElement</div>
+                    <div class="doc-item-name">MALOHELPERS.getElement(el)</div>
+                    <div class="note-container">
+                        <div class="note-content">
+                            <img src="/icons/info-lg.svg" alt="info" />
+                            <div>
+                                Gets an HTML Element
+                                <br />
+                                Accepts el arguement, which is of type Object or String and is required.
+                                <br />
+                                Returns HTMLElement
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="doc-list-item-container" id="helper-useDefaultDuration">
+                <div class="doc-list-item-content">
+                    <div class="frame-identity">useDefaultDuration</div>
+                    <div class="doc-item-name">MALOHELPERS.useDefaultDuration(props, duration)</div>
+                    <div class="note-container">
+                        <div class="note-content">
+                            <img src="/icons/info-lg.svg" alt="info" />
+                            <div>
+                                Check is object has the duration field, if not it adds duration field to object and applies the specified value.
+                                <br />
+                                Accepts props arguement, which is of type Object or String and is required.
+                                <br />
+                                Accepts duration arguement, which is of type Interger and is required.
+                                <br />
+                                Returns Object
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="doc-list-item-container" id="helper-getValueFromAlias">
+                <div class="doc-list-item-content">
+                    <div class="frame-identity">getValueFromAlias</div>
+                    <div class="doc-item-name">MALOHELPERS.getValueFromAlias(obj, aliases)</div>
+                    <div class="note-container">
+                        <div class="note-content">
+                            <img src="/icons/info-lg.svg" alt="info" />
+                            <div>
+                                Check is object has the duration field, if not it adds duration field to object and applies the specified value.
+                                <br />
+                                Accepts , arguement, which is of type Object and is required.
+                                <br />
+                                Accepts aliases arguement, which is of type Array and is required.
+                                <br />
+                                Returns Null if Empty, else Returns Object or String
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="doc-list-item-container" id="helper-hideOverflow">
+                <div class="doc-list-item-content">
+                    <div class="frame-identity">hideOverflow</div>
+                    <div class="doc-item-name">MALOHELPERS.hideOverflow(element)</div>
+                    <div class="note-container">
+                        <div class="note-content">
+                            <img src="/icons/info-lg.svg" alt="info" />
+                            <div>
+                                Sets CSS overflow property to 'hidden'.
+                                <br />
+                                Accepts element arguement, which is of type Object or String and is required.
+                                <br />
+                                Returns void
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="doc-list-item-container" id="helper-showOverflow">
+                <div class="doc-list-item-content">
+                    <div class="frame-identity">showOverflow</div>
+                    <div class="doc-item-name">MALOHELPERS.showOverflow(element)</div>
+                    <div class="note-container">
+                        <div class="note-content">
+                            <img src="/icons/info-lg.svg" alt="info" />
+                            <div>
+                                Sets CSS overflow property to null.
+                                <br />
+                                Accepts element arguement, which is of type Object or String and is required.
+                                <br />
+                                Returns void
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="doc-list-item-container" id="helper-display">
+                <div class="doc-list-item-content">
+                    <div class="frame-identity">display</div>
+                    <div class="doc-item-name">MALOHELPERS.display(element, value)</div>
+                    <div class="note-container">
+                        <div class="note-content">
+                            <img src="/icons/info-lg.svg" alt="info" />
+                            <div>
+                                Sets CSS display property to specified value.
+                                <br />
+                                Accepts element arguement, which is of type Object or String and is required.
+                                <br />
+                                Accepts value arguement, which is of type String and is required.
+                                <br />
+                                Returns void
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

@@ -52,4 +52,6 @@ Sort out flashing issue of slide method
 
 
 more
-Add tool tip>
+Add tool tip
+Implement useAnimations
+refine variables, decide between var and let, which one to use

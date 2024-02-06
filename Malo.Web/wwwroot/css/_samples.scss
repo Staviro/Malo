@@ -48,3 +48,17 @@
     padding: 20px 0;
     padding-bottom: 0;
 }
+
+.sample-div {
+    padding: 10px 0;
+    width: fit-content;
+
+    .sample-div-content {
+        padding: 10px;
+        background-color: #5555ff;
+        padding: 10px;
+        border-radius: 2px;
+        cursor: pointer;
+        color: white;
+    }
+}

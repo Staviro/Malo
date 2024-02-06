@@ -1,9 +1,10 @@
 .sidemenu-container {
-    max-height: 80vh;
     overflow: auto;
     padding: 0 5px;
     position: sticky;
     top: 10px;
+    bottom: 10px;
+    max-height: 98vh;
 }
 .sidemenu-content {
     background-color: white;
@@ -71,7 +72,7 @@
         display: block;
         padding: 5px 10px;
         cursor: pointer;
-        border-radius: 15px;
+        border-radius: 10px;
         transition: all 150ms;
         color: white;
         overflow: hidden;
@@ -80,13 +81,19 @@
         word-break: break-all;
 
         &:hover {
-            background-color: #eee;
+            background-color: rgba(white, .2);
         }
     }
 }
 
 .shortcuts-li {
     padding: 10px 0;
+}
+
+.malo-slide-x-out, .malo-slide-x-in {
+    .sidemenu-header-icons {
+        flex-wrap: nowrap;
+    }
 }
 
 .sidemenu-header-icons {
@@ -106,7 +113,7 @@
         height: 24px;
         padding: 10px;
         filter: invert(1);
-        background-color: rgba(black, .1);
+        background-color: rgba(white, .1);
         border-radius: 10px;
         transition: all .15s;
     }

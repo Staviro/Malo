@@ -109,10 +109,10 @@ const MALOMETHODS = {
                 var display = 'none';
                 var hasCallback = MALOHELPERS.hasProperty(T, "callback");
                 MALOHELPERS.prepAndStartFrame(element, "malo-fade-out", T.duration, display);
-                setTimeout(function() {
+                setTimeout(function () {
+                    element.style.display = display;
                     MALOHELPERS.endFrame(element, "malo-fade-out");
                     MALOHELPERS.checkCallback(hasCallback, T.callback);
-                    element.style.display = display;
                 }, T.duration * .8);
 
             } else {
@@ -153,10 +153,10 @@ const MALOMETHODS = {
                 var display = 'none';
                 var hasCallback = MALOHELPERS.hasProperty(T, "callback");
                 MALOHELPERS.prepAndStartFrame(element, "malo-pop-out", T.duration, display);
-                setTimeout(function() {
+                setTimeout(function () {
+                    element.style.display = display;
                     MALOHELPERS.endFrame(element, "malo-pop-out");
                     MALOHELPERS.checkCallback(hasCallback, T.callback);
-                    element.style.display = display;
                 }, T.duration * .8);
 
             } else {
@@ -199,10 +199,10 @@ const MALOMETHODS = {
                 var hasCallback = MALOHELPERS.hasProperty(T, "callback");
                 var animationClass = MALOHELPERS.hasProperty(T, "bounce") && T.bounce == "double" ? "malo-double-bounce-out": "malo-bounce-out";
                 MALOHELPERS.prepAndStartFrame(element, animationClass, T.duration, display);
-                setTimeout(function() {
+                setTimeout(function () {
+                    element.style.display = display;
                     MALOHELPERS.endFrame(element, animationClass);
                     MALOHELPERS.checkCallback(hasCallback, T.callback);
-                    element.style.display = display;
                 }, T.duration * .8);
 
             } else {
@@ -258,11 +258,12 @@ const MALOMETHODS = {
                     MALOHELPERS.prepAndStartFrame(element, selectedClass, T.duration, display);
                 }
 
-                setTimeout(function() {
-                    MALOHELPERS.endFrame(element, selectedClass);
-                    MALOHELPERS.checkCallback(hasCallback, T.callback);
+                setTimeout(function () {
                     if (T.axis == 'y') { element.style.height = null }
                     else if (T.axis == 'x') { element.style.width = null }
+
+                    MALOHELPERS.endFrame(element, selectedClass);
+                    MALOHELPERS.checkCallback(hasCallback, T.callback);
                 }, T.duration);
 
             } else {
@@ -298,10 +299,10 @@ const MALOMETHODS = {
                     MALOHELPERS.prepAndStartFrame(element, selectedClass, T.duration, display);
                 }
 
-                setTimeout(function() {
+                setTimeout(function () {
+                    element.style.display = display;
                     MALOHELPERS.endFrame(element, selectedClass);
                     MALOHELPERS.checkCallback(hasCallback, T.callback);
-                    element.style.display = display;
                     if (T.axis == 'y') { element.style.height = null }
                     else if (T.axis == 'x') { element.style.width = null }
                 }, T.duration * 0.95);
@@ -368,10 +369,10 @@ const MALOMETHODS = {
                 }
                 
                 MALOHELPERS.prepAndStartFrame(element, selectedClass, T.duration, display);
-                setTimeout(function() {
+                setTimeout(function () {
+                    element.style.display = display;
                     MALOHELPERS.endFrame(element, selectedClass);
                     MALOHELPERS.checkCallback(hasCallback, T.callback);
-                    element.style.display = display;
                 }, T.duration * .8);
 
             } else {
@@ -435,6 +436,25 @@ const MALOMETHODS = {
             }, T.duration * iteractionCount);
 
           } catch (e) {
+            console.error(e);
+        }
+    },
+    noAnimation(target) {
+        try {
+            /*var T = MALOHELPERS.convertToFullNamedProps(target);
+            if (MALOHELPERS.hasProperty(T, 'element') && MALOHELPERS.isValidElement(T.element)) {
+                var element = MALOHELPERS.getElement(T.element);
+                if (MALOHELPERS.isUsingEffect(element)) { return; }
+            }
+
+            var display = !MALOHELPERS.hasProperty(T, "display") ? "block" : T.display;
+            var iteractionCount = MALOHELPERS.hasProperty(T, 'iteration') && MALOHELPERS.getValueFromAlias(T, ["iteration"]) != 0 ? T.iteration : 1;
+            MALOHELPERS.prepAndStartEffect(element, "malo-bounce", display, T.duration, iteractionCount);
+            setTimeout(function () {
+                MALOHELPERS.removeAndResetEffect(element, "malo-bounce");
+            }, T.duration * iteractionCount);*/
+
+        } catch (e) {
             console.error(e);
         }
     }
@@ -501,7 +521,6 @@ const MALOHELPERS = {
         }
         return newObj;
     },
-
     isValidProp (obj, propNames) {
         var result = false;
         if (typeof(propNames) === 'object') {
@@ -517,7 +536,6 @@ const MALOHELPERS = {
         }
         return result;
     },
-
     isValidElement(el) {
         if (typeof(el) === 'object')
             return el != null && el != undefined && el != '';
@@ -533,13 +551,11 @@ const MALOHELPERS = {
         }
         element.setAttribute("is-malo-animating", 'true');
     },
-
     endFrame(element, clsName) {
         element.classList.remove(clsName);
         element.style.animationDuration = null;
         element.removeAttribute("is-malo-animating");
     },
-
     isAnimating(element) {
         if (element.getAttribute('is-malo-animating') == null) {
             return false;
@@ -549,7 +565,6 @@ const MALOHELPERS = {
             return false;
         }
     },
-
     isUsingEffect(element) {
         if (element.getAttribute('is-using-malo-effect') == null) {
             return false;
@@ -568,18 +583,15 @@ const MALOHELPERS = {
         element.setAttribute("is-using-malo-effect", 'true');
         element.classList.add(clsName);
     },
-
     removeAndResetEffect(element, clsName) {
         element.removeAttribute("is-using-malo-effect");
         element.classList.remove(clsName);
         element.style.animationDuration = null;
         element.style.animationIterationCount = null;
     },
-
     hasProperty(obj, name) {
         return obj[name] != undefined;
     },
-
     getElement(el) {
         if (typeof(el) === 'object')
             return el;
@@ -587,7 +599,6 @@ const MALOHELPERS = {
             return document.querySelector(el);
         }
     },
-
     useDefaultDuration(props, duration) {
         if (props.duration == undefined && props.dr == undefined) {
             props.duration = duration;
@@ -596,9 +607,8 @@ const MALOHELPERS = {
             return props;
         }
     },
-
     getValueFromAlias(obj, aliases) {
-        var value;
+        var value = null;
         aliases.forEach(function(a) {
             if (obj[a] != undefined) {
                 value = obj[a];
@@ -606,7 +616,6 @@ const MALOHELPERS = {
         });
         return value;
     },
-
     checkCallback(has, callback) {
         if (has)
             callback();
@@ -666,6 +675,7 @@ const MALOCONSTANTS = {
         BLINK: "blink",
         JUMP: "jump",
         BOUNCE: "bounce"
-    },
-    DURATION: 500
+    }
 }
+
+window.malo = new Malo();

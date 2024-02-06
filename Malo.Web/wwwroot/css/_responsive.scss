@@ -4,8 +4,7 @@
         display: flex;
 
         .app-sidemenu {
-            width: 100%;
-            max-width: 25%;
+            width: 380px;
         }
     }
 }
@@ -24,8 +23,32 @@
     .app-container {
         display: block;
 
-        .app-sidemenu, app-sidemenu-container, .app-sidemenu-content {
+        .app-sidemenu {
             display: none;
+        }
+
+        .app-sidemenu {
+            position: fixed;
+            left: 0px;
+            top: 0;
+            right: 10px;
+            background-color: rgba(black, .4);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            height: 100vh;
+            width: 100vw;
+            overflow: auto;
+            z-index: 5;
+            max-width: 380px;
+            .sidemenu-container {
+
+                position: relative;
+                top: 5px;
+            }
+        }
+
+        .sidemenu-content {
+            padding: 1px;
         }
     }
 }
