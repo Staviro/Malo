@@ -20,3 +20,14 @@
         background-color: rgba(#5555ee, .8);
     }
 }
+
+.btn-primary {
+    @extend .btn;
+    background-color: #5555ee;
+    color: white;
+    border-color: #5555ee;
+
+    &:hover {
+        background-color: rgba(#5555ee, .8);
+    }
+}

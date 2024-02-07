@@ -12,7 +12,7 @@ var app = {
                     console.log(data);
                     if (data.statusCode == 200) {
                         var file = document.createElement('a');
-                        file.download = "MaloJsV" + version;
+                        file.download = "MaloJsV" + version + ".zip";
                         file.href = data.url;
                         file.click();
                         file.remove();
