@@ -4,7 +4,7 @@
     "inputFile": "wwwroot/css/main.scss"
   },
   {
-    "outputFile": "wwwroot/lib/css/malo.css",
-    "inputFile": "wwwroot/lib/css/malo.scss"
+    "outputFile": "wwwroot/lib/css/malo.1.0.0.css",
+    "inputFile": "wwwroot/lib/css/malo.1.0.0.scss"
   }
 ]

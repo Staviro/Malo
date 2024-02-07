@@ -16,7 +16,7 @@ html {
     scroll-behavior: smooth;
     color: #555;
     background-color: #fcfcfc;
-    transition: all 0.15s;
+    transition: all 0.05s;
 }
 
 body {
@@ -33,20 +33,22 @@ body {
 ::-webkit-scrollbar {
     width: 5px;
     height: 3px;
+    border-radius: 5px;
 }
 ::-webkit-scrollbar-thumb {
-    background-color: #333;
-    padding: 5px;
+    background-color: #5555ff;
     border-radius: 5px;
 }
 ::-webkit-scrollbar-track-piece {
-    background-color: rgba(white, .4);
+    background-color: rgba(white, .1);
+    border-radius: 5px;
+    margin: 5px 0;
 }
 
 
 
 html.dark {
-    color: white;
+    color: #DDD;
     background-color: #1a1a1f;
 
     nav {

@@ -9,23 +9,24 @@
     left: 0;
     top: 0;
     bottom: 0;
-    background-color: rgba(#222, .9);
-    padding: 10px;
+    background-color: rgba(black, .9);
 }
-
 .shortcut-modal-content {
-    display: none;
-    padding: 20px;
-    background-color: rgba(#eee, .05);
-    border: 1px solid rgba(#eee, .1);
+    background-color: rgba(white, .05);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(#eee, .1);
+    padding: 20px;
+    border-radius: 20px;
+    color: white;
+}
+.shortcut-modal-container {
+    display: none;
+    padding: 0 5px;
     max-width: 400px;
     width: 95%;
     max-height: 75%;
     overflow-y: auto;
-    border-radius: 20px;
-    color: white;
 }
 
 .shortcut-modal-header {
@@ -64,7 +65,7 @@
     .shortcut-value {
         padding: 5px;
         div {
-            background-color: rgba(black,.1);
+            background-color: rgba(white,.05);
             padding: 10px 15px;
             border-radius: 50px;
             text-align: center;

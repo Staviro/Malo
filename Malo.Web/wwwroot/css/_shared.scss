@@ -3,6 +3,11 @@
 .section {
     padding: 10px;
     margin-bottom: 10px;
+    border-bottom: 1px solid #5555dd;
+
+    &.center {
+        text-align: center;
+    }
 
     &:last-child {
         margin-bottom: 0px;
@@ -15,15 +20,17 @@
 
     .section-header {
         font-family: $font-header;
-        font-size: 24px;
-        font-weight: 700;
+        color: #5555ff;
+        font-size: 28px;
+        font-weight: 500;
         padding: 10px 0;
+        text-transform:uppercase;
     }
 
     .section-sub-header {
         font-family: $font-header;
         font-size: 18px;
-        font-weight: 600;
+        font-weight: 500;
         padding: 10px 0;
     }
 
@@ -38,7 +45,8 @@
 
 .footer-content {
     padding: 20px;
-    background-color: rgba(#5f5f5f, .2);
+    background-color: #222;
+    color: #DDD;
     align-items: center;
     display: flex;
     justify-content: center;
@@ -55,9 +63,10 @@
     list-style-position: inside;
     li {
         padding: 10px 15px;
-        border-radius: 0px;
-        background-color: rgba(#5a5a5a, .1);
+        border-radius: 5px;
+        background-color: rgba(#5555ff, .1);
         margin-bottom: 10px;
+        font-weight: 600;
         &:last-child {
             margin-bottom: 0px;
         }

@@ -1,8 +1,13 @@
 ﻿<header>
     <nav>
         <div class="nav-content">
-            <div class="nav-link list" onclick="toggleSidemenu()"><img src="/icons/list.svg" alt="list icon" /></div>
-            <div class="nav-link hover version" onclick="toggleSidemenu()"> v1.0.0</div>
+            <a class="nav-link list" href="/">
+                <img src="/icons/house.svg" alt="house icon" />
+            </a>
+            <div class="nav-link list" id="navMenuIcon" onclick="toggleSidemenu(true, this)">
+                <img src="/icons/list.svg" alt="list icon" />
+            </div>
+            <div class="nav-link hover version"> v1.0.0</div>
         </div>
     </nav>
 </header>

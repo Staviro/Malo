@@ -1,6 +1,6 @@
 function toggleShortcutModal() {
     var modal = document.querySelector('.shortcut-modal');
-    var content = document.querySelector('.shortcut-modal-content');
+    var content = document.querySelector('.shortcut-modal-container');
     var display = getComputedStyle(modal).display;
 
     if (display == "none") {

@@ -1,3 +1,4 @@
+using Malo.Web.Helpers.Bundles;
 using WebOptimizer;
 
 namespace Malo.Web
@@ -12,6 +13,13 @@ namespace Malo.Web
             builder.Services.AddControllersWithViews()
                 .AddRazorRuntimeCompilation();
 
+            //Bundling
+            builder.Services.AddWebOptimizer((config) =>
+            {
+                config.AddCssBundle(AppBundles.GetCSSBundleName(), AppBundles.GetCSSBundleFiles());
+                config.AddJavaScriptBundle(AppBundles.GetJSBundleName(), AppBundles.GetJSBundleFiles());
+            });
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -22,6 +30,7 @@ namespace Malo.Web
                 app.UseHsts();
             }
 
+            app.UseWebOptimizer();
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 

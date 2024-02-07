@@ -1,10 +1,10 @@
-﻿<!DOCTYPE html>
+﻿@using Malo.Web.Helpers.Bundles
+<!DOCTYPE html>
 <html lang="en" class="darks">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/main.css"/>
-    <link rel="stylesheet" href="/lib/css/malo.css"/>
+    <link rel="stylesheet" href="@AppBundles.GetCSSBundleName()" />
     <title>@ViewData["Title"] - Malo.Web</title>
 </head>
 <body>
@@ -28,9 +28,6 @@
     </div>
     @await Html.PartialAsync("~/Views/Shared/_Footer.cshtml")
     @await Html.PartialAsync("~/Views/Shared/_ShortcutModal.cshtml")
-    <script src="/lib/js/malo.1.0.0.js"></script>
-    <script src="/js/startup.js"></script>
-    <script src="/js/shared.ui.js"></script>
-    <script src="/js/sidemenu.ui.js"></script>
+    <script src="@AppBundles.GetJSBundleName()"></script>
 </body>
 </html>
