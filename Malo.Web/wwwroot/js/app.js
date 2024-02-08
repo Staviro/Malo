@@ -9,13 +9,17 @@ var app = {
             if (req.readyState == XMLHttpRequest.DONE) {
                 if (req.status == 200) {
                     var data = JSON.parse(req.responseText);
-                    console.log(data);
                     if (data.statusCode == 200) {
-                        var file = document.createElement('a');
-                        file.download = "MaloJsV" + version + ".zip";
-                        file.href = data.url;
-                        file.click();
-                        file.remove();
+                        try {
+                            var file = document.createElement('a');
+                            file.download = "MaloJsV" + version + ".zip";
+                            file.href = data.url;
+                            file.click();
+                            file.remove();
+                        } catch (e) {
+                            alert('Something went wrong.');
+                        }
+
                     } else {
                         alert(data.message);
                     }
