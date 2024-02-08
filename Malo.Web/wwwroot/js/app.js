@@ -29,5 +29,10 @@ var app = {
                 }
             }
         }
+    },
+    onDocumentationPage() {
+        if (window.location.href.includes("/documentation")) {
+            document.querySelector('.sidemenu-item-header.frames').click();
+        }
     }
 }

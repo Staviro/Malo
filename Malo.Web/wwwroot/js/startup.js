@@ -22,4 +22,5 @@ window.onload = function () {
         document.querySelector('html').classList.add('dark');
         document.getElementById('appMode').src = "/icons/brightness-high.svg";
     }
+    app.onDocumentationPage();
 }
