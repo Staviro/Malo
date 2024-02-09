@@ -635,6 +635,7 @@ code {
   }
   .app-container .app-body {
     max-width: 1119px;
+    width: 100%;
   }
   .app-container #toggleSideMenuIcon {
     display: none;
