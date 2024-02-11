@@ -681,6 +681,9 @@ code {
   .app-container .sidemenu-content {
     padding: 1px;
   }
+  .app-container .app-body {
+    padding: 10px;
+  }
   #navMenuIcon {
     display: flex;
   }
