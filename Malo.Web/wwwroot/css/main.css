@@ -143,8 +143,11 @@ html.dark .doc-list-item-container .comment {
   align-items: center;
   cursor: pointer;
 }
+.sidemenu-item-header div {
+  padding: 7px 0;
+}
 .sidemenu-item-header img {
-  width: 22px;
+  width: 20px;
   padding: 5px;
   display: flex;
   transition: all 500ms;
@@ -300,6 +303,9 @@ nav {
   padding: 10px;
   margin-bottom: 10px;
   border-bottom: 1px solid #5555dd;
+}
+.section:last-child {
+  border-bottom: none;
 }
 .section.center {
   text-align: center;
