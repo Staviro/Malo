@@ -3,7 +3,7 @@
 .section {
     padding: 10px;
     margin-bottom: 10px;
-    border-bottom: 1px solid #5555dd;
+    border-bottom: 1px solid rgba(#5555dd, .2);
 
     &:last-child {
         border-bottom: none;
@@ -23,16 +23,13 @@
     }
 
     .section-header {
-        font-family: $font-header;
         color: #5555ff;
         font-size: 28px;
-        font-weight: 500;
         padding: 10px 0;
         text-transform: uppercase;
     }
 
     .section-sub-header {
-        font-family: $font-header;
         font-size: 18px;
         font-weight: 500;
         padding: 10px 0;
@@ -41,10 +38,6 @@
     .section-body {
         padding: 20px 0;
     }
-}
-
-.font-header {
-    font-family: $font-header;
 }
 
 .footer-content {
@@ -59,6 +52,7 @@
 
     .footer-item {
         padding: 5px 10px;
+        color: #ddd;
     }
 }
 

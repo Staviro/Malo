@@ -6,11 +6,17 @@
 class Malo {
     constructor(duration = 500, useAnimations = true) {
         this.duration = duration;
+        this.useAnimations = useAnimations;
     }
 
     frame(operation, method, properties) {
         properties = MALOHELPERS.useDefaultDuration(properties, this.duration);
+
         if (operation === MALOCONSTANTS.OPERATIONS.SHOW) {
+            if (this.useAnimations == false) {
+                MALOMETHODS.noAnimation(properties, "");
+                return;
+            }
             switch (method) {
                 case MALOCONSTANTS.METHODS.FADE:
                     MALOMETHODS.fadeIn(properties);
@@ -28,10 +34,14 @@ class Malo {
                     MALOMETHODS.floatIn(properties);
                     break;
                 default:
-                    console.error("Invalid malo.js method.");
+                    console.error("Invalid malo.js method");
                     break;
             }
         } else if (operation === MALOCONSTANTS.OPERATIONS.HIDE) {
+            if (this.useAnimations == false) {
+                MALOMETHODS.noAnimation(properties, "none");
+                return;
+            }
             switch (method) {
                 case MALOCONSTANTS.METHODS.FADE:
                     MALOMETHODS.fadeOut(properties);
@@ -49,11 +59,11 @@ class Malo {
                     MALOMETHODS.floatOut(properties);
                     break;
                 default:
-                    console.error("Invalid malo.js method.");
+                    console.error("Invalid malo.js method");
                     break;
             }
         } else {
-            console.error("Invalid malo.js operation.");
+            console.error("Invalid malo.js operation");
         }
     }
     effect(effect, properties) {
@@ -69,7 +79,7 @@ class Malo {
                 MALOMETHODS.bounce(properties);
                 break;
             default:
-                console.error("Invalid malo.js method.");
+                console.error("Invalid malo.js method");
                 break;
         }
     }
@@ -439,21 +449,21 @@ const MALOMETHODS = {
             console.error(e);
         }
     },
-    noAnimation(target) {
+    noAnimation(target, animationDisplay) {
         try {
-            /*var T = MALOHELPERS.convertToFullNamedProps(target);
+            var T = MALOHELPERS.convertToFullNamedProps(target);
             if (MALOHELPERS.hasProperty(T, 'element') && MALOHELPERS.isValidElement(T.element)) {
                 var element = MALOHELPERS.getElement(T.element);
-                if (MALOHELPERS.isUsingEffect(element)) { return; }
+                var display = "";
+                if (animationDisplay == "none") {
+                    display = "none";
+                } else {
+                    display = !MALOHELPERS.hasProperty(T, "display") ? "block" : T.display;
+                }
+                var hasCallback = MALOHELPERS.hasProperty(T, "callback");
+                element.style.display = display;
+                MALOHELPERS.checkCallback(hasCallback, T.callback);
             }
-
-            var display = !MALOHELPERS.hasProperty(T, "display") ? "block" : T.display;
-            var iteractionCount = MALOHELPERS.hasProperty(T, 'iteration') && MALOHELPERS.getValueFromAlias(T, ["iteration"]) != 0 ? T.iteration : 1;
-            MALOHELPERS.prepAndStartEffect(element, "malo-bounce", display, T.duration, iteractionCount);
-            setTimeout(function () {
-                MALOHELPERS.removeAndResetEffect(element, "malo-bounce");
-            }, T.duration * iteractionCount);*/
-
         } catch (e) {
             console.error(e);
         }

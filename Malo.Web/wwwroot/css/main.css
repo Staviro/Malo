@@ -100,6 +100,10 @@ html.dark .doc-list-item-container .comment {
   color: #2db92d;
 }
 
+.download-container {
+  padding: 10px 0;
+}
+
 .sidemenu-container {
   overflow: auto;
   padding: 0 5px;
@@ -302,7 +306,7 @@ nav {
 .section {
   padding: 10px;
   margin-bottom: 10px;
-  border-bottom: 1px solid #5555dd;
+  border-bottom: 1px solid rgba(85, 85, 221, 0.2);
 }
 .section:last-child {
   border-bottom: none;
@@ -318,25 +322,18 @@ nav {
   background-color: rgba(79, 79, 79, 0.1);
 }
 .section .section-header {
-  font-family: "Header", "sans-serif", "helvetica", "Arial", "Times", "Times New Roman";
   color: #5555ff;
   font-size: 28px;
-  font-weight: 500;
   padding: 10px 0;
   text-transform: uppercase;
 }
 .section .section-sub-header {
-  font-family: "Header", "sans-serif", "helvetica", "Arial", "Times", "Times New Roman";
   font-size: 18px;
   font-weight: 500;
   padding: 10px 0;
 }
 .section .section-body {
   padding: 20px 0;
-}
-
-.font-header {
-  font-family: "Header", "sans-serif", "helvetica", "Arial", "Times", "Times New Roman";
 }
 
 .footer-content {
@@ -351,6 +348,7 @@ nav {
 }
 .footer-content .footer-item {
   padding: 5px 10px;
+  color: #ddd;
 }
 
 .styled-ul {
@@ -369,7 +367,7 @@ nav {
 
 .btn, .btn-primary, .btn-run {
   padding: 5px 15px;
-  border-radius: 40px;
+  border-radius: 2px;
   border: 1px solid black;
   color: black;
   font-weight: 600;
