@@ -1,4 +1,4 @@
-window.malo = new Malo(500, false);
+window.malo = new Malo(500);
 function toggleOrSetTheme(isDark = false) {
     if (isDark) {
         document.querySelector('html').classList.add('dark');
