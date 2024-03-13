@@ -19,14 +19,12 @@
   <ItemGroup>
     <Folder Include="wwwroot\lib\css\archive\" />
     <Folder Include="wwwroot\lib\js\archive\" />
+    <Folder Include="wwwroot\lib\stable\" />
   </ItemGroup>
 
   <ItemGroup>
     <None Include="compilerconfig.json" />
     <None Include="wwwroot\icons\brightness-high.svg" />
-    <None Include="wwwroot\lib\stable\malo.1.0.0.zip">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
   </ItemGroup>
 
   <ItemGroup>
