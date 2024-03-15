@@ -58,15 +58,43 @@
 
 
 .styled-ul {
-    list-style-position: inside;
+    list-style-position: outside;
     li {
         padding: 10px 15px;
-        border-radius: 5px;
+        border-radius: 10px;
         background-color: rgba(#5555ff, .1);
         margin-bottom: 10px;
         font-weight: 600;
         &:last-child {
             margin-bottom: 0px;
+        }
+    }
+}
+
+.info-card {
+
+}
+
+.info-card-content {
+    padding: 10px;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    border: 1px solid $color-primary;
+    border-radius: 20px;
+
+    .body {
+        padding: 10px;
+        border-radius: 10px;
+    }
+
+    .image {
+        text-align: center;
+
+        img {
+            display: flex;
+            width: 40px;
+            height: 40px;
         }
     }
 }

@@ -1,3 +1,5 @@
+@import '_variables.scss';
+
 .sidemenu-container {
     overflow: auto;
     padding: 0 5px;
@@ -28,7 +30,7 @@
 
     &:hover {
         background-color: rgba(#5555ff, .1);
-        border-radius: 20px;
+        border-radius: 3px;
     }
 
     &[href] {
@@ -64,7 +66,7 @@
     padding: 10px;
     padding-left: 35px;
     display: none;
-    border-radius: 15px;
+    border-radius: 2px;
     flex-direction: column;
     background-color: #5555ff;
     gap: 5px;
@@ -106,9 +108,8 @@
     align-items: center;
     padding: 5px;
     margin: 5px;
-
-    background-color: #5555ff;
-    border-radius: 15px;
+    background-color: $color-primary;
+    border-radius: 3px;
 
     img {
         width: 24px;
@@ -116,7 +117,7 @@
         padding: 10px;
         filter: invert(1);
         background-color: rgba(white, .1);
-        border-radius: 10px;
+        border-radius: 2px;
         transition: all .15s;
     }
 }

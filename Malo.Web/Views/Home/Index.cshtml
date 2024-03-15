@@ -1,10 +1,28 @@
 ﻿<section class="section">
+    <div class="version-card">
+        v1.0.0
+    </div>
+</section>
+
+<section class="section">
+    <div class="info-card">
+        <div class="info-card-content">
+            <div class="image">
+                <img class="dark-invert" src="/icons/curiosity-icon.svg" alt="globe" />
+            </div>
+            <div class="body">
+                You can use shorthand declarations for properties. Check the shorthand declarations  <button class="btn btn-primary" onclick="toggleShortcutModal()">here</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section">
     <div class="section-header">
         <div>Your new favourite Javascript Library</div>
     </div>
     <div class="section-body">
-        <div>MaloJS is a lightweight Javascript library for performing animations and transitions on HTML using Javascript and CSS.
-        </div>
+        <div>MaloJS is a lightweight Javascript library for performing animations and transitions on HTML using Javascript and CSS.</div>
     </div>
 </section>
 
@@ -48,6 +66,7 @@
         </ul>
     </div>
 </section>
+@await Html.PartialAsync("~/Views/Home/_TestedDevices.cshtml")
 <section class="section">
     <div class="section-header">
         Is MaloJs for you?
@@ -60,5 +79,15 @@
             <li>Predefined methods to perform effects on your HTML elements.</li>
             <li>Ability to perform callbacks after each animation or effect!</li>
         </ul>
+        <div class="info-card">
+            <div class="info-card-content">
+                <div class="image">
+                    <img class="dark-invert" src="/icons/world-globe-line-icon.svg" alt="globe" />
+                </div>
+                <div class="body">
+                    MaloJs has been tested on popular browsers like Safari, Chrome, Edge and more
+                </div>
+            </div>
+        </div>
      </div>
 </section>

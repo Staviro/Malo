@@ -33,7 +33,7 @@ body button, body select, body textrea, body input {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #5555ff;
+  background: radial-gradient(circle at top right, #00adff, #5555ff, #9300ff);
   border-radius: 5px;
 }
 
@@ -99,9 +99,62 @@ html.dark .doc-list-item-container .param {
 html.dark .doc-list-item-container .comment {
   color: #2db92d;
 }
+html.dark .dark-invert {
+  filter: invert(1) !important;
+}
 
 .download-container {
   padding: 10px 0;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.tested-cards {
+  display: flex;
+  gap: 10px;
+  padding: 10px 0;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  align-items: center;
+}
+
+.tested-device-card-content {
+  padding: 20px;
+  background: radial-gradient(circle at top right, #00adff, #5555ff, #9300ff);
+  border-radius: 20px;
+  width: 330px;
+  height: 100%;
+}
+.tested-device-card-content .title {
+  padding: 5px 15px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 30px;
+  text-align: center;
+  width: fit-content;
+  margin: auto;
+  color: white;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+.tested-device-card-content .image {
+  padding: 30px 0;
+  text-align: center;
+}
+.tested-device-card-content .image img {
+  width: 150px;
+  height: 150px;
+  margin: auto;
+}
+
+.version-card {
+  padding: 20px;
+  border-radius: 3px;
+  text-align: center;
+  background-image: radial-gradient(circle at top right, #00adff, #5555ff, #9300ff);
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
 }
 
 .sidemenu-container {
@@ -134,7 +187,7 @@ html.dark .doc-list-item-container .comment {
 }
 .sidemenu-item:hover {
   background-color: rgba(85, 85, 255, 0.1);
-  border-radius: 20px;
+  border-radius: 3px;
 }
 .sidemenu-item[href] {
   color: #5555ff;
@@ -167,7 +220,7 @@ html.dark .doc-list-item-container .comment {
   padding: 10px;
   padding-left: 35px;
   display: none;
-  border-radius: 15px;
+  border-radius: 2px;
   flex-direction: column;
   background-color: #5555ff;
   gap: 5px;
@@ -206,7 +259,7 @@ html.dark .doc-list-item-container .comment {
   padding: 5px;
   margin: 5px;
   background-color: #5555ff;
-  border-radius: 15px;
+  border-radius: 3px;
 }
 .sidemenu-header-icons img {
   width: 24px;
@@ -214,7 +267,7 @@ html.dark .doc-list-item-container .comment {
   padding: 10px;
   filter: invert(1);
   background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
+  border-radius: 2px;
   transition: all 0.15s;
 }
 
@@ -230,10 +283,8 @@ html.dark .doc-list-item-container .comment {
 }
 
 nav {
-  border: 1px solid rgba(238, 238, 238, 0.6);
-  margin: 10px;
-  border-radius: 10px;
   background-color: white;
+  padding: 10px;
 }
 
 .nav-content {
@@ -352,11 +403,11 @@ nav {
 }
 
 .styled-ul {
-  list-style-position: inside;
+  list-style-position: outside;
 }
 .styled-ul li {
   padding: 10px 15px;
-  border-radius: 5px;
+  border-radius: 10px;
   background-color: rgba(85, 85, 255, 0.1);
   margin-bottom: 10px;
   font-weight: 600;
@@ -365,9 +416,30 @@ nav {
   margin-bottom: 0px;
 }
 
+.info-card-content {
+  padding: 10px;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  border: 1px solid #5555ff;
+  border-radius: 20px;
+}
+.info-card-content .body {
+  padding: 10px;
+  border-radius: 10px;
+}
+.info-card-content .image {
+  text-align: center;
+}
+.info-card-content .image img {
+  display: flex;
+  width: 40px;
+  height: 40px;
+}
+
 .btn, .btn-primary, .btn-run {
   padding: 5px 15px;
-  border-radius: 2px;
+  border-radius: 3px;
   border: 1px solid black;
   color: black;
   font-weight: 600;
@@ -489,12 +561,12 @@ nav {
 
 code {
   padding: 15px;
-  background-color: white;
+  background-color: #fefefe;
   border-radius: 5px;
   color: black;
   display: block;
   font-size: 16px;
-  box-shadow: 0 0 2px rgba(221, 221, 221, 0.6);
+  border: 1px solid #eee;
   overflow: auto;
   max-width: 100%;
 }
@@ -633,6 +705,7 @@ code {
   .app-container {
     display: flex;
     justify-content: start;
+    padding-top: 5px;
   }
   .app-container .app-sidemenu {
     width: 380px;
@@ -668,7 +741,7 @@ code {
     position: fixed;
     left: 0px;
     top: 0;
-    right: 10px;
+    right: 0px;
     background-color: rgba(0, 0, 0, 0.4);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
@@ -676,7 +749,6 @@ code {
     width: 100vw;
     overflow: auto;
     z-index: 5;
-    max-width: 380px;
   }
   .app-container .app-sidemenu .sidemenu-container {
     position: relative;

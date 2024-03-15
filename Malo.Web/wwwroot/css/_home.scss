@@ -36,7 +36,7 @@ body {
     border-radius: 5px;
 }
 ::-webkit-scrollbar-thumb {
-    background-color: #5555ff;
+    background: $primary-radial-gradient;
     border-radius: 5px;
 }
 ::-webkit-scrollbar-track-piece {
@@ -120,8 +120,69 @@ html.dark {
             color: darken(limegreen, 5%);
         }
     }
+
+    .dark-invert {
+        filter: invert(1) !important;
+    }
 }
 
 .download-container {
     padding: 10px 0;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.tested-cards {
+    display: flex;
+    gap: 10px;
+    padding: 10px 0;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    align-items: center;
+}
+
+.tested-device-card {
+}
+
+.tested-device-card-content {
+    padding: 20px;
+    background: $primary-radial-gradient;
+    border-radius: 20px;
+    width: 330px;
+    height: 100%;
+
+
+    .title {
+        padding: 5px 15px;
+        background-color: rgba(white, .2);
+        border-radius: 30px;
+        text-align: center;
+        width: fit-content;
+        margin: auto;
+        color: white;
+        font-weight:bold;
+        letter-spacing: 1px;
+    }
+
+    .image {
+        padding: 30px 0;
+        text-align: center;
+
+        img {
+            width: 150px;
+            height: 150px;
+            margin: auto;
+        }
+    }
+}
+
+.version-card {
+    padding: 20px;
+    border-radius: 3px;
+    text-align: center;
+    background-image: $primary-radial-gradient;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
 }
