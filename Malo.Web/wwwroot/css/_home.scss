@@ -15,7 +15,7 @@
 html {
     scroll-behavior: smooth;
     color: #555;
-    background-color: #fcfcfc;
+    background-color: #fafafa;
     transition: all 0.05s;
 }
 
@@ -123,6 +123,9 @@ html.dark {
 
     .dark-invert {
         filter: invert(1) !important;
+    }
+    code {
+        border-color: #444;
     }
 }
 
