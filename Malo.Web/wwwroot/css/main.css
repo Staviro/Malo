@@ -145,14 +145,21 @@ body button, body select, body textrea, body input {
 .sources .source-container .source-links {
   display: flex;
   gap: 10px;
+  flex-direction: column;
 }
 .sources .source-container .source-link {
   color: inherit;
-  padding: 3px 15px;
-  display: block;
-  border: 1px solid #aaa;
-  border-radius: 40px;
+  padding: 10px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  border-radius: 5px;
   margin-top: 5px;
+  width: fit-content;
+}
+.sources .source-container .source-link img {
+  width: 22px;
+  height: 22px;
 }
 .sources .source-container .source-link:hover {
   background-color: rgba(170, 170, 170, 0.1);
@@ -234,9 +241,11 @@ body button, body select, body textrea, body input {
   white-space: break-spaces;
   text-overflow: ellipsis;
   word-break: break-all;
+  text-transform: lowercase;
 }
 .sidemenu-item-body a:hover {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(85, 85, 255, 0.05);
+  border-radius: 5px;
 }
 
 .shortcuts-li {
@@ -453,7 +462,7 @@ nav {
   padding: 5px 15px;
   border: 1px solid black;
   color: black;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 16px;
   background-color: white;
   color: black;
@@ -783,6 +792,9 @@ html.dark .sidemenu-header-icons img {
 }
 html.dark .sidemenu-container {
   border-color: #2a2a2a;
+}
+html.dark .sources .source-links .source-link img {
+  filter: invert(1);
 }
 
 @media (min-width: 992px) {

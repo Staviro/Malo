@@ -9,6 +9,7 @@ namespace Malo.Web.Controllers
             return View();
         }
 
+        [Route("/License")]
         public IActionResult License()
         {
             return View();

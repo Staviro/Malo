@@ -81,9 +81,11 @@
         white-space: break-spaces;
         text-overflow: ellipsis;
         word-break: break-all;
+        text-transform: lowercase;
 
         &:hover {
-            background-color: rgba(white, .2);
+            background-color: rgba($color-primary, .05);
+            border-radius: 5px;
         }
     }
 }

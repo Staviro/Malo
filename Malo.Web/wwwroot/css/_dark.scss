@@ -57,20 +57,34 @@ html.dark {
         color: white;
         box-shadow: none;
     }
-    
+
     .dark-invert {
         filter: invert(1) !important;
     }
+
     code {
         border-color: #444;
     }
+
     .sidemenu-header-icons {
         border-color: #333;
+
         img {
             filter: invert(1);
         }
     }
+
     .sidemenu-container {
         border-color: #2a2a2a;
+    }
+
+    .sources {
+        .source-links {
+            .source-link {
+                img {
+                    filter: invert(1);
+                }
+            }
+        }
     }
 }
