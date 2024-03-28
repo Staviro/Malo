@@ -15,12 +15,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\lib\css\archive\" />
-    <Folder Include="wwwroot\lib\js\archive\" />
-    <Folder Include="wwwroot\lib\stable\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Include="compilerconfig.json" />
   </ItemGroup>
 
@@ -33,12 +27,6 @@
 
   <ItemGroup>
     <Content Update="wwwroot\documentation\License.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Update="wwwroot\lib\stable\malo.1.0.0.zip">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Update="wwwroot\lib\stable\malo.module.1.0.0.zip">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
