@@ -8,12 +8,10 @@
 
   <ItemGroup>
     <Content Remove="compilerconfig.json" />
-    <Content Remove="wwwroot\icons\brightness-high.svg" />
   </ItemGroup>
 
   <ItemGroup>
     <_ContentIncludedByDefault Remove="wwwroot\fonts\Quicksand-VariableFont_wght.ttf" />
-    <_ContentIncludedByDefault Remove="wwwroot\icons\brightness-high.svg" />
   </ItemGroup>
 
   <ItemGroup>
@@ -24,7 +22,6 @@
 
   <ItemGroup>
     <None Include="compilerconfig.json" />
-    <None Include="wwwroot\icons\brightness-high.svg" />
   </ItemGroup>
 
   <ItemGroup>

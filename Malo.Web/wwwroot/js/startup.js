@@ -1,26 +1,23 @@
-window.malo = new Malo(500);
+const malo = new Malo(500);
 function toggleOrSetTheme(isDark = false) {
     if (isDark) {
         document.querySelector('html').classList.add('dark');
-        document.getElementById('appMode').src = "/icons/brightness-high.svg";
+        document.getElementById('appMode').src = "/assets/icons/brightness-high.svg";
         localStorage.setItem('isDarkMode', true);
         return;
     }
     if (document.querySelector('html').classList.contains('dark')) {
         localStorage.setItem('isDarkMode', false);
         document.querySelector('html').classList.remove('dark');
-        document.getElementById('appMode').src = "/icons/brightness-low.svg";
     } else {
-        document.querySelector('html').classList.add('dark');
-        document.getElementById('appMode').src = "/icons/brightness-high.svg";
         localStorage.setItem('isDarkMode', true);
+        document.querySelector('html').classList.add('dark');
     }
 }
 
-window.onload = function () {
-    if (localStorage['isDarkMode'] == 'true') {
-        document.querySelector('html').classList.add('dark');
-        document.getElementById('appMode').src = "/icons/brightness-high.svg";
-    }
-    app.onDocumentationPage();
+let html = document.querySelector('html');
+if (localStorage['isDarkMode'] == 'true') {
+    html.classList.add('dark');
+} else {
+    html.classList.remove('dark');
 }

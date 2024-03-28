@@ -5,10 +5,8 @@
 
 .note-content {
     padding: 10px;
-    border-radius: 5px;
-    color: white;
-    background-color: #5555ff;
-    border: 1px solid #5555ee;
+    color: $color-primary;
+    background-color: rgba($color-primary, .1);
     display: flex;
     gap: 10px;
     justify-content: start;
@@ -17,10 +15,11 @@
     img {
         display: flex;
         width: 14px;
-       padding: 4px;
-        background-color: rgba(black, .3);
-        border-radius: 50px;
-        filter: invert(1);
+        padding: 4px;
+        align-self: center;
+        border-radius: 5px;
+        background-color: rgba(black, .1);
+        filter: invert(0);
     }
 
     &.success {

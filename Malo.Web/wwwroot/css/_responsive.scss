@@ -3,15 +3,14 @@
     .app-container {
         display: flex;
         justify-content: start;
-        padding-top: 5px;
 
         .app-sidemenu {
-            width: 500px;
+            width: 300px;
         }
 
         .app-body {
-            width:100%;
-            padding: 0 20px;
+            padding: 0 10px;
+            width: calc(100% - 300px);
         }
 
         #toggleSideMenuIcon {
@@ -21,12 +20,27 @@
     #navMenuIcon {
         display: none;
     }
+
+    
+    .sidemenu-header-icons {
+        img {
+            filter: invert(.1);
+        }
+    }
 }
 
 @media (min-width: 1399px) {
+    body {
+        max-width: 2600px;
+        margin: auto;
+    }
     .app-container {
         .app-sidemenu {
-            width: 600px;
+            width: 320px;
+        }
+
+        .app-body {
+            width: calc(100% - 320px);
         }
     }
 }
@@ -36,8 +50,15 @@
     .app-container {
         display: block;
 
+        .sidemenu-container {
+            border-right: none;
+        }
         .app-sidemenu {
             display: none;
+        }
+
+        .app-body {
+            padding: 10px;
         }
 
         #toggleSideMenuIcon {
@@ -47,9 +68,9 @@
         .app-sidemenu {
             position: fixed;
             left: 0px;
-            top: 0;
+            top: 0px;
             right: 0px;
-            background-color: rgba(black, .4);
+            background-color: rgba(black, .8);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
             height: 100vh;
@@ -59,20 +80,34 @@
 
             .sidemenu-container {
                 position: relative;
-                top: 5px;
             }
         }
 
         .sidemenu-content {
             padding: 1px;
-        }
+            border: none;
+            background-color: transparent;
+            color: white;
 
-        .app-body {
-            padding: 10px;
+            .sidemenu-item-header {
+                img {
+                    filter: invert(1);
+                }
+            }
         }
     }
 
     #navMenuIcon {
         display: flex;
+    }
+
+    .languages-list  {
+        flex-wrap: wrap;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .intro-container {
+        flex-direction: column;
     }
 }

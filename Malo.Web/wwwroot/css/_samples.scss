@@ -1,3 +1,5 @@
+@import '_variables.scss';
+
 .sample-modal {
     display: none;
     justify-content: center;
@@ -14,19 +16,20 @@
 
 .sample-modal-content {
     padding: 20px;
-    background-color: rgba(black, .7);
+    background-color: white;
     border: 1px solid rgba(white, .1);
     max-width: 400px;
+    margin: 10px;
     width: 100%;
     max-height: 75%;
     overflow-y: auto;
-    color: white;
+    color: #444;
 }
 
 .sample-modal-header {
     text-transform: uppercase;
     display: flex;
-    justify-content: space-between;
+    justify-content: end;
     gap: 10px;
     align-items: center;
     font-size: 24px;
@@ -35,7 +38,7 @@
 
     img {
         cursor: pointer;
-        filter: invert(1);
+        filter: invert(0);
         width: 28px;
         padding: 5px;
         background-color: rgba(black, .05);
@@ -47,6 +50,17 @@
 .sample-modal-body {
     padding: 20px 0;
     padding-bottom: 0;
+
+    .sample-modal-message {
+        padding: 5px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        img {
+            display: flex;
+            width: 34px;
+        }
+    }
 }
 
 .sample-div {
@@ -56,7 +70,6 @@
     .sample-div-content {
         padding: 10px;
         background-color: #5555ff;
-        padding: 10px;
         border-radius: 2px;
         cursor: pointer;
         color: white;

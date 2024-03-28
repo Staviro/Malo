@@ -5,9 +5,7 @@
 }
 
 .doc-list-item-container {
-    padding: 10px 20px;
-    border: 1px solid #eee;
-    border-radius: 20px;
+    padding: 10px 0px;
 }
 
 .doc-list-item-content {
@@ -18,13 +16,13 @@
 code {
     padding: 15px;
     background-color: #fefefe;
-    border-radius: 5px;
     color: black;
     display: block;
     font-size: 16px;
     border: 1px solid #eee;
     overflow: auto;
     max-width: 100%;
+    word-break: auto-phrase;
 }
 
 .indent {
@@ -54,34 +52,19 @@ code {
 }
 
 .variable {
-    color: darken(aquamarine, 40%);
+    color: #d11
 }
 
 .method {
-    color: darken(yellow, 30%);
+    color: #1a1
 }
 
 .param {
-    color: darken(burlywood, 30%);
+    color: #1ab;
 }
 
 .comment {
     color: darken(limegreen, 20%);
-}
-
-.light {
-    .variable {
-        color: aquamarine;
-    }
-
-    .method {
-        color: yellow;
-    }
-
-    .param {
-        color: burlywood;
-    }
-
 }
 
 

@@ -1,6 +1,7 @@
-﻿/*
-    MaloJS  v1.0.0
-    Licensed under MIT (https://malojs.co.za/license)
+﻿/*!
+    *Malo  v1.0.0
+    *(c) 2024 Joseph Morukhuladi
+    *Licensed under MIT (https://malo-library.com/license)
 */
 .extend-animation-defaults, .malo-float-right-out, .malo-float-right-in, .malo-float-left-out, .malo-float-left-in, .malo-float-down-out, .malo-float-down-in, .malo-float-up-out, .malo-float-up-in, .malo-slide-y-out, .malo-slide-x-out, .malo-slide-y-in, .malo-slide-x-in, .malo-double-bounce-out, .malo-bounce-out, .malo-double-bounce-in, .malo-bounce-in, .malo-pop-out, .malo-pop-in, .malo-fade-out, .malo-fade-in {
   animation-duration: 500ms;
@@ -143,6 +144,10 @@
   0% {
     transform: scale(0%);
     -webkit-transform: scale(0%);
+  }
+  40% {
+    transform: scale(103%);
+    -webkit-transform: scale(103%);
   }
   80% {
     transform: scale(100%);
@@ -403,16 +408,12 @@
     -webkit-transform: translateY(0);
   }
   40% {
-    transform: translateY(-30px) rotate(15deg);
-    -webkit-transform: translateY(-30px) rotate(15deg);
+    transform: translateY(-15px);
+    -webkit-transform: translateY(-15px);
   }
-  50% {
-    transform: translateY(-10px) rotate(-15deg);
-    -webkit-transform: translateY(-10px) rotate(-15deg);
-  }
-  60% {
-    transform: translateY(0) rotate(0deg);
-    -webkit-transform: translateY(0) rotate(0deg);
+  100% {
+    transform: translateY(0);
+    -webkit-transform: translateY(0);
   }
 }
 @keyframes malo-effect-bounce {
@@ -421,8 +422,8 @@
     -webkit-transform: scale(100%);
   }
   20% {
-    transform: scale(90%);
-    -webkit-transform: scale(90%);
+    transform: scale(80%);
+    -webkit-transform: scale(80%);
   }
   40% {
     transform: scale(110%);

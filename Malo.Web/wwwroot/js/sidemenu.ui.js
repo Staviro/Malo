@@ -13,14 +13,13 @@ function togglesidemenuBody(identifer) {
         }
     }
 }
-
 function toggleSidemenu(isMenuButton = false, btn = null) {
     var sidemenu = document.querySelector(`.app-sidemenu`);
     var display = getComputedStyle(sidemenu).display;
 
     if (isMenuButton && display == 'block') {
         if (btn != null)
-            malo.effect(MALOCONSTANTS.EFFECTS.BOUNCE, { el: btn, itr: 1, dr: 1000 });
+            malo.effect(malo.MALOCONSTANTS.EFFECTS.BOUNCE, { el: btn, itr: 1, dr: 1000 });
         return;
     }
 
@@ -30,8 +29,7 @@ function toggleSidemenu(isMenuButton = false, btn = null) {
 
         } else if (window.innerWidth < 1399 && window.innerWidth > 991) {
             malo.frame("show", "slide", { el: sidemenu, axis: "x", maxWidth: '380px' });
-        } else
-        {
+        } else {
             malo.frame("show", "float", { el: sidemenu, direction: "right" });
         }
     } else {
@@ -40,8 +38,6 @@ function toggleSidemenu(isMenuButton = false, btn = null) {
             malo.frame("hide", "float", { el: sidemenu, direction: "right" });
         } else {
             malo.frame("hide", "slide", { el: sidemenu, axis: "x" });
-
-
         }
     }
 }

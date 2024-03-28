@@ -4,22 +4,27 @@ function toggleShortcutModal() {
     var display = getComputedStyle(modal).display;
 
     if (display == "none") {
-        malo.frame("show", 'fade',  {
+        malo.frame("show", 'fade', {
             el: modal, dr: 200, dp: "flex", cb: function () {
                 malo.frame("show", "float", { el: content, direction: "right" });
             }
         });
     } else {
-        malo.frame("hide", 'float',  {
+        malo.frame("hide", 'float', {
             el: content, dr: 500, direction: "right", cb: function () {
-                malo.frame("hide", "fade", { el: modal, dr: 200  });
+                malo.frame("hide", "fade", { el: modal, dr: 200 });
             }
         });
     }
 }
 
-function setFrameClose(opr, mtd, props) {
-    document.getElementById("sampleModalClose").onclick = function () {
-        malo.frame(opr, mtd, props);
+function closeSideMenuOnMobile() {
+    let sidemenu = document.querySelector('.app-sidemenu');
+    let isMobile = false;
+    if (sidemenu) {
+        isMobile = sidemenu.style.display == "block" && getComputedStyle(sidemenu).position == "fixed";
+    }
+    if (isMobile) {
+        malo.frame('hide', 'float', { direction: 'right', el: sidemenu });
     }
 }
