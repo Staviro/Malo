@@ -89,7 +89,6 @@ class Malo {
     }
 }
 
-
 const MALOMETHODS = {
     fadeIn(target) {
         try {
@@ -97,7 +96,6 @@ const MALOMETHODS = {
             if (MALOHELPERS.hasProperty(T, 'element') && MALOHELPERS.isValidElement(T.element)) {
                 let element = MALOHELPERS.getElement(T.element);
                 if (MALOHELPERS.isAnimating(element)) { return; }
-
                 let display = !MALOHELPERS.hasProperty(T, "display") ? "block" : T.display;
                 let hasCallback = MALOHELPERS.hasProperty(T, "callback");
                 MALOHELPERS.prepAndStartFrame(element, "malo-fade-in", T.duration, display);
@@ -119,7 +117,6 @@ const MALOMETHODS = {
             if (MALOHELPERS.hasProperty(T, 'element') && MALOHELPERS.isValidElement(T.element)) {
                 let element = MALOHELPERS.getElement(T.element);
                 if (MALOHELPERS.isAnimating(element)) { return; }
-
                 let display = 'none';
                 let hasCallback = MALOHELPERS.hasProperty(T, "callback");
                 MALOHELPERS.prepAndStartFrame(element, "malo-fade-out", T.duration, display);
@@ -149,7 +146,6 @@ const MALOMETHODS = {
                     MALOHELPERS.endFrame(element, "malo-pop-in");
                     MALOHELPERS.checkCallback(hasCallback, T.callback);
                 }, T.duration * .8);
-
             } else {
                 return console.error("Element was not found.");
             }
@@ -163,7 +159,6 @@ const MALOMETHODS = {
             if (MALOHELPERS.hasProperty(T, 'element') && MALOHELPERS.isValidElement(T.element)) {
                 let element = MALOHELPERS.getElement(T.element);
                 if (MALOHELPERS.isAnimating(element)) { return; }
-
                 let display = 'none';
                 let hasCallback = MALOHELPERS.hasProperty(T, "callback");
                 MALOHELPERS.prepAndStartFrame(element, "malo-pop-out", T.duration, display);
@@ -172,7 +167,6 @@ const MALOMETHODS = {
                     MALOHELPERS.endFrame(element, "malo-pop-out");
                     MALOHELPERS.checkCallback(hasCallback, T.callback);
                 }, T.duration * .8);
-
             } else {
                 return console.error("Element was not found.");
             }
@@ -194,7 +188,6 @@ const MALOMETHODS = {
                     MALOHELPERS.endFrame(element, animationClass);
                     MALOHELPERS.checkCallback(hasCallback, T.callback);
                 }, T.duration * .8);
-
             } else {
                 return console.error("Element was not found.");
             }
@@ -208,7 +201,6 @@ const MALOMETHODS = {
             if (MALOHELPERS.hasProperty(T, 'element') && MALOHELPERS.isValidElement(T.element)) {
                 let element = MALOHELPERS.getElement(T.element);
                 if (MALOHELPERS.isAnimating(element)) { return; }
-
                 let display = 'none';
                 let hasCallback = MALOHELPERS.hasProperty(T, "callback");
                 let animationClass = MALOHELPERS.hasProperty(T, "bounce") && T.bounce == "double" ? "malo-double-bounce-out" : "malo-bounce-out";
@@ -218,7 +210,6 @@ const MALOMETHODS = {
                     MALOHELPERS.endFrame(element, animationClass);
                     MALOHELPERS.checkCallback(hasCallback, T.callback);
                 }, T.duration * .8);
-
             } else {
                 return console.error("Element was not found.");
             }
@@ -237,7 +228,6 @@ const MALOMETHODS = {
                 let hasMaxWidth = MALOHELPERS.hasProperty(T, "maxWidth");
                 let hasMaxHeight = MALOHELPERS.hasProperty(T, "maxHeight");
                 let selectedClass = '';
-
                 let clone = element.cloneNode(true);
                 clone.style.display = display;
                 clone.id = "malo_clone";
@@ -247,7 +237,6 @@ const MALOMETHODS = {
                 hidden.classList.add("malo-hidden");
                 hidden.appendChild(clone);
                 document.querySelector("body").appendChild(hidden);
-
                 if (T.axis == "y") {
                     if (hasMaxWidth) {
                         clone.style.maxWidth = T.maxWidth;
@@ -255,11 +244,9 @@ const MALOMETHODS = {
                         clone.style.maxHeight = T.maxHeight;
                     }
                     element.style.height = getComputedStyle(clone).height;
-
                     hidden.remove();
                     selectedClass = "malo-slide-y-in";
                     MALOHELPERS.prepAndStartFrame(element, selectedClass, T.duration, display);
-
                 } else if (T.axis == "x") {
                     if (hasMaxWidth) {
                         clone.style.maxWidth = T.maxWidth;
@@ -271,7 +258,6 @@ const MALOMETHODS = {
                     selectedClass = "malo-slide-x-in";
                     MALOHELPERS.prepAndStartFrame(element, selectedClass, T.duration, display);
                 }
-
                 setTimeout(function () {
                     if (T.axis == 'y') { element.style.height = null }
                     else if (T.axis == 'x') { element.style.width = null }
@@ -279,14 +265,12 @@ const MALOMETHODS = {
                     MALOHELPERS.endFrame(element, selectedClass);
                     MALOHELPERS.checkCallback(hasCallback, T.callback);
                 }, T.duration);
-
             } else {
                 if (!MALOHELPERS.hasProperty(T, "axis")) {
                     return console.error("axis property was not specified");
                 } else {
                     return console.error("Element was not found.");
                 }
-
             }
         } catch (e) {
             console.error(e);
@@ -298,11 +282,9 @@ const MALOMETHODS = {
             if (MALOHELPERS.hasProperty(T, 'element') && MALOHELPERS.isValidElement(T.element) && MALOHELPERS.hasProperty(T, "axis")) {
                 let element = MALOHELPERS.getElement(T.element);
                 if (MALOHELPERS.isAnimating(element)) { return; }
-
                 let display = 'none';
                 let hasCallback = MALOHELPERS.hasProperty(T, "callback");
                 let selectedClass = "";
-
                 if (T.axis == 'y') {
                     element.style.height = getComputedStyle(element).height;
                     selectedClass = "malo-slide-y-out";
@@ -312,7 +294,6 @@ const MALOMETHODS = {
                     selectedClass = "malo-slide-x-out";
                     MALOHELPERS.prepAndStartFrame(element, selectedClass, T.duration, display);
                 }
-
                 setTimeout(function () {
                     element.style.display = display;
                     MALOHELPERS.endFrame(element, selectedClass);
@@ -320,7 +301,6 @@ const MALOMETHODS = {
                     if (T.axis == 'y') { element.style.height = null }
                     else if (T.axis == 'x') { element.style.width = null }
                 }, T.duration * 0.95);
-
             } else {
                 return console.error("Element was not found.");
             }
@@ -337,7 +317,6 @@ const MALOMETHODS = {
                 let display = !MALOHELPERS.hasProperty(T, "display") ? "block" : T.display;
                 let hasCallback = MALOHELPERS.hasProperty(T, "callback");
                 let selectedClass = "";
-
                 if (T.direction == 'up') {
                     selectedClass = "malo-float-up-in";
                 } else if (T.direction == 'down') {
@@ -348,12 +327,10 @@ const MALOMETHODS = {
                     selectedClass = "malo-float-right-in";
                 }
                 MALOHELPERS.prepAndStartFrame(element, selectedClass, T.duration, display);
-
                 setTimeout(function () {
                     MALOHELPERS.endFrame(element, selectedClass);
                     MALOHELPERS.checkCallback(hasCallback, T.callback);
                 }, T.duration * .8);
-
             } else {
                 return console.error("Element was not found.");
             }
@@ -367,11 +344,9 @@ const MALOMETHODS = {
             if (MALOHELPERS.hasProperty(T, 'element') && MALOHELPERS.isValidElement(T.element)) {
                 let element = MALOHELPERS.getElement(T.element);
                 if (MALOHELPERS.isAnimating(element)) { return; }
-
                 let display = 'none';
                 let hasCallback = MALOHELPERS.hasProperty(T, "callback");
                 let selectedClass = "";
-
                 if (T.direction == 'up') {
                     selectedClass = "malo-float-up-out";
                 } else if (T.direction == 'down') {
@@ -381,14 +356,12 @@ const MALOMETHODS = {
                 } else if (T.direction == 'right') {
                     selectedClass = "malo-float-right-out";
                 }
-
                 MALOHELPERS.prepAndStartFrame(element, selectedClass, T.duration, display);
                 setTimeout(function () {
                     element.style.display = display;
                     MALOHELPERS.endFrame(element, selectedClass);
                     MALOHELPERS.checkCallback(hasCallback, T.callback);
                 }, T.duration * .8);
-
             } else {
                 return console.error("Element was not found.");
             }
@@ -410,7 +383,6 @@ const MALOMETHODS = {
             setTimeout(function () {
                 MALOHELPERS.removeAndResetEffect(element, "malo-blink");
             }, T.duration * iteractionCount);
-
         } catch (e) {
             console.error(e);
         }
@@ -429,7 +401,6 @@ const MALOMETHODS = {
             setTimeout(function () {
                 MALOHELPERS.removeAndResetEffect(element, "malo-jump");
             }, T.duration * iteractionCount);
-
         } catch (e) {
             console.error(e);
         }
@@ -448,7 +419,6 @@ const MALOMETHODS = {
             setTimeout(function () {
                 MALOHELPERS.removeAndResetEffect(element, "malo-bounce");
             }, T.duration * iteractionCount);
-
         } catch (e) {
             console.error(e);
         }
@@ -459,11 +429,8 @@ const MALOMETHODS = {
             if (MALOHELPERS.hasProperty(T, 'element') && MALOHELPERS.isValidElement(T.element)) {
                 let element = MALOHELPERS.getElement(T.element);
                 let display = "";
-                if (animationDisplay == "none") {
-                    display = "none";
-                } else {
-                    display = !MALOHELPERS.hasProperty(T, "display") ? "block" : T.display;
-                }
+                if (animationDisplay == "none") { display = "none"; }
+                else { display = !MALOHELPERS.hasProperty(T, "display") ? "block" : T.display;  }
                 let hasCallback = MALOHELPERS.hasProperty(T, "callback");
                 element.style.display = display;
                 MALOHELPERS.checkCallback(hasCallback, T.callback);
@@ -491,92 +458,41 @@ const MALOMETHODS = {
 const MALOHELPERS = {
     convertToFullNamedProps(obj) {
         let newObj = {};
-
-        if (this.isValidProp(obj, ["element", "el"])) {
-            newObj.element = this.getValueFromAlias(obj, ["element", "el"]);
-        }
-
-        if (this.isValidProp(obj, ["duration", "dr"])) {
-            newObj.duration = this.getValueFromAlias(obj, ["duration", "dr"]);
-        }
-
-        if (this.isValidProp(obj, ["callback", "cb"])) {
-            newObj.callback = this.getValueFromAlias(obj, ["callback", "cb"]);
-        }
-
-        if (this.isValidProp(obj, ["display", "dp"])) {
-            newObj.display = this.getValueFromAlias(obj, ["display", "dp"]);
-        }
-
-        if (this.isValidProp(obj, ["operation", "opr"])) {
-            newObj.operation = this.getValueFromAlias(obj, ["operation", "opr"]);
-        }
-
-        if (this.isValidProp(obj, ["type"])) {
-            newObj.type = this.getValueFromAlias(obj, ["type"]);
-        }
-
-        if (this.isValidProp(obj, ["animation", "anm"])) {
-            newObj.animation = this.getValueFromAlias(obj, ["animation", "anm"]);
-        }
-
-        if (this.isValidProp(obj, ["iteration", "itr"])) {
-            newObj.iteration = this.getValueFromAlias(obj, ["iteration", "itr"]);
-        }
-
-        if (this.isValidProp(obj, ["appendTo", "apt"])) {
-            newObj.appendTo = this.getValueFromAlias(obj, ["appendTo", "apt"]);
-        }
-
-        if (this.isValidProp(obj, ["bounce"])) {
-            newObj.bounce = this.getValueFromAlias(obj, ["bounce"]);
-        }
-
-        if (this.isValidProp(obj, ["axis"])) {
-            newObj.axis = this.getValueFromAlias(obj, ["axis"]);
-        }
-
-        if (this.isValidProp(obj, ["direction"])) {
-            newObj.direction = this.getValueFromAlias(obj, ["direction"]);
-        }
-
-        if (this.isValidProp(obj, ["maxHeight"])) {
-            newObj.maxHeight = this.getValueFromAlias(obj, ["maxHeight"]);
-        }
-
-        if (this.isValidProp(obj, ["maxWidth"])) {
-            newObj.maxWidth = this.getValueFromAlias(obj, ["maxWidth"]);
-        }
+        if (this.isValidProp(obj, ["element", "el"])) { newObj.element = this.getValueFromAlias(obj, ["element", "el"]); }
+        if (this.isValidProp(obj, ["duration", "dr"])) { newObj.duration = this.getValueFromAlias(obj, ["duration", "dr"]);  }
+        if (this.isValidProp(obj, ["callback", "cb"])) { newObj.callback = this.getValueFromAlias(obj, ["callback", "cb"]); }
+        if (this.isValidProp(obj, ["display", "dp"])) { newObj.display = this.getValueFromAlias(obj, ["display", "dp"]); }
+        if (this.isValidProp(obj, ["operation", "opr"])) { newObj.operation = this.getValueFromAlias(obj, ["operation", "opr"]); }
+        if (this.isValidProp(obj, ["type"])) { newObj.type = this.getValueFromAlias(obj, ["type"]); }
+        if (this.isValidProp(obj, ["animation", "anm"])) { newObj.animation = this.getValueFromAlias(obj, ["animation", "anm"]);  }
+        if (this.isValidProp(obj, ["iteration", "itr"])) { newObj.iteration = this.getValueFromAlias(obj, ["iteration", "itr"]);  }
+        if (this.isValidProp(obj, ["appendTo", "apt"])) { newObj.appendTo = this.getValueFromAlias(obj, ["appendTo", "apt"]); }
+        if (this.isValidProp(obj, ["bounce"])) { newObj.bounce = this.getValueFromAlias(obj, ["bounce"]); }
+        if (this.isValidProp(obj, ["axis"])) { newObj.axis = this.getValueFromAlias(obj, ["axis"]); }
+        if (this.isValidProp(obj, ["direction"])) { newObj.direction = this.getValueFromAlias(obj, ["direction"]); }
+        if (this.isValidProp(obj, ["maxHeight"])) { newObj.maxHeight = this.getValueFromAlias(obj, ["maxHeight"]); }
+        if (this.isValidProp(obj, ["maxWidth"])) {  newObj.maxWidth = this.getValueFromAlias(obj, ["maxWidth"]); }
         return newObj;
     },
     isValidProp(obj, propNames) {
         let result = false;
         if (typeof (propNames) === 'object') {
             propNames.forEach(n => {
-                if (obj[n] != undefined && obj[n] != "") {
-                    result = true;
-                }
+                if (obj[n] != undefined && obj[n] != "") { result = true; }
             });
         } else {
-            if (obj[propNames] != undefined && obj[propNames] != "") {
-                result = true;
-            }
+            if (obj[propNames] != undefined && obj[propNames] != "") { result = true;  }
         }
         return result;
     },
     isValidElement(el) {
-        if (typeof (el) === 'object')
-            return el != null && el != undefined && el != '';
-        else {
-            return document.querySelector(el) != null && document.querySelector(el) != undefined && document.querySelector(el) != ''
-        }
+        if (typeof (el) === 'object') { return el != null && el != undefined && el != ''; }
+        else { return document.querySelector(el) != null && document.querySelector(el) != undefined && document.querySelector(el) != ''  }
     },
     prepAndStartFrame(element, clsName, duration, display) {
         element.classList.add(clsName);
         element.style.animationDuration = `${duration}ms`;
-        if (display != 'none') {
-            element.style.display = display;
-        }
+        if (display != 'none') { element.style.display = display; }
         element.setAttribute("is-malo-animating", 'true');
     },
     endFrame(element, clsName) {
@@ -585,29 +501,19 @@ const MALOHELPERS = {
         element.removeAttribute("is-malo-animating");
     },
     isAnimating(element) {
-        if (element.getAttribute('is-malo-animating') == null) {
-            return false;
-        } else if (element.getAttribute('is-malo-animating') == 'true') {
-            return true;
-        } else {
-            return false;
-        }
+        if (element.getAttribute('is-malo-animating') == null) { return false; }
+        else if (element.getAttribute('is-malo-animating') == 'true') { return true; }
+        else { return false; }
     },
     isUsingEffect(element) {
-        if (element.getAttribute('is-using-malo-effect') == null) {
-            return false;
-        } else if (element.getAttribute('is-using-malo-effect') == 'true') {
-            return true;
-        } else {
-            return false;
-        }
+        if (element.getAttribute('is-using-malo-effect') == null) { return false; }
+        else if (element.getAttribute('is-using-malo-effect') == 'true') { return true; }
+        else { return false; }
     },
     prepAndStartEffect(element, clsName, display, duration, iteration) {
         element.style.animationDuration = `${duration}ms`;
         element.style.animationIterationCount = iteration;
-        if (display != 'none') {
-            element.style.display = display;
-        }
+        if (display != 'none') { element.style.display = display; }
         element.setAttribute("is-using-malo-effect", 'true');
         element.classList.add(clsName);
     },
@@ -617,70 +523,48 @@ const MALOHELPERS = {
         element.style.animationDuration = null;
         element.style.animationIterationCount = null;
     },
-    hasProperty(obj, name) {
-        return obj[name] != undefined;
-    },
+    hasProperty(obj, name) { return obj[name] != undefined; },
     getElement(el) {
-        if (typeof (el) === 'object')
-            return el;
-        else {
-            return document.querySelector(el);
-        }
+        if (typeof (el) === 'object') { return el;  }   
+        else { return document.querySelector(el); }
     },
     useDefaultDuration(props, duration) {
         if (props.duration == undefined && props.dr == undefined) {
             props.duration = duration;
             return props;
-        } else {
-            return props;
-        }
+        } else { return props; }
     },
     getValueFromAlias(obj, aliases) {
         let value = null;
         aliases.forEach(function (a) {
-            if (obj[a] != undefined) {
-                value = obj[a];
-            }
+            if (obj[a] != undefined) { value = obj[a]; }
         });
         return value;
     },
     checkCallback(has, callback) {
-        if (has)
-            callback();
+        if (has) { callback(); } 
     },
     hideOverflow(element) {
         try {
-            if (typeof (element) == 'object') {
-                element.style.overflow = "hidden";
-            } else {
-                document.querySelector(element).style.overflow = "hidden";
-            }
+            if (typeof (element) == 'object') { element.style.overflow = "hidden"; }
+            else { document.querySelector(element).style.overflow = "hidden";  }
         } catch (error) {
             console.log(error);
         }
     },
     showOverflow(element) {
         try {
-            if (typeof (element) == 'object') {
-                element.style.overflow = null;
-            } else {
-                document.querySelector(element).style.overflow = null;
-            }
+            if (typeof (element) == 'object') { element.style.overflow = null; }
+            else { document.querySelector(element).style.overflow = null;  }
         } catch (error) {
             console.log(error);
         }
     },
     display(element, value) {
-        if (value == "" || value == null || value == undefined) {
-            console.error('Invalid display value"');
-            return;
-        }
+        if (value == "" || value == null || value == undefined) { console.error('Invalid display value"'); return;  }
         try {
-            if (typeof (element) == 'object') {
-                element.style.display = value;
-            } else {
-                document.querySelector(element).style.display = value;
-            }
+            if (typeof (element) == 'object') { element.style.display = value; }
+            else { document.querySelector(element).style.display = value; }
         } catch (error) {
             console.log(error);
         }
