@@ -25,7 +25,9 @@
     .section-header {
         padding: 10px 0;
         text-transform: uppercase;
-        @extend .text-stroke;
+        font-size: 24px;
+        font-weight: 600;
+        color: $color-primary;
     }
 
     .section-sub-header {

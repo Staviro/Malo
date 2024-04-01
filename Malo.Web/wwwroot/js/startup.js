@@ -16,7 +16,7 @@ function toggleOrSetTheme(isDark = false) {
 }
 
 let html = document.querySelector('html');
-if (localStorage['isDarkMode'] == 'true') {
+if (localStorage['isDarkMode'] == 'true' || localStorage['isDarkMode'] == undefined) {
     html.classList.add('dark');
 } else {
     html.classList.remove('dark');

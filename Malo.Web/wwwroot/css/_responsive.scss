@@ -59,6 +59,7 @@
 
         .app-body {
             padding: 10px;
+            padding-top: 0px;
         }
 
         #toggleSideMenuIcon {
@@ -109,5 +110,6 @@
 @media screen and (max-width: 767px) {
     .intro-container {
         flex-direction: column;
+        text-align: center;
     }
 }
