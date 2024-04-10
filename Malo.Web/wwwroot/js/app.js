@@ -19,5 +19,5 @@ function runEffect(effect, props) {
 }
 
 function testRun() {
-    malo.effect('blink', { element: "body", iteration: 1, dr: 1000, dp: "block" });
+    malo.effect('bounce', { element: "body", iteration: 1, dr: 1000, dp: "block" });
 }

@@ -22,17 +22,24 @@ body {
     }
 }
 
+header {
+    position: sticky;
+    top: 0px;
+    z-index: 6;
+}
+
 ::-webkit-scrollbar {
-    width: 5px;
+    width: 10px;
     height: 5px;
     border-radius: 0px;
     background-color: transparent;
+    cursor: grab;
 }
 ::-webkit-scrollbar-thumb {
     background: $primary-radial-gradient;
     border-radius: 5px;
     padding: 10px;
-
+    cursor: grab;
 }
 ::-webkit-scrollbar-track-piece {
     background-color: rgba(#ddd, .3);
@@ -75,6 +82,8 @@ body {
         margin: auto;
         color: white;
         letter-spacing: 1px;
+        font-size: 14px;
+        font-weight: bold;
     }
 
     .image {
@@ -90,19 +99,22 @@ body {
 }
 
 .version-card {
-    padding: 10px 20px;
-    background-color: rgba($color-primary, .1);
+    padding: 10px 0px;
 
-    .header {
-        font-size: 18px;
-        letter-spacing: 1px;
-        color: $color-primary;
+    .release-date {
         padding: 10px 0;
-        font-weight: bold;
-    }
-
-    .body {
-        padding: 5px 0;
+        font-weight: 600;
+    } 
+    
+    .header {
+        letter-spacing: 1px;
+        color: white;
+        padding: 10px 20px;
+        font-weight: 600;
+        text-align: center;
+        border-radius: 40px;
+        width: fit-content;
+        background-image: $primary-radial-gradient;
     }
 }
 
@@ -127,7 +139,6 @@ body {
     align-items: center;
     padding: 20px;
     gap: 10px;
-    background-color: rgba($color-primary, .1);
 }
 
 .sources {
@@ -136,13 +147,14 @@ body {
     gap: 10px;
 
     .source-container {
-        padding: 5px 20px;
+        padding: 10px 20px;
+        border: 1px solid #ddd;
+        border-radius: 10px;
 
         .source-header {
-            font-weight: 600;
-            text-decoration: underline;
+            font-weight: 700;
             padding: 5px 0;
-            font-size: 18px
+            font-size: 20px
         }
 
         .source-note {

@@ -23,16 +23,18 @@
     max-height: 75%;
     overflow-y: auto;
     color: #444;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(black, .2);
 }
 
 .sample-modal-header {
     text-transform: uppercase;
     display: flex;
-    justify-content: end;
+    justify-content: space-between;
     gap: 10px;
     align-items: center;
-    font-size: 24px;
     padding-bottom: 10px;
+    font-weight: bold;
     border-bottom: 1px solid rgba(white, .2);
 
     img {
@@ -63,14 +65,15 @@
 }
 
 .sample-div {
-    padding: 10px 0;
+    padding: 5px 0;
     width: fit-content;
 
     .sample-div-content {
-        padding: 10px;
-        background-color: #5555ff;
-        border-radius: 2px;
+        padding: 10px 20px;
+        background-color: $color-primary;
+        border-radius: 40px;
         cursor: pointer;
+        font-size: 14px;
         color: white;
     }
 }

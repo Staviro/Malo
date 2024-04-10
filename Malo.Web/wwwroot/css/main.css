@@ -18,17 +18,25 @@ body button, body select, body textrea, body input {
   font-family: "Primary", "sans-serif", "helvetica", "Arial", "Times", "Times New Roman";
 }
 
+header {
+  position: sticky;
+  top: 0px;
+  z-index: 6;
+}
+
 ::-webkit-scrollbar {
-  width: 5px;
+  width: 10px;
   height: 5px;
   border-radius: 0px;
   background-color: transparent;
+  cursor: grab;
 }
 
 ::-webkit-scrollbar-thumb {
   background: radial-gradient(circle at top right, #00adff, #5555ff, #9300ff);
   border-radius: 5px;
   padding: 10px;
+  cursor: grab;
 }
 
 ::-webkit-scrollbar-track-piece {
@@ -69,6 +77,8 @@ body button, body select, body textrea, body input {
   margin: auto;
   color: white;
   letter-spacing: 1px;
+  font-size: 14px;
+  font-weight: bold;
 }
 .tested-device-card-content .image {
   padding: 30px 0;
@@ -81,18 +91,21 @@ body button, body select, body textrea, body input {
 }
 
 .version-card {
-  padding: 10px 20px;
-  background-color: rgba(85, 85, 255, 0.1);
+  padding: 10px 0px;
+}
+.version-card .release-date {
+  padding: 10px 0;
+  font-weight: 600;
 }
 .version-card .header {
-  font-size: 18px;
   letter-spacing: 1px;
-  color: #5555ff;
-  padding: 10px 0;
-  font-weight: bold;
-}
-.version-card .body {
-  padding: 5px 0;
+  color: white;
+  padding: 10px 20px;
+  font-weight: 600;
+  text-align: center;
+  border-radius: 40px;
+  width: fit-content;
+  background-image: radial-gradient(circle at top right, #00adff, #5555ff, #9300ff);
 }
 
 .languages-list {
@@ -116,7 +129,6 @@ body button, body select, body textrea, body input {
   align-items: center;
   padding: 20px;
   gap: 10px;
-  background-color: rgba(85, 85, 255, 0.1);
 }
 
 .sources {
@@ -125,13 +137,14 @@ body button, body select, body textrea, body input {
   gap: 10px;
 }
 .sources .source-container {
-  padding: 5px 20px;
+  padding: 10px 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
 }
 .sources .source-container .source-header {
-  font-weight: 600;
-  text-decoration: underline;
+  font-weight: 700;
   padding: 5px 0;
-  font-size: 18px;
+  font-size: 20px;
 }
 .sources .source-container .source-note {
   padding: 5px 0;
@@ -164,13 +177,18 @@ body button, body select, body textrea, body input {
   overflow: auto;
   padding: 0;
   position: sticky;
-  top: 0px;
+  top: 47px;
   bottom: 0px;
   max-height: 100vh;
+  padding: 10px;
+  z-index: 7;
 }
 
 .sidemenu-content {
   background-color: white;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  padding: 5px;
 }
 
 .sidemenu-items-li {
@@ -181,8 +199,9 @@ body button, body select, body textrea, body input {
 
 .sidemenu-item {
   width: -webkit-fill-available;
-  padding: 5px 0px;
+  padding: 0px;
   transition: all 150ms;
+  border-radius: 20px;
 }
 .sidemenu-item a {
   display: block;
@@ -197,18 +216,27 @@ body button, body select, body textrea, body input {
 .sidemenu-item-header {
   display: flex;
   justify-content: start;
-  gap: 10px;
+  gap: 5px;
   align-items: center;
   cursor: pointer;
   border-radius: 10px;
-  padding: 2px 10px;
-  background-color: rgba(175, 175, 175, 0.05);
+  padding: 3px 0px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 150ms;
 }
 .sidemenu-item-header div {
   padding: 7px 0;
 }
+.sidemenu-item-header:hover {
+  padding-left: 5px;
+}
+.sidemenu-item-header:hover img {
+  width: 16px;
+}
 .sidemenu-item-header img {
-  width: 20px;
+  width: 0px;
+  height: 14px;
   padding: 5px;
   display: flex;
   transition: all 500ms;
@@ -219,9 +247,9 @@ body button, body select, body textrea, body input {
 }
 
 .sidemenu-item-body {
-  margin-top: 10px;
   padding: 10px;
-  padding-left: 40px;
+  padding-left: 30px;
+  padding-top: 0px;
   display: none;
   flex-direction: column;
   gap: 5px;
@@ -240,6 +268,7 @@ body button, body select, body textrea, body input {
   word-break: break-all;
   text-transform: lowercase;
   text-decoration: none;
+  font-size: 14px;
 }
 .sidemenu-item-body a:hover {
   background-color: rgba(85, 85, 255, 0.05);
@@ -262,11 +291,14 @@ body button, body select, body textrea, body input {
   align-items: center;
   padding: 5px;
   margin: 5px;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
 }
 .sidemenu-header-icons img {
   width: 28px;
   height: 28px;
   padding: 10px;
+  border-radius: 5px;
   filter: invert(0.9);
   transition: all 0.15s;
 }
@@ -283,14 +315,12 @@ body button, body select, body textrea, body input {
   font-size: 14px;
   color: #5555ff;
   text-transform: uppercase;
-  margin-bottom: 10px;
   letter-spacing: 2px;
 }
 
 nav {
   background: #fefefe;
   padding: 10px;
-  border-bottom: 1px solid #eee;
 }
 
 .nav-content {
@@ -333,10 +363,14 @@ nav {
   padding: 10px;
   color: #5555ff;
   background-color: rgba(85, 85, 255, 0.1);
+  border: 1px solid rgba(85, 85, 255, 0.2);
   display: flex;
   gap: 10px;
   justify-content: start;
-  align-items: start;
+  align-items: center;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
 }
 .note-content img {
   display: flex;
@@ -344,7 +378,7 @@ nav {
   padding: 4px;
   align-self: center;
   border-radius: 5px;
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.8);
   filter: invert(0);
 }
 .note-content.success {
@@ -377,23 +411,26 @@ nav {
   color: #5555ff;
 }
 .section .section-sub-header {
-  font-size: 18px;
-  font-weight: 500;
-  padding: 10px 0;
+  font-size: 20px;
+  font-weight: 600;
+  padding: 5px 0;
+  color: #9300ff;
 }
 .section .section-body {
-  padding: 20px 0;
+  padding: 10px 0;
 }
 
 .footer-content {
   padding: 20px;
-  background-color: #1a1a1f;
-  border-top: 1px solid #2f2f2f;
+  background-color: #2a2a2f;
+  border-top: 1px solid #3f3f3f;
   color: #ccc;
   align-items: center;
   display: flex;
   justify-content: center;
   gap: 10px;
+  font-size: 14px;
+  font-weight: 600;
   flex-wrap: wrap;
 }
 .footer-content .footer-item {
@@ -421,6 +458,7 @@ nav {
   background-color: rgba(85, 85, 255, 0.1);
   color: #5555ff;
   border: 1px solid rgba(85, 85, 255, 0.1);
+  border-radius: 10px;
 }
 .info-card-content .body {
   padding: 10px;
@@ -459,8 +497,8 @@ nav {
   filter: invert(0) !important;
 }
 
-.btn, .btn-download, .btn-primary, .btn-run {
-  padding: 5px 15px;
+.btn, .btn-primary, .btn-run {
+  padding: 10px 15px;
   border: 1px solid black;
   color: black;
   font-weight: 500;
@@ -469,16 +507,24 @@ nav {
   color: black;
   border-color: black;
   display: inline-block;
+  transition: all 150ms;
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 10px;
 }
 
 .btn-run {
-  color: white;
-  background: #333;
-  border: none;
-  outline: 1px solid transparent;
+  color: #5555ff;
+  background: transparent;
+  border: 1px solid #5555ff;
+  border-radius: 40px;
+  padding: 5px 20px;
+  font-size: 14px;
+  outline: none;
 }
 .btn-run:hover {
-  outline-color: #ddd;
+  background-color: #5555ff;
+  color: white;
 }
 
 .btn-primary {
@@ -492,15 +538,6 @@ nav {
 
 .rounded {
   border-radius: 40px;
-}
-
-.btn-download {
-  background-color: transparent;
-  border-color: transparent;
-  color: #5555ff;
-  font-size: 20px;
-  text-decoration: none;
-  background-color: rgba(85, 85, 255, 0.2);
 }
 
 .shortcut-modal {
@@ -584,10 +621,6 @@ nav {
   gap: 10px;
 }
 
-.doc-list-item-container {
-  padding: 10px 0px;
-}
-
 .doc-list-item-content {
   padding: 10px 0;
   border-radius: 10px;
@@ -603,6 +636,7 @@ code {
   overflow: auto;
   max-width: 100%;
   word-break: auto-phrase;
+  border-radius: 10px;
 }
 
 .indent.one {
@@ -641,13 +675,13 @@ code {
 }
 
 .doc-item-name {
-  font-weight: 600;
+  font-size: 14px;
+  padding-bottom: 5px;
 }
 
 .frame-identity {
-  padding-bottom: 10px;
-  font-weight: bold;
-  font-size: 18px;
+  font-weight: 600;
+  font-size: 20px;
 }
 
 .doc-options {
@@ -685,16 +719,18 @@ code {
   max-height: 75%;
   overflow-y: auto;
   color: #444;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .sample-modal-header {
   text-transform: uppercase;
   display: flex;
-  justify-content: end;
+  justify-content: space-between;
   gap: 10px;
   align-items: center;
-  font-size: 24px;
   padding-bottom: 10px;
+  font-weight: bold;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 .sample-modal-header img {
@@ -723,14 +759,15 @@ code {
 }
 
 .sample-div {
-  padding: 10px 0;
+  padding: 5px 0;
   width: fit-content;
 }
 .sample-div .sample-div-content {
-  padding: 10px;
+  padding: 10px 20px;
   background-color: #5555ff;
-  border-radius: 2px;
+  border-radius: 40px;
   cursor: pointer;
+  font-size: 14px;
   color: white;
 }
 
@@ -751,7 +788,7 @@ html.dark nav .nav-link img {
 }
 html.dark .sidemenu-content {
   background-color: transparent;
-  border-image: radial-gradient(circle at top right, #00adff, #5555ff, #9300ff) 30;
+  border-color: #333;
 }
 html.dark .sidemenu-content .sidemenu-item-body {
   background-color: rgba(58, 58, 63, 0.2);
@@ -800,8 +837,15 @@ html.dark .sidemenu-container {
 html.dark .sources .source-links .source-link img {
   filter: invert(1);
 }
+html.dark .sources .source-container {
+  border-color: #3a3a3a;
+}
 
 @media (min-width: 992px) {
+  #main {
+    max-width: 1400px;
+    margin: auto;
+  }
   .app-container {
     display: flex;
     justify-content: start;
@@ -812,6 +856,10 @@ html.dark .sources .source-links .source-link img {
   .app-container .app-body {
     padding: 0 10px;
     width: calc(100% - 300px);
+    background-color: rgba(85, 85, 85, 0.05);
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
   .app-container #toggleSideMenuIcon {
     display: none;
@@ -819,13 +867,16 @@ html.dark .sources .source-links .source-link img {
   #navMenuIcon {
     display: none;
   }
+  nav {
+    padding: 5px 10px;
+    padding-bottom: 0px;
+  }
   .sidemenu-header-icons img {
     filter: invert(0.1);
   }
 }
 @media (min-width: 1399px) {
   body {
-    max-width: 2600px;
     margin: auto;
   }
   .app-container .app-sidemenu {
@@ -863,10 +914,11 @@ html.dark .sources .source-links .source-link img {
     height: 100vh;
     width: 100vw;
     overflow: auto;
-    z-index: 5;
+    z-index: 7;
   }
   .app-container .app-sidemenu .sidemenu-container {
     position: relative;
+    top: 0;
   }
   .app-container .sidemenu-content {
     padding: 1px;
@@ -888,5 +940,8 @@ html.dark .sources .source-links .source-link img {
   .intro-container {
     flex-direction: column;
     text-align: center;
+  }
+  ::-webkit-scrollbar {
+    width: 5px;
   }
 }

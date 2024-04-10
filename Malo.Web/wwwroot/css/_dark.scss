@@ -22,8 +22,7 @@ html.dark {
 
     .sidemenu-content {
         background-color: transparent;
-        border-image: $primary-radial-gradient 30;
-
+        border-color: #333;
 
         .sidemenu-item-body {
             background-color: rgba(#3a3a3f, .2);
@@ -90,6 +89,10 @@ html.dark {
                     filter: invert(1);
                 }
             }
+        }
+
+        .source-container {
+            border-color: #3a3a3a;
         }
     }
 }

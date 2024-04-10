@@ -7,10 +7,14 @@
     padding: 10px;
     color: $color-primary;
     background-color: rgba($color-primary, .1);
+    border: 1px solid rgba($color-primary, .2);
     display: flex;
     gap: 10px;
     justify-content: start;
-    align-items: start;
+    align-items: center;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
 
     img {
         display: flex;
@@ -18,7 +22,7 @@
         padding: 4px;
         align-self: center;
         border-radius: 5px;
-        background-color: rgba(black, .1);
+        background-color: rgba(white, .8);
         filter: invert(0);
     }
 

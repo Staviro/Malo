@@ -4,13 +4,18 @@
     overflow: auto;
     padding: 0;
     position: sticky;
-    top: 0px;
+    top: 47px;
     bottom: 0px;
     max-height: 100vh;
+    padding: 10px;
+    z-index: 7;
 }
 
 .sidemenu-content {
     background-color: white;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    padding: 5px;
 }
 
 .sidemenu-items-li {
@@ -21,9 +26,10 @@
 
 .sidemenu-item {
     width: -webkit-fill-available;
-    padding: 5px 0px;
+    padding: 0px;
     transition: all 150ms;
-    
+    border-radius: 20px;
+
     a {
         display: block;
     }
@@ -40,18 +46,29 @@
 .sidemenu-item-header {
     display: flex;
     justify-content: start;
-    gap: 10px;
+    gap: 5px;
     align-items: center;
     cursor: pointer;
     border-radius: 10px;
-    padding: 2px 10px;
-    background-color: rgba(#afafaf, .05);
+    padding: 3px 0px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 150ms;
 
     div {
         padding: 7px 0;
     }
+
+    &:hover {
+        padding-left: 5px;
+        img {
+            width: 16px;
+        }
+    }
+
     img {
-        width: 20px;
+        width: 0px;
+        height: 14px;
         padding: 5px;
         display: flex;
         transition: all 500ms;
@@ -64,9 +81,9 @@
 }
 
 .sidemenu-item-body {
-    margin-top: 10px;
     padding: 10px;
-    padding-left: 40px;
+    padding-left: 30px;
+    padding-top: 0px;
     display: none;
     flex-direction: column;
     gap: 5px;
@@ -85,6 +102,7 @@
         word-break: break-all;
         text-transform: lowercase;
         text-decoration: none;
+        font-size: 14px;
 
         &:hover {
             background-color: rgba($color-primary, .05);
@@ -111,11 +129,14 @@
     align-items: center;
     padding: 5px;
     margin: 5px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
 
     img {
         width: 28px;
         height: 28px;
         padding: 10px;
+        border-radius: 5px;
         filter: invert(.9);
         transition: all .15s;
 
@@ -134,6 +155,5 @@
     font-size: 14px;
     color: $color-primary;
     text-transform: uppercase;
-    margin-bottom: 10px;
     letter-spacing: 2px;
 }
