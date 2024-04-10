@@ -7,8 +7,6 @@
     top: 0px;
     bottom: 0px;
     max-height: 100vh;
-    border-right: 1px solid #aaa;
-
 }
 
 .sidemenu-content {
@@ -23,7 +21,7 @@
 
 .sidemenu-item {
     width: -webkit-fill-available;
-    padding: 5px;
+    padding: 5px 0px;
     transition: all 150ms;
     
     a {
@@ -113,7 +111,6 @@
     align-items: center;
     padding: 5px;
     margin: 5px;
-    border-bottom: 1px solid #ddd;
 
     img {
         width: 28px;

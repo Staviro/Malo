@@ -78,6 +78,8 @@
     align-items: center;
     background-color: rgba($color-primary, .1);
     color: $color-primary;
+    border: 1px solid rgba($color-primary, .1);
+
 
     .body {
         padding: 10px;

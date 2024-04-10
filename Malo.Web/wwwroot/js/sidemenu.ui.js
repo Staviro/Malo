@@ -5,7 +5,7 @@ function togglesidemenuBody(identifer) {
 
     if (display == "none" && !MALOHELPERS.isAnimating(sidemenuBody)) {
         sidemenuHeader.querySelector('img').classList.add('opened');
-        malo.frame("show", "slide", { el: sidemenuBody, axis: "y", maxWidth: "280px" });
+        malo.frame("show", "slide", { el: sidemenuBody, axis: "y" });
     } else {
         if (!MALOHELPERS.isAnimating(sidemenuBody)) {
             sidemenuHeader.querySelector('img').classList.remove('opened');

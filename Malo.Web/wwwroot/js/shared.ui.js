@@ -4,17 +4,11 @@ function toggleShortcutModal() {
     var display = getComputedStyle(modal).display;
 
     if (display == "none") {
-        malo.frame("show", 'fade', {
-            el: modal, dr: 200, dp: "flex", cb: function () {
-                malo.frame("show", "float", { el: content, direction: "right" });
-            }
-        });
+        malo.frame("show", 'fade', { el: modal, dp: "flex" });
+        malo.frame("show", "bounce", { el: content});
     } else {
-        malo.frame("hide", 'float', {
-            el: content, dr: 500, direction: "right", cb: function () {
-                malo.frame("hide", "fade", { el: modal, dr: 200 });
-            }
-        });
+        malo.frame("hide", 'bounce', { el: content });
+        malo.frame("hide", "fade", { el: modal });
     }
 }
 
