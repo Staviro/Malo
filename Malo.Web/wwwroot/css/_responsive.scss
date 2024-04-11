@@ -15,7 +15,7 @@
         .app-body {
             padding: 0 10px;
             width: calc(100% - 300px);
-            background-color: rgba(#555, .05);
+            background-color: rgba(#555, .02);
             border-radius: 10px;
             margin-top: 10px;
             margin-bottom: 10px;
@@ -38,6 +38,10 @@
         img {
             filter: invert(.1);
         }
+    }
+
+    .dark .app-body {
+        background-color: rgba(#555, .1);
     }
 }
 

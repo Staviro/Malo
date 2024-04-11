@@ -857,7 +857,7 @@ html.dark .sources .source-container {
   .app-container .app-body {
     padding: 0 10px;
     width: calc(100% - 300px);
-    background-color: rgba(85, 85, 85, 0.05);
+    background-color: rgba(85, 85, 85, 0.02);
     border-radius: 10px;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -874,6 +874,9 @@ html.dark .sources .source-container {
   }
   .sidemenu-header-icons img {
     filter: invert(0.1);
+  }
+  .dark .app-body {
+    background-color: rgba(85, 85, 85, 0.1);
   }
 }
 @media (min-width: 1399px) {
