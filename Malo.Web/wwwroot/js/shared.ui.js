@@ -7,7 +7,7 @@ function toggleShortcutModal() {
         malo.frame("show", 'fade', { el: modal, dp: "flex" });
         malo.frame("show", "bounce", { el: content});
     } else {
-        malo.frame("hide", 'bounce', { el: content });
+        malo.frame("hide", 'pop', { el: content });
         malo.frame("hide", "fade", { el: modal });
     }
 }
