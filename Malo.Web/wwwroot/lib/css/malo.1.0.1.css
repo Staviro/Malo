@@ -3,312 +3,359 @@
     *(c) 2024 Joseph Morukhuladi
     *Licensed under MIT (https://malo-library.com/license)
 */
-.extend-animation-defaults, .malo-fade-in, .malo-fade-out, .malo-pop-in, .malo-pop-out, .malo-bounce-in, .malo-double-bounce-in, .malo-bounce-out, .malo-double-bounce-out, .malo-slide-x-in, .malo-slide-y-in, .malo-slide-x-out, .malo-slide-y-out, .malo-float-up-in, .malo-float-up-out, .malo-float-down-in, .malo-float-down-out, .malo-float-left-in, .malo-float-left-out, .malo-float-right-in, .malo-float-right-out {
+.extend-animation-defaults, .malo-float-right-out, .malo-float-right-in, .malo-float-left-out, .malo-float-left-in, .malo-float-down-out, .malo-float-down-in, .malo-float-up-out, .malo-float-up-in, .malo-slide-y-out, .malo-slide-x-out, .malo-slide-y-in, .malo-slide-x-in, .malo-double-bounce-out, .malo-bounce-out, .malo-double-bounce-in, .malo-bounce-in, .malo-pop-out, .malo-pop-in, .malo-fade-out, .malo-fade-in {
   animation-duration: 1000ms;
   animation-iteration-count: 1;
-  animation-timing-function: cubic-bezier(0.15, 0.59, 0.01, 1); }
+  animation-timing-function: cubic-bezier(0.15, 0.59, 0.01, 1);
+}
 
-.extend-effect-defaults, .malo-blink, .malo-jump, .malo-bounce {
+.extend-effect-defaults, .malo-bounce, .malo-jump, .malo-blink {
   animation-duration: 1000ms;
   animation-iteration-count: 1;
-  animation-timing-function: ease; }
+  animation-timing-function: ease;
+}
 
 .malo-hidden {
-  visibility: hidden; }
+  visibility: hidden;
+}
 
 .malo-fade-in {
-  animation-name: malo-frame-fade-in; }
+  animation-name: malo-frame-fade-in;
+}
 
 .malo-fade-out {
-  animation-name: malo-frame-fade-out; }
+  animation-name: malo-frame-fade-out;
+}
 
 .malo-pop-in {
-  animation-name: malo-frame-pop-in; }
+  animation-name: malo-frame-pop-in;
+}
 
 .malo-pop-out {
-  animation-name: malo-frame-pop-out; }
+  animation-name: malo-frame-pop-out;
+}
 
 .malo-bounce-in {
-  animation-name: malo-frame-bounce-in; }
+  animation-name: malo-frame-bounce-in;
+}
 
 .malo-double-bounce-in {
-  animation-name: malo-frame-double-bounce-in; }
+  animation-name: malo-frame-double-bounce-in;
+}
 
 .malo-bounce-out {
-  animation-name: malo-frame-bounce-out; }
+  animation-name: malo-frame-bounce-out;
+}
 
 .malo-double-bounce-out {
-  animation-name: malo-frame-double-bounce-out; }
+  animation-name: malo-frame-double-bounce-out;
+}
 
 .malo-slide-x-in {
-  animation-name: malo-frame-slide-x-in; }
+  animation-name: malo-frame-slide-x-in;
+}
 
 .malo-slide-y-in {
-  animation-name: malo-frame-slide-y-in; }
+  animation-name: malo-frame-slide-y-in;
+}
 
 .malo-slide-x-out {
-  animation-name: malo-frame-slide-x-out; }
+  animation-name: malo-frame-slide-x-out;
+}
 
 .malo-slide-y-out {
-  animation-name: malo-frame-slide-y-out; }
+  animation-name: malo-frame-slide-y-out;
+}
 
 .malo-float-up-in {
-  animation-name: malo-frame-float-up-in; }
+  animation-name: malo-frame-float-up-in;
+}
 
 .malo-float-up-out {
-  animation-name: malo-frame-float-up-out; }
+  animation-name: malo-frame-float-up-out;
+}
 
 .malo-float-down-in {
-  animation-name: malo-frame-float-down-in; }
+  animation-name: malo-frame-float-down-in;
+}
 
 .malo-float-down-out {
-  animation-name: malo-frame-float-down-out; }
+  animation-name: malo-frame-float-down-out;
+}
 
 .malo-float-left-in {
-  animation-name: malo-frame-float-left-in; }
+  animation-name: malo-frame-float-left-in;
+}
 
 .malo-float-left-out {
-  animation-name: malo-frame-float-left-out; }
+  animation-name: malo-frame-float-left-out;
+}
 
 .malo-float-right-in {
-  animation-name: malo-frame-float-right-in; }
+  animation-name: malo-frame-float-right-in;
+}
 
 .malo-float-right-out {
-  animation-name: malo-frame-float-right-out; }
+  animation-name: malo-frame-float-right-out;
+}
 
 .malo-blink {
-  animation-name: malo-effect-blink; }
+  animation-name: malo-effect-blink;
+}
 
 .malo-jump {
-  animation-name: malo-effect-jump; }
+  animation-name: malo-effect-jump;
+}
 
 .malo-bounce {
-  animation-name: malo-effect-bounce; }
+  animation-name: malo-effect-bounce;
+}
 
 @keyframes malo-frame-fade-in {
   0% {
     filter: opacity(0);
     -webkit-filter: opacity(0);
-    opacity: 0; }
+    opacity: 0;
+  }
   100% {
     filter: opacity(1);
     -webkit-filter: opacity(1);
-    opacity: 1; } }
-
+    opacity: 1;
+  }
+}
 @keyframes malo-frame-fade-out {
   0% {
     filter: opacity(1);
-    -webkit-filter: opacity(1); }
+    -webkit-filter: opacity(1);
+  }
   100% {
     filter: opacity(0);
-    -webkit-filter: opacity(0); } }
-
+    -webkit-filter: opacity(0);
+  }
+}
 @keyframes malo-frame-pop-in {
   0% {
-    opacity: .2;
+    opacity: 0.2;
     transform: scale(50%);
-    -webkit-transform: scale(50%); }
+    -webkit-transform: scale(50%);
+  }
   50% {
-    opacity: 0;
     transform: scale(110%);
-    -webkit-transform: scale(110%); }
+    -webkit-transform: scale(110%);
+  }
   100% {
     opacity: 1;
     transform: scale(100%);
-    -webkit-transform: scale(100%); } }
-
+    -webkit-transform: scale(100%);
+  }
+}
 @keyframes malo-frame-pop-out {
   0% {
     transform: scale(75%);
-    -webkit-transform: scale(75%); }
+    -webkit-transform: scale(75%);
+  }
   100% {
     opacity: 0;
     transform: scale(110%);
-    -webkit-transform: scale(110%); } }
-
+    -webkit-transform: scale(110%);
+  }
+}
 @keyframes malo-frame-bounce-in {
   0% {
     opacity: 0;
     transform: translateY(-10%) scale(90%);
-    -webkit-transform: translateY(-10%) scale(90%); }
+    -webkit-transform: translateY(-10%) scale(90%);
+  }
   50% {
     transform: translateY(0%) scale(100%);
-    -webkit-transform: translateY(0%) scale(100%); }
+    -webkit-transform: translateY(0%) scale(100%);
+  }
   100% {
     opacity: 1;
     transform: translateY(0%);
-    -webkit-transform: translateY(0%); } }
-
+    -webkit-transform: translateY(0%);
+  }
+}
 @keyframes malo-frame-double-bounce-in {
   0% {
-    opacity: 0;
-    transform: translateY(0%) scale(50%);
-    -webkit-transform: translateY(0%) scale(50%); }
+    opacity: 0.8;
+    transform: translateY(-10%) scale(90%);
+    -webkit-transform: translateY(-10%) scale(90%);
+  }
   25% {
-    transform: translateY(5%) scale(95%);
-    -webkit-transform: translateY(5%) scale(95%); }
+    opacity: 0;
+    transform: translateY(0%) scale(120%);
+    -webkit-transform: translateY(0%) scale(120%);
+  }
   50% {
-    transform: translateY(-2%) scale(80%);
-    -webkit-transform: translateY(-2%) scale(80%); }
+    opacity: 0;
+    transform: translateY(-10%) scale(90%);
+    -webkit-transform: translateY(-10%) scale(90%);
+  }
   100% {
     opacity: 1;
     transform: translateY(0%) scale(100%);
-    -webkit-transform: translateY(0%) scale(100%); } }
-
+    -webkit-transform: translateY(0%) scale(100%);
+  }
+}
 @keyframes malo-frame-bounce-out {
   100% {
     opacity: 0;
     transform: scale(75%) translateY(-10%);
-    -webkit-transform: scale(75%) translateY(-10%); } }
-
+    -webkit-transform: scale(75%) translateY(-10%);
+  }
+}
 @keyframes malo-frame-double-bounce-out {
   100% {
     opacity: 0;
     transform: scale(75%) translateY(-10%);
-    -webkit-transform: scale(75%) translateY(-10%); } }
-
+    -webkit-transform: scale(75%) translateY(-10%);
+  }
+}
 @keyframes malo-frame-slide-x-in {
   0% {
     width: 0px;
     padding: 0;
     margin: 0;
     overflow-x: hidden;
-    border-width: 0; } }
-
+    border-width: 0;
+  }
+}
 @keyframes malo-frame-slide-y-in {
   0% {
     height: 0px;
     padding: 0;
     margin: 0;
     overflow-y: hidden;
-    border-width: 0; } }
-
+    border-width: 0;
+  }
+}
 @keyframes malo-frame-slide-x-out {
   100% {
     width: 0px;
     overflow-x: hidden;
     padding: 0;
     margin: 0;
-    border-width: 0; } }
-
+    border-width: 0;
+  }
+}
 @keyframes malo-frame-slide-y-out {
   100% {
     height: 0px;
     overflow-y: hidden;
     padding: 0;
     margin: 0;
-    border-width: 0; } }
-
+    border-width: 0;
+  }
+}
 @keyframes malo-frame-float-up-in {
   0% {
-    transform: translateY(100vh); }
-  /*
-    80% {
-        transform: translateY(0);
-    }*/
+    transform: translateY(100vh);
+  }
   100% {
-    transform: translateY(0); } }
-
+    transform: translateY(0);
+  }
+}
 @keyframes malo-frame-float-up-out {
   0% {
-    transform: translateY(0); }
-  /*
-    80% {
-        transform: translateY(100vh);
-    }*/
+    transform: translateY(0);
+  }
   100% {
-    transform: translateY(100vh); } }
-
+    transform: translateY(100vh);
+  }
+}
 @keyframes malo-frame-float-down-in {
   0% {
-    transform: translateY(-100vh); }
-  /*    80% {
-        transform: translateY(0);
-    }*/
+    transform: translateY(-100vh);
+  }
   100% {
-    transform: translateY(0); } }
-
+    transform: translateY(0);
+  }
+}
 @keyframes malo-frame-float-down-out {
   0% {
-    transform: translateY(0); }
-  /*
-    80% {
-        transform: translateY(-100vh);
-    }*/
+    transform: translateY(0);
+  }
   100% {
-    transform: translateY(-100vh); } }
-
+    transform: translateY(-100vh);
+  }
+}
 @keyframes malo-frame-float-left-in {
   0% {
-    transform: translateX(100vw); }
-  /*    80% {
-        transform: translateX(0);
-    }*/
+    transform: translateX(100vw);
+  }
   100% {
-    transform: translateX(0); } }
-
+    transform: translateX(0);
+  }
+}
 @keyframes malo-frame-float-left-out {
   0% {
-    transform: translateX(0); }
-  /*    80% {
-        transform: translateX(100vw);
-    }
-*/
+    transform: translateX(0);
+  }
   100% {
-    transform: translateX(100vw); } }
-
+    transform: translateX(100vw);
+  }
+}
 @keyframes malo-frame-float-right-in {
   0% {
-    transform: translateX(-100vw); }
-  /*    80% {
-        transform: translateX(0);
-    }
-*/
+    transform: translateX(-100vw);
+  }
   100% {
-    transform: translateX(0); } }
-
+    transform: translateX(0);
+  }
+}
 @keyframes malo-frame-float-right-out {
   0% {
-    transform: translateX(0); }
-  /*    80% {
-        transform: translatex(-100vw);
-    }
-*/
+    transform: translateX(0);
+  }
   100% {
-    transform: translateX(-100vw); } }
-
+    transform: translateX(-100vw);
+  }
+}
 @keyframes malo-effect-blink {
   0% {
-    opacity: 1; }
+    opacity: 1;
+  }
   50% {
-    opacity: 0.8; }
+    opacity: 0.8;
+  }
   100% {
-    opacity: 1; } }
-
+    opacity: 1;
+  }
+}
 @keyframes malo-effect-jump {
   0% {
     transform: translateY(5px);
-    -webkit-transform: translateY(5px); }
+    -webkit-transform: translateY(5px);
+  }
   40% {
     transform: translateY(-15px);
-    -webkit-transform: translateY(-15px); }
+    -webkit-transform: translateY(-15px);
+  }
   100% {
     transform: translateY(0);
-    -webkit-transform: translateY(0); } }
-
+    -webkit-transform: translateY(0);
+  }
+}
 @keyframes malo-effect-bounce {
   0% {
     transform: scale(100%);
-    -webkit-transform: scale(100%); }
+    -webkit-transform: scale(100%);
+  }
   20% {
     transform: scale(80%);
-    -webkit-transform: scale(80%); }
+    -webkit-transform: scale(80%);
+  }
   40% {
     transform: scale(110%);
-    -webkit-transform: scale(110%); }
+    -webkit-transform: scale(110%);
+  }
   60% {
     transform: scale(100%);
-    -webkit-transform: scale(100%); }
+    -webkit-transform: scale(100%);
+  }
   100% {
     transform: scale(100%);
-    -webkit-transform: scale(100%); } }
+    -webkit-transform: scale(100%);
+  }
+}

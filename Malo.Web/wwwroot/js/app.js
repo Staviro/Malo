@@ -4,7 +4,6 @@ function setFrameClose(opr, mtd, props) {
         malo.frame(opr, mtd, props);
     }
 }
-
 function runFrame(opr, mtd, props) {
     malo.frame(opr, mtd, props);
 }
@@ -16,8 +15,4 @@ function run(opr, mtd, props) {
 
 function runEffect(effect, props) {
     malo.effect(effect, props);
-}
-
-function testRun() {
-    malo.effect('bounce', { element: "body", iteration: 1, dr: 1000, dp: "block" });
 }

@@ -27,13 +27,12 @@
 
 @keyframes malo-frame-pop-in {
     0% {
-        opacity: .2;
+        opacity: 0.2;
         transform: scale(50%);
         -webkit-transform: scale(50%);
     }
 
     50% {
-        opacity: 0;
         transform: scale(110%);
         -webkit-transform: scale(110%);
     }
@@ -82,19 +81,21 @@
 
 @keyframes malo-frame-double-bounce-in {
     0% {
-        opacity: 0;
-        transform: translateY(0%) scale(50%);
-        -webkit-transform: translateY(0%) scale(50%);
+        opacity: .8;
+        transform: translateY(-10%) scale(90%);
+        -webkit-transform: translateY(-10%) scale(90%);
     }
 
     25% {
-        transform: translateY(5%) scale(95%);
-        -webkit-transform: translateY(5%) scale(95%);
+        opacity: 0;
+        transform: translateY(0%) scale(120%);
+        -webkit-transform: translateY(0%) scale(120%);
     }
 
     50% {
-        transform: translateY(-2%) scale(80%);
-        -webkit-transform: translateY(-2%) scale(80%);
+        opacity: 0;
+        transform: translateY(-10%) scale(90%);
+        -webkit-transform: translateY(-10%) scale(90%);
     }
 
     100% {
@@ -166,10 +167,6 @@
     0% {
         transform: translateY(100vh);
     }
-/*
-    80% {
-        transform: translateY(0);
-    }*/
 
     100% {
         transform: translateY(0);
@@ -180,10 +177,6 @@
     0% {
         transform: translateY(0);
     }
-/*
-    80% {
-        transform: translateY(100vh);
-    }*/
 
     100% {
         transform: translateY(100vh);
@@ -195,10 +188,6 @@
         transform: translateY(-100vh);
     }
 
-/*    80% {
-        transform: translateY(0);
-    }*/
-
     100% {
         transform: translateY(0);
     }
@@ -208,10 +197,6 @@
     0% {
         transform: translateY(0);
     }
-/*
-    80% {
-        transform: translateY(-100vh);
-    }*/
 
     100% {
         transform: translateY(-100vh);
@@ -223,10 +208,6 @@
         transform: translateX(100vw);
     }
 
-/*    80% {
-        transform: translateX(0);
-    }*/
-
     100% {
         transform: translateX(0);
     }
@@ -236,11 +217,6 @@
     0% {
         transform: translateX(0);
     }
-
-/*    80% {
-        transform: translateX(100vw);
-    }
-*/
     100% {
         transform: translateX(100vw);
     }
@@ -250,11 +226,6 @@
     0% {
         transform: translateX(-100vw);
     }
-
-/*    80% {
-        transform: translateX(0);
-    }
-*/
     100% {
         transform: translateX(0);
     }
@@ -264,11 +235,6 @@
     0% {
         transform: translateX(0);
     }
-
-/*    80% {
-        transform: translatex(-100vw);
-    }
-*/
     100% {
         transform: translateX(-100vw);
     }
