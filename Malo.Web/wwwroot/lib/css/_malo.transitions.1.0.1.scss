@@ -1,9 +1,10 @@
 $default-duration: 1000ms;
-
+$cubic-timing: cubic-bezier(.15,.59, .01, 1);
+$out-animation-timing: ease-in-out;
 .extend-animation-defaults {
     animation-duration: $default-duration;
     animation-iteration-count: 1;
-    animation-timing-function: cubic-bezier(.15,.59, .01, 1);
+    animation-timing-function: $cubic-timing;
 }
 
 .extend-effect-defaults {
@@ -19,101 +20,121 @@ $default-duration: 1000ms;
 .malo-fade-in {
     @extend .extend-animation-defaults;
     animation-name: malo-frame-fade-in;
+    animation-timing-function: $cubic-timing;
 }
 
 .malo-fade-out {
     @extend .extend-animation-defaults;
     animation-name: malo-frame-fade-out;
+    animation-timing-function: $out-animation-timing;
 }
 
 .malo-pop-in {
     @extend .extend-animation-defaults;
     animation-name: malo-frame-pop-in;
+    animation-timing-function: $cubic-timing;
 }
 
 .malo-pop-out {
     @extend .extend-animation-defaults;
     animation-name: malo-frame-pop-out;
+    animation-timing-function: $out-animation-timing;
 }
 
 .malo-bounce-in {
     @extend .extend-animation-defaults;
     animation-name: malo-frame-bounce-in;
+    animation-timing-function: $cubic-timing;
 }
 
 .malo-double-bounce-in {
     @extend .extend-animation-defaults;
     animation-name: malo-frame-double-bounce-in;
+    animation-timing-function: $cubic-timing;
 }
 
 .malo-bounce-out {
     @extend .extend-animation-defaults;
     animation-name: malo-frame-bounce-out;
+    animation-timing-function: $out-animation-timing;
 }
 
 .malo-double-bounce-out {
     @extend .extend-animation-defaults;
     animation-name: malo-frame-double-bounce-out;
+    animation-timing-function: $out-animation-timing;
 }
 
 .malo-slide-x-in {
     @extend .extend-animation-defaults;
     animation-name: malo-frame-slide-x-in;
+    animation-timing-function: $cubic-timing;
 }
 
 .malo-slide-y-in {
     @extend .extend-animation-defaults;
     animation-name: malo-frame-slide-y-in;
+    animation-timing-function: $cubic-timing;
 }
 
 .malo-slide-x-out {
     @extend .extend-animation-defaults;
     animation-name: malo-frame-slide-x-out;
+    animation-timing-function: $out-animation-timing;
 }
 
 .malo-slide-y-out {
     @extend .extend-animation-defaults;
     animation-name: malo-frame-slide-y-out;
+    animation-timing-function: $out-animation-timing;
 }
 
 .malo-float-up-in {
     @extend .extend-animation-defaults;
     animation-name: malo-frame-float-up-in;
+    animation-timing-function: $cubic-timing;
 }
 
 .malo-float-up-out {
     @extend .extend-animation-defaults;
     animation-name: malo-frame-float-up-out;
+    animation-timing-function: $out-animation-timing;
 }
 
 .malo-float-down-in {
     @extend .extend-animation-defaults;
     animation-name: malo-frame-float-down-in;
+    animation-timing-function: $cubic-timing;
 }
 
 .malo-float-down-out {
     @extend .extend-animation-defaults;
     animation-name: malo-frame-float-down-out;
+    animation-timing-function: $out-animation-timing;
 }
 
 .malo-float-left-in {
     @extend .extend-animation-defaults;
     animation-name: malo-frame-float-left-in;
+    animation-timing-function: $cubic-timing;
 }
 
 .malo-float-left-out {
     @extend .extend-animation-defaults;
     animation-name: malo-frame-float-left-out;
+    animation-timing-function: $out-animation-timing;
 }
 
 .malo-float-right-in {
     @extend .extend-animation-defaults;
     animation-name: malo-frame-float-right-in;
+    animation-timing-function: $cubic-timing;
 }
 
 .malo-float-right-out {
     @extend .extend-animation-defaults;
     animation-name: malo-frame-float-right-out;
+    animation-timing-function: $out-animation-timing;
 }
 
 .malo-blink {
