@@ -1,6 +1,6 @@
 $default-duration: 1000ms;
-$cubic-timing: cubic-bezier(.15,.59, .01, 1);
-$out-animation-timing: ease-in-out;
+$cubic-timing: cubic-bezier(0,.8,.2,1);
+$out-animation-timing: cubic-bezier(.5,.35,.20,1) ;
 .extend-animation-defaults {
     animation-duration: $default-duration;
     animation-iteration-count: 1;

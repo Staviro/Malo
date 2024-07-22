@@ -6,7 +6,7 @@
 .extend-animation-defaults, .malo-float-right-out, .malo-float-right-in, .malo-float-left-out, .malo-float-left-in, .malo-float-down-out, .malo-float-down-in, .malo-float-up-out, .malo-float-up-in, .malo-slide-y-out, .malo-slide-x-out, .malo-slide-y-in, .malo-slide-x-in, .malo-double-bounce-out, .malo-bounce-out, .malo-double-bounce-in, .malo-bounce-in, .malo-pop-out, .malo-pop-in, .malo-fade-out, .malo-fade-in {
   animation-duration: 1000ms;
   animation-iteration-count: 1;
-  animation-timing-function: cubic-bezier(0.15, 0.59, 0.01, 1);
+  animation-timing-function: cubic-bezier(0, 0.8, 0.2, 1);
 }
 
 .extend-effect-defaults, .malo-bounce, .malo-jump, .malo-blink {
@@ -21,102 +21,102 @@
 
 .malo-fade-in {
   animation-name: malo-frame-fade-in;
-  animation-timing-function: cubic-bezier(0.15, 0.59, 0.01, 1);
+  animation-timing-function: cubic-bezier(0, 0.8, 0.2, 1);
 }
 
 .malo-fade-out {
   animation-name: malo-frame-fade-out;
-  animation-timing-function: ease-in-out;
+  animation-timing-function: cubic-bezier(0.5, 0.35, 0.2, 1);
 }
 
 .malo-pop-in {
   animation-name: malo-frame-pop-in;
-  animation-timing-function: cubic-bezier(0.15, 0.59, 0.01, 1);
+  animation-timing-function: cubic-bezier(0, 0.8, 0.2, 1);
 }
 
 .malo-pop-out {
   animation-name: malo-frame-pop-out;
-  animation-timing-function: ease-in-out;
+  animation-timing-function: cubic-bezier(0.5, 0.35, 0.2, 1);
 }
 
 .malo-bounce-in {
   animation-name: malo-frame-bounce-in;
-  animation-timing-function: cubic-bezier(0.15, 0.59, 0.01, 1);
+  animation-timing-function: cubic-bezier(0, 0.8, 0.2, 1);
 }
 
 .malo-double-bounce-in {
   animation-name: malo-frame-double-bounce-in;
-  animation-timing-function: cubic-bezier(0.15, 0.59, 0.01, 1);
+  animation-timing-function: cubic-bezier(0, 0.8, 0.2, 1);
 }
 
 .malo-bounce-out {
   animation-name: malo-frame-bounce-out;
-  animation-timing-function: ease-in-out;
+  animation-timing-function: cubic-bezier(0.5, 0.35, 0.2, 1);
 }
 
 .malo-double-bounce-out {
   animation-name: malo-frame-double-bounce-out;
-  animation-timing-function: ease-in-out;
+  animation-timing-function: cubic-bezier(0.5, 0.35, 0.2, 1);
 }
 
 .malo-slide-x-in {
   animation-name: malo-frame-slide-x-in;
-  animation-timing-function: cubic-bezier(0.15, 0.59, 0.01, 1);
+  animation-timing-function: cubic-bezier(0, 0.8, 0.2, 1);
 }
 
 .malo-slide-y-in {
   animation-name: malo-frame-slide-y-in;
-  animation-timing-function: cubic-bezier(0.15, 0.59, 0.01, 1);
+  animation-timing-function: cubic-bezier(0, 0.8, 0.2, 1);
 }
 
 .malo-slide-x-out {
   animation-name: malo-frame-slide-x-out;
-  animation-timing-function: ease-in-out;
+  animation-timing-function: cubic-bezier(0.5, 0.35, 0.2, 1);
 }
 
 .malo-slide-y-out {
   animation-name: malo-frame-slide-y-out;
-  animation-timing-function: ease-in-out;
+  animation-timing-function: cubic-bezier(0.5, 0.35, 0.2, 1);
 }
 
 .malo-float-up-in {
   animation-name: malo-frame-float-up-in;
-  animation-timing-function: cubic-bezier(0.15, 0.59, 0.01, 1);
+  animation-timing-function: cubic-bezier(0, 0.8, 0.2, 1);
 }
 
 .malo-float-up-out {
   animation-name: malo-frame-float-up-out;
-  animation-timing-function: ease-in-out;
+  animation-timing-function: cubic-bezier(0.5, 0.35, 0.2, 1);
 }
 
 .malo-float-down-in {
   animation-name: malo-frame-float-down-in;
-  animation-timing-function: cubic-bezier(0.15, 0.59, 0.01, 1);
+  animation-timing-function: cubic-bezier(0, 0.8, 0.2, 1);
 }
 
 .malo-float-down-out {
   animation-name: malo-frame-float-down-out;
-  animation-timing-function: ease-in-out;
+  animation-timing-function: cubic-bezier(0.5, 0.35, 0.2, 1);
 }
 
 .malo-float-left-in {
   animation-name: malo-frame-float-left-in;
-  animation-timing-function: cubic-bezier(0.15, 0.59, 0.01, 1);
+  animation-timing-function: cubic-bezier(0, 0.8, 0.2, 1);
 }
 
 .malo-float-left-out {
   animation-name: malo-frame-float-left-out;
-  animation-timing-function: ease-in-out;
+  animation-timing-function: cubic-bezier(0.5, 0.35, 0.2, 1);
 }
 
 .malo-float-right-in {
   animation-name: malo-frame-float-right-in;
-  animation-timing-function: cubic-bezier(0.15, 0.59, 0.01, 1);
+  animation-timing-function: cubic-bezier(0, 0.8, 0.2, 1);
 }
 
 .malo-float-right-out {
   animation-name: malo-frame-float-right-out;
-  animation-timing-function: ease-in-out;
+  animation-timing-function: cubic-bezier(0.5, 0.35, 0.2, 1);
 }
 
 .malo-blink {
