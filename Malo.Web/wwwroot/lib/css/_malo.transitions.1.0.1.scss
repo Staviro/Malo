@@ -81,12 +81,14 @@ $out-animation-timing: cubic-bezier(.5,.35,.20,1) ;
     @extend .extend-animation-defaults;
     animation-name: malo-frame-slide-x-out;
     animation-timing-function: $out-animation-timing;
+    overflow-x: hidden;
 }
 
 .malo-slide-y-out {
     @extend .extend-animation-defaults;
     animation-name: malo-frame-slide-y-out;
     animation-timing-function: $out-animation-timing;
+    overflow-y: hidden;
 }
 
 .malo-float-up-in {

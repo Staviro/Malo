@@ -72,11 +72,13 @@
 .malo-slide-x-out {
   animation-name: malo-frame-slide-x-out;
   animation-timing-function: cubic-bezier(0.5, 0.35, 0.2, 1);
+  overflow-x: hidden;
 }
 
 .malo-slide-y-out {
   animation-name: malo-frame-slide-y-out;
   animation-timing-function: cubic-bezier(0.5, 0.35, 0.2, 1);
+  overflow-y: hidden;
 }
 
 .malo-float-up-in {
@@ -231,8 +233,10 @@
 @keyframes malo-frame-slide-x-in {
   0% {
     width: 0px;
-    padding: 0;
-    margin: 0;
+    padding-right: 0px;
+    padding-left: 0px;
+    margin-right: 0px;
+    margin-left: 0px;
     overflow-x: hidden;
     border-width: 0;
   }
@@ -240,8 +244,10 @@
 @keyframes malo-frame-slide-y-in {
   0% {
     height: 0px;
-    padding: 0;
-    margin: 0;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
     overflow-y: hidden;
     border-width: 0;
   }
@@ -250,8 +256,10 @@
   100% {
     width: 0px;
     overflow-x: hidden;
-    padding: 0;
-    margin: 0;
+    padding-right: 0px;
+    padding-left: 0px;
+    margin-right: 0px;
+    margin-left: 0px;
     border-width: 0;
   }
 }
@@ -259,8 +267,10 @@
   100% {
     height: 0px;
     overflow-y: hidden;
-    padding: 0;
-    margin: 0;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
     border-width: 0;
   }
 }
