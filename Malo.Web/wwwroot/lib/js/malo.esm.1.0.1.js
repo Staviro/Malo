@@ -1,5 +1,5 @@
 /*!
-    *Malo  v1.0.1
+    *Malo
     *(c) 2024 Joseph Morukhuladi
     *Licensed under MIT (https://malo-library.com/license)
 */
@@ -8,11 +8,10 @@
 1. Replacing setTimeout with onanimationend
 2. Adding custom animation-timing-function
 3. Updating keyframes to make animation last 100%
-4. Updating default animation time to 1000ms
 */
 
 class Malo {
-    constructor(duration = 1000, useAnimations = true) {
+    constructor(duration = 500, useAnimations = true) {
         this.duration = duration;
         this.useAnimations = useAnimations;
     }
