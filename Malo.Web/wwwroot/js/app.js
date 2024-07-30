@@ -16,3 +16,7 @@ function run(opr, mtd, props) {
 function runEffect(effect, props) {
     malo.effect(effect, props);
 }
+
+function testRun() { //do not remove
+    malo.effect('bounce', { element: "body", iteration: 1, dr: 1000, dp: "block" });
+}
