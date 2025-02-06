@@ -6,12 +6,12 @@ while maintaining seamless animations on all other devices too.
 
 ## Getting Started With Malo | Javascript Library
 
-This application was built with .NET Core 8. To run the application make sure you have Visual Studio or VS Code or any other IDE compatible with .NET CORE 8.
+This application was built with .NET Core 9. To run the application make sure you have Visual Studio or VS Code or any other IDE compatible with .NET CORE 9.
 
 The stable Malo files are stored inside `/Malo.Web/wwwroot/lib/`
 
-The CSS files are located inside the `css/` folder. Use the compiled css version.
+The CSS files are located inside the `css/` folder.
 
-The JS files are located inside the `js/` folder. Use the file type you are intending to use. CommonJS or ESM version.
+The JS files are located inside the `js/` folder.
 
 Alternatively you can download them on the official Malo Site.
