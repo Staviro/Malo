@@ -1,0 +1,37 @@
+@import '../../shared/_variables.scss';
+
+html.dark {
+    nav {
+        border-bottom: 1px solid #222;
+        background-color: black;
+    }
+
+    .nav-links-li {
+        li {
+            a {
+                color: #ccc;
+
+                &:hover {
+                    color: #777;
+                }
+            }
+        }
+    }
+
+    .nav-splitter {
+        background-color: #222;
+    }
+
+    .nav-icon-container {
+        background-color: #333;
+
+        &.icon-menu {
+            background-color: transparent;
+            outline: 1px solid #222;
+        }
+
+        &:hover {
+            background-color: #555;
+        }
+    }
+}

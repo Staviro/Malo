@@ -1,0 +1,15 @@
+@import '../../shared/_variables.scss';
+
+@media (max-width: $phone-lg-max) {
+    .card-benefit {
+        min-width: calc(100% / 2 - 9px);
+        max-width: calc(100% / 2 - 9px);
+    }
+}
+
+@media (max-width: $phone-max) {
+    .card-benefit {
+        min-width: 100%;
+        max-width: 100%;
+    }
+}

@@ -2,144 +2,288 @@
     ViewData["Title"] = "Documentation";
 }
 
-<section class="section">
-    <div class="section-header">Documentation</div>
-    <div class="section-body">
-        <div class="note-container">
-            <div class="note-content">
-                <img  src="/icons/info-lg.svg" alt="info"/>
-                <div>Building the examples assuming that => const malo =  new Malo(1000, true)</div>
-            </div>
+<section id="documentation">
+    <div class="container">
+        <div class="section-header">
+            <p>Documentation</p>
         </div>
-        <div class="section-sub-header">
-            Frames
-        </div>
-        <div class="doc-li">
-            <div class="doc-list-item-container" id="frameFade">
-                <div class="doc-list-item-content">
-                    <div class="frame-identity">Fade</div>
-                    <div class="doc-item-name">malo.frame(operation, method, properties)</div>
-                    <div class="method-defiinition">
-                        <code>
-                            <span class="line"><span class="variable">malo</span>.<span class="method">frame</span>(<span class="param">MALOCONSTANTS.OPERATIONS.SHOW</span>, <span class="param">MALOCONSTANTS.METHODS.FADE</span>, <span class="param">{ element: '.sample-modal' , display: 'flex' }</span>);</span>
-                        </code>
-                    </div>
-                    <div class="doc-options">
-                        <button class="btn btn-run"onclick="run('show', 'fade', { element: '.sample-modal' , display: 'flex' })">Run</button>
-                    </div>
+        <div class="section-body">
+            <p class="text text-color-greyish">
+                Here is our documentation on how to use Malo.
+            </p>
+            <div class="sub-section" id="animations">
+                <div class="sub-section-header">
+                    <p class="text-color-primary">Animations</p>
                 </div>
-            </div>
-            <div class="doc-list-item-container" id="framePop">
-                <div class="doc-list-item-content">
-                    <div class="frame-identity">Pop</div>
-                    <div class="doc-item-name">malo.frame(operation, method, properties)</div>
-                    <div class="method-defiinition">
-                        <code>
-                            <span class="line"><span class="variable">malo</span>.<span class="method">frame</span>(<span class="param">MALOCONSTANTS.OPERATIONS.SHOW</span>, <span class="param">MALOCONSTANTS.METHODS.POP</span>, <span class="param">{ element: '.sample-modal' , display: 'flex' }</span>);</span>
-                        </code>
-                    </div>
-                    <div class="doc-options">
-                        <button class="btn btn-run" onclick="run('show', 'pop', { element: '.sample-modal' , display: 'flex' })">Run</button>
-                    </div>
-                </div>
-            </div>
-            <div class="doc-list-item-container" id="frameBounce">
-                <div class="doc-list-item-content">
-                    <div class="frame-identity">BOUNCE</div>
-                    <div class="doc-item-name">malo.frame(operation, method, properties)</div>
-                    <div class="method-defiinition">
-                        <code>
-                            <span class="line"><span class="variable">malo</span>.<span class="method">frame</span>(<span class="param">MALOCONSTANTS.OPERATIONS.BOUNCE</span>, <span class="param">MALOCONSTANTS.METHODS.BOUNCE</span>, <span class="param">{ element: '.sample-modal' , display: 'flex' }</span>);</span>
-                        </code>
-                    </div>
-                    <div class="doc-options">
-                        <button class="btn btn-run"onclick="run('show', 'bounce', { element: '.sample-modal' , display: 'flex' })">Run</button>
-                    </div>
-                    <div class="note-container">
-                        <div class="note-content">
-                            <img src="/icons/info-lg.svg" alt="info" />
-                            <div>Bounce frame accepts "bounce" field inside the properties object, which accepts "double" as a value.</div>
+                <div class="sub-section-body">
+                    <p class="text text-color-greyish">
+                        Animations are predefined methods that animate an element only once. They should normally be used for showing and hiding elements.
+                    </p>
+                    <p class="text text-color-greyish">All animations come with 2 types, the type to show or transition "in" an element and a type to hide or transition "out" an element.</p>
+                    <p class="text text-color-greyish">
+                        Here is a list of animation types Malo currently has.
+                        <ul class="text-color-greyish">
+                            <li>Fade</li>
+                            <li>Pop (4 Variations)</li>
+                            <li>Bounce</li>
+                            <li>Slide</li>
+                            <li>Float (4 Variations)</li>
+                        </ul>
+                    </p>
+                    <div class="splitter"></div>
+                    <div class="doc-item" id="fade">
+                        <div class="doc-item-name">
+                            <p class="text text-color-black">fade</p>
+                        </div>
+                        <div class="doc-item-fields-container">
+                            <p class="text text-color-greyish">Acceptable Fields:</p>
+                            <div class="doc-item-fields">
+                                <div>*animation: string</div>
+                                <div>*element: string</div>
+                                <div>callback: function</div>
+                                <div>display: string</div>
+                                <div>duration: number</div>
+                                <div>timingFunction: string</div>
+                            </div>
+                        </div>
+                        <p class="text text-color-greyish font-size-fine">All fields marked with "*" are required.</p>
+                        <div class="my-smallest">
+                            <p class="text text-color-black">Example "fade-in"</p>
+                            <code>
+                                <span class="c-o">malo</span>.<span class="c-m">animate</span>({ <span class="c-f">element</span>: <span class="c-v">'#doc-modal'</span>, <span class="c-f">animation</span>: <span class="c-v">'fade-in'</span>, <span class="c-f">display</span>: <span class="c-v">'flex'</span> });
+                            </code>
+                            <div class="my-smallest">
+                                <button type="button" class="btn btn-white" onclick="malo.animate({ element: '#doc-modal', animation: 'fade-in', display: 'flex' }); docModal.setHideWith({ element: '#doc-modal', animation: 'fade-out' })">Try</button>
+                            </div>
+                            <p class="text text-color-greyish font-size-fine">To hide the element you need to change the animation field value to "fade-out" and remove the display field.</p>
                         </div>
                     </div>
-                    <div class="method-defiinition">
-                        <code>
-                            <span class="line"><span class="variable">malo</span>.<span class="method">frame</span>(<span class="param">MALOCONSTANTS.OPERATIONS.SHOW</span>, <span class="param">MALOCONSTANTS.METHODS.BOUNCE</span>, <span class="param">{ element: '.sample-modal' , display: 'flex', bounce: 'double', duration: 1000 }</span>);</span>
-                        </code>
+                    <div class="splitter"></div>
+                    <div class="doc-item" id="pop">
+                        <div class="doc-item-name">
+                            <p class="text text-color-black">pop</p>
+                        </div>
+                        <div class="doc-item-fields-container">
+                            <p class="text text-color-greyish">Acceptable Fields:</p>
+                            <div class="doc-item-fields">
+                                <div>*animation: string</div>
+                                <div>*element: string</div>
+                                <div>callback: function</div>
+                                <div>direction: string</div>
+                                <div>display: string</div>
+                                <div>duration: number</div>
+                                <div>timingFunction: string</div>
+                            </div>
+                        </div>
+                        <p class="text text-color-greyish font-size-fine">All fields marked with "*" are required.</p>
+                        <p class="text">Pop allows "right", "left", "top" and "bottom" as values for the "direction" field</p>
+                        <div class="my-smallest">
+                            <p class="text text-color-black">Example "pop-in"</p>
+                            <code>
+                                <span class="c-o">malo</span>.<span class="c-m">animate</span>({ <span class="c-f">element</span>: <span class="c-v">'#doc-modal'</span>, <span class="c-f">animation</span>: <span class="c-v">'pop-in'</span>, <span class="c-f">display</span>: <span class="c-v">'flex'</span>, <span class="c-f">direction</span>: <span class="c-v">'right'</span> });
+                            </code>
+                            <div class="my-smallest">
+                                <button type="button" class="btn btn-white" onclick="malo.animate({ element: '#doc-modal', animation: 'pop-in', display: 'flex', direction: 'right' }); docModal.setHideWith({ element: '#doc-modal', animation: 'pop-out', direction: 'right' })">Try</button>
+                            </div>
+                            <p class="text text-color-greyish font-size-fine">To hide the element you need to change the animation field value to "pop-out" and remove the display field.</p>
+                        </div>
                     </div>
-                    <div class="doc-options">
-                        <button class="btn btn-run"onclick="run('show', 'bounce', { element: '.sample-modal' , display: 'flex', bounce: 'double', duration: 1000 })">Run</button>
+                    <div class="splitter"></div>
+                    <div class="doc-item" id="bounce">
+                        <div class="doc-item-name">
+                            <p class="text text-color-black">bounce</p>
+                        </div>
+                        <div class="doc-item-fields-container">
+                            <p class="text text-color-greyish">Acceptable Fields:</p>
+                            <div class="doc-item-fields">
+                                <div>*animation: string</div>
+                                <div>*element: string</div>
+                                <div>callback: function</div>
+                                <div>display: string</div>
+                                <div>duration: number</div>
+                                <div>timingFunction: string</div>
+                            </div>
+                        </div>
+                        <p class="text text-color-greyish font-size-fine">All fields marked with "*" are required.</p>
+                        <div class="my-smallest">
+                            <p class="text text-color-black">Example "bounce-in"</p>
+                            <code>
+                                <span class="c-o">malo</span>.<span class="c-m">animate</span>({ <span class="c-f">element</span>: <span class="c-v">'#doc-modal'</span>, <span class="c-f">animation</span>: <span class="c-v">'bounce-in'</span>, <span class="c-f">display</span>: <span class="c-v">'flex'</span>, <span class="c-f">duration</span>: <span class="c-v">750</span> });
+                            </code>
+                            <div class="my-smallest">
+                                <button type="button" class="btn btn-white" onclick="malo.animate({ element: '#doc-modal', animation: 'bounce-in', display: 'flex', duration: 750 }); docModal.setHideWith({ element: '#doc-modal', animation: 'bounce-out', duration: 750 })">Try</button>
+                            </div>
+                            <p class="text text-color-greyish font-size-fine">To hide the element you need to change the animation field value to "bounce-out" and remove the display field.</p>
+                        </div>
+                    </div>
+                    <div class="splitter"></div>
+                    <div class="doc-item" id="slide">
+                        <div class="doc-item-name">
+                            <p class="text text-color-black">slide</p>
+                        </div>
+                        <div class="doc-item-fields-container">
+                            <p class="text text-color-greyish">Acceptable Fields:</p>
+                            <div class="doc-item-fields">
+                                <div>*animation: string</div>
+                                <div>*element: string</div>
+                                <div>*axis: string</div>
+                                <div>callback: function</div>
+                                <div>display: string</div>
+                                <div>duration: number</div>
+                                <div>timingFunction: string</div>
+                            </div>
+                        </div>
+                        <p class="text text-color-greyish font-size-fine">All fields marked with "*" are required.</p>
+                        <p class="text">Slide allows "y" and "x" as values for the "axis" field</p>
+                        <div class="my-smallest">
+                            <p class="text text-color-black">Example "slide-in"</p>
+                            <code>
+                                <span class="c-o">malo</span>.<span class="c-m">animate</span>({ <span class="c-f">element</span>: <span class="c-v">'#doc-modal'</span>, <span class="c-f">animation</span>: <span class="c-v">'slide-in'</span>, <span class="c-f">axis</span>: <span class="c-v">'y'</span>, <span class="c-f">display</span>: <span class="c-v">'flex'</span> });
+                            </code>
+                            <div class="my-smallest">
+                                <button type="button" class="btn btn-white"
+                                        onclick="malo.animate({ element: '#doc-modal', animation: 'slide-in', axis: 'y', display: 'flex' });
+                                        docModal.setHideWith({ element: '#doc-modal', animation: 'slide-out', axis: 'y' })">
+                                    Try
+                                </button>
+                            </div>
+                            <p class="text text-color-greyish font-size-fine">To hide the element you need to change the animation field value to "slide-out" and remove the display field.</p>
+                        </div>
+                    </div>
+                    <div class="splitter"></div>
+                    <div class="doc-item" id="float">
+                        <div class="doc-item-name">
+                            <p class="text text-color-black">float</p>
+                        </div>
+                        <div class="doc-item-fields-container">
+                            <p class="text text-color-greyish">Acceptable Fields:</p>
+                            <div class="doc-item-fields">
+                                <div>*animation: string</div>
+                                <div>*element: string</div>
+                                <div>*direction: string</div>
+                                <div>callback: function</div>
+                                <div>display: string</div>
+                                <div>duration: number</div>
+                                <div>timingFunction: string</div>
+                            </div>
+                        </div>
+                        <p class="text text-color-greyish font-size-fine">All fields marked with "*" are required.</p>
+                        <p class="text">Float allows "right", "left", "top" and "bottom" as values for the "direction" field</p>
+                        <div class="my-smallest">
+                            <p class="text text-color-black">Example "float-in"</p>
+                            <code>
+                                <span class="c-o">malo</span>.<span class="c-m">animate</span>({ <span class="c-f">element</span>: <span class="c-v">'#doc-modal'</span>, <span class="c-f">animation</span>: <span class="c-v">'float-in'</span>, <span class="c-f">display</span>: <span class="c-v">'flex'</span>, <span class="c-f">direction</span>: <span class="c-v">'up'</span> });
+                            </code>
+                            <div class="my-smallest">
+                                <button type="button" class="btn btn-white" onclick="malo.animate({ element: '#doc-modal', animation: 'float-in', display: 'flex', direction: 'up' }); docModal.setHideWith({ element: '#doc-modal', animation: 'float-out', direction: 'up' })">Try</button>
+                            </div>
+                            <p class="text text-color-greyish font-size-fine">To hide the element you need to change the animation field value to "float-out" and remove the display field.</p>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="doc-list-item-container" id="frameSlide">
-                <div class="doc-list-item-content">
-                    <div class="frame-identity">SLIDE</div>
-                    <div class="doc-item-name">malo.frame(operation, method, properties)</div>
-                    <div class="note-container">
-                        <div class="note-content">
-                            <img src="/icons/info-lg.svg" alt="info" />
-                            <div>Slide frame accepts "axis" field inside the properties object, which accepts "x" or "y" as a value.</div>
-                        </div>
-                    </div>
-                    <div class="method-defiinition">
-                        <code>
-                            <span class="line"><span class="variable">malo</span>.<span class="method">frame</span>(<span class="param">MALOCONSTANTS.OPERATIONS.SLIDE</span>, <span class="param">MALOCONSTANTS.METHODS.SLIDE</span>, <span class="param">{ element: '.sample-modal' , display: 'flex', axis: 'y' }</span>);</span>
-                        </code>
-                    </div>
-                    <div class="doc-options">
-                        <button class="btn btn-run"onclick="run('show', 'slide', { element: '.sample-modal' , display: 'flex', axis: 'y' })">Run</button>
-                    </div>
-                    <div class="method-defiinition">
-                        <code>
-                            <span class="line"><span class="variable">malo</span>.<span class="method">frame</span>(<span class="param">MALOCONSTANTS.OPERATIONS.SHOW</span>, <span class="param">MALOCONSTANTS.METHODS.SLIDE</span>, <span class="param">{ element: '.sample-modal' , display: 'flex', axis: 'x' }</span>);</span>
-                        </code>
-                    </div>
-                    <div class="doc-options">
-                        <button class="btn btn-run"onclick="run('show', 'slide', { element: '.sample-modal' , display: 'flex', axis: 'x' })">Run</button>
-                    </div>
+            <div class="sub-section" id="effects">
+                <div class="sub-section-header">
+                    <p class="text-color-primary">Effects</p>
                 </div>
-            </div>
-            <div class="doc-list-item-container" id="frameFloat">
-                <div class="doc-list-item-content">
-                    <div class="frame-identity">FLOAT</div>
-                    <div class="doc-item-name">malo.frame(operation, method, properties)</div>
-                    <div class="note-container">
-                        <div class="note-content">
-                            <img src="/icons/info-lg.svg" alt="info" />
-                            <div>Float frame accepts "direction" field inside the properties object, which accepts "up" or "down" or "right" or "left" as a value.</div>
+                <div class="sub-section-body">
+                    <p class="text text-color-greyish">
+                        Effects are predefined methods that adds effects to elements. Normally effects are used to perform a transition on a element more than once.
+                    </p>
+                    <p class="text text-color-greyish"> 
+                        Here is a list of effect types Malo currently has.
+                        <ul class="text-color-greyish">
+                            <li>Blink</li>
+                            <li>Jump</li>
+                            <li>Bounce</li>
+                        </ul>
+                    </p>
+                    <div class="splitter"></div>
+                    <div class="doc-item" id="blink">
+                        <div class="doc-item-name">
+                            <p class="text text-color-black">blink</p>
+                        </div>
+                        <div class="doc-item-fields-container">
+                            <p class="text text-color-greyish">Acceptable Fields:</p>
+                            <div class="doc-item-fields">
+                                <div>*effect: string</div>
+                                <div>*element: string</div>
+                                <div>callback: function</div>
+                                <div>delay: number</div>
+                                <div>display: string</div>
+                                <div>duration: number</div>
+                                <div>iteration: string | number</div>
+                                <div>timingFunction: string</div>
+                            </div>
+                        </div>
+                        <p class="text text-color-greyish font-size-fine">All fields marked with "*" are required.</p>
+                        <div class="my-smallest">
+                            <p class="text text-color-black">Example "blink"</p>
+                            <code>
+                                <span class="c-o">malo</span>.<span class="c-m">effect</span>({ <span class="c-f">element</span>: <span class="c-v">'#btn-effect-blink'</span>, <span class="c-f">effect</span>: <span class="c-v">'blink'</span>, <span class="c-f">iteration</span>: <span class="c-v">3</span> });
+                            </code>
+                            <div class="my-smallest">
+                                <button type="button" class="btn btn-white" id="btn-effect-blink" onclick="malo.effect({ element: '#btn-effect-blink', effect: 'blink', iteration: 3 });">Test Effect Here</button>
+                            </div>
                         </div>
                     </div>
-                    <div class="method-defiinition">
-                        <code>
-                            <span class="line"><span class="variable">malo</span>.<span class="method">frame</span>(<span class="param">MALOCONSTANTS.OPERATIONS.FLOAT</span>, <span class="param">MALOCONSTANTS.METHODS.FLOAT</span>, <span class="param">{ element: '.sample-modal' , display: 'flex', direction: 'up' }</span>);</span>
-                        </code>
+                    <div class="splitter"></div>
+                    <div class="doc-item" id="jump">
+                        <div class="doc-item-name">
+                            <p class="text text-color-black">jump</p>
+                        </div>
+                        <div class="doc-item-fields-container">
+                            <p class="text text-color-greyish">Acceptable Fields:</p>
+                            <div class="doc-item-fields">
+                                <div>*effect: string</div>
+                                <div>*element: string</div>
+                                <div>callback: function</div>
+                                <div>delay: number</div>
+                                <div>display: string</div>
+                                <div>duration: number</div>
+                                <div>iteration: string | number</div>
+                                <div>timingFunction: string</div>
+                            </div>
+                        </div>
+                        <p class="text text-color-greyish font-size-fine">All fields marked with "*" are required.</p>
+                        <div class="my-smallest">
+                            <p class="text text-color-black">Example "jump"</p>
+                            <code>
+                                <span class="c-o">malo</span>.<span class="c-m">effect</span>({ <span class="c-f">element</span>: <span class="c-v">'#btn-effect-jump'</span>, <span class="c-f">effect</span>: <span class="c-v">'jump'</span>, <span class="c-f">iteration</span>: <span class="c-v">3</span>, <span class="c-f">duration</span>: <span class="c-v">1000</span> });
+                            </code>
+                            <div class="my-smallest">
+                                <button type="button" class="btn btn-white" id="btn-effect-jump" onclick="malo.effect({ element: '#btn-effect-jump', effect: 'jump', iteration: 3, duration: 1000 });">Test Effect Here</button>
+                            </div>
+                        </div>
                     </div>
-                    <div class="doc-options">
-                        <button class="btn btn-run"onclick="run('show', 'float', { element: '.sample-modal' , display: 'flex', direction: 'up' })">Run</button>
-                    </div>
-                    <div class="method-defiinition">
-                        <code>
-                            <span class="line"><span class="variable">malo</span>.<span class="method">frame</span>(<span class="param">MALOCONSTANTS.OPERATIONS.FLOAT</span>, <span class="param">MALOCONSTANTS.METHODS.FLOAT</span>, <span class="param">{ element: '.sample-modal' , display: 'flex', direction: 'down' }</span>);</span>
-                        </code>
-                    </div>
-                    <div class="doc-options">
-                        <button class="btn btn-run"onclick="run('show', 'float', { element: '.sample-modal' , display: 'flex', direction: 'down' })">Run</button>
-                    </div>
-                    <div class="method-defiinition">
-                        <code>
-                            <span class="line"><span class="variable">malo</span>.<span class="method">frame</span>(<span class="param">MALOCONSTANTS.OPERATIONS.FLOAT</span>, <span class="param">MALOCONSTANTS.METHODS.FLOAT</span>, <span class="param">{ element: '.sample-modal' , display: 'flex', direction: 'right' }</span>);</span>
-                        </code>
-                    </div>
-                    <div class="doc-options">
-                        <button class="btn btn-run"onclick="run('show', 'float', { element: '.sample-modal' , display: 'flex', direction: 'right' })">Run</button>
-                    </div>
-                    <div class="method-defiinition">
-                        <code>
-                            <span class="line"><span class="variable">malo</span>.<span class="method">frame</span>(<span class="param">MALOCONSTANTS.OPERATIONS.FLOAT</span>, <span class="param">MALOCONSTANTS.METHODS.FLOAT</span>, <span class="param">{ element: '.sample-modal' , display: 'flex', direction: 'left' }</span>);</span>
-                        </code>
-                    </div>
-                    <div class="doc-options">
-                        <button class="btn btn-run"onclick="run('show', 'float', { element: '.sample-modal' , display: 'flex', direction: 'left' })">Run</button>
+                    <div class="splitter"></div>
+                    <div class="doc-item" id="effect-bounce">
+                        <div class="doc-item-name">
+                            <p class="text text-color-black">bounce</p>
+                        </div>
+                        <div class="doc-item-fields-container">
+                            <p class="text text-color-greyish">Acceptable Fields:</p>
+                            <div class="doc-item-fields">
+                                <div>*effect: string</div>
+                                <div>*element: string</div>
+                                <div>callback: function</div>
+                                <div>delay: number</div>
+                                <div>display: string</div>
+                                <div>duration: number</div>
+                                <div>iteration: string | number</div>
+                                <div>timingFunction: string</div>
+                            </div>
+                        </div>
+                        <p class="text text-color-greyish font-size-fine">All fields marked with "*" are required.</p>
+                        <div class="my-smallest">
+                            <p class="text text-color-black">Example "bounce"</p>
+                            <code>
+                                <span class="c-o">malo</span>.<span class="c-m">effect</span>({ <span class="c-f">element</span>: <span class="c-v">'#btn-effect-bounce'</span>, <span class="c-f">effect</span>: <span class="c-v">'bounce'</span>, <span class="c-f">iteration</span>: <span class="c-v">1</span>, <span class="c-f">duration</span>: <span class="c-v">750</span> });
+                            </code>
+                            <div class="my-smallest">
+                                <button type="button" class="btn btn-white" id="btn-effect-bounce" onclick="malo.effect({ element: '#btn-effect-bounce', effect: 'bounce', iteration: 1, duration: 750 });">Test Effect Here</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -147,81 +291,24 @@
     </div>
 </section>
 
-<section id="effects" class="section">
-    <div class="section-sub-header">
-        Effects
-    </div>
-    <div class="section-body">
-        <div class="doc-li">
-            <div class="doc-list-item-container" id="effectBlink">
-                <div class="doc-list-item-content">
-                    <div class="frame-identity">BLINK</div>
-                    <div class="doc-item-name">malo.effect(effect, properties)</div>
-                    <div class="method-defiinition">
-                        <code>
-                            <span class="line"><span class="variable">malo</span>.<span class="method">effect</span>(<span class="param">MALOCONSTANTS.EFFECTS.BLINK</span>, <span class="param">{ element: '.sample-div.blink .sample-div-content' , iteration: 2, duration: 500 }</span>);</span>
-                        </code>
-                    </div>
-                    <div class="sample-div blink"onclick="runEffect('blink', { element: '.sample-div.blink .sample-div-content' , iteration: 2, duration: 500 });">
-                        <div class="sample-div-content">Apply Effect Here</div>
-                    </div>
-                </div>
+<div class="modal" id="doc-modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <div class="modal-header-start">
+                <img src="/images/Malo Logo_Blue.png" width="28" height="28" alt="Malo" />
             </div>
-            <div class="doc-list-item-container" id="effectJump">
-                <div class="doc-list-item-content">
-                    <div class="frame-identity">JUMP</div>
-                    <div class="doc-item-name">malo.effect(effect, properties)</div>
-                    <div class="method-defiinition">
-                        <code>
-                            <span class="line"><span class="variable">malo</span>.<span class="method">effect</span>(<span class="param">MALOCONSTANTS.EFFECTS.JUMP</span>, <span class="param">{ element: '.sample-div.jump .sample-div-content' , iteration: 1, duration: 1000 }</span>);</span>
-                        </code>
-                    </div>
-                    <div class="sample-div jump"onclick="runEffect('jump', { element: '.sample-div.jump .sample-div-content' , iteration: 1, duration: 500 });">
-                        <div class="sample-div-content">Apply Effect Here</div>
-                    </div>
-                </div>
-            </div>
-            <div class="doc-list-item-container" id="effectBounce">
-                <div class="doc-list-item-content">
-                    <div class="frame-identity">BOUNCE</div>
-                    <div class="doc-item-name">malo.effect(effect, properties)</div>
-                    <div class="method-defiinition">
-                        <code>
-                            <span class="line"><span class="variable">malo</span>.<span class="method">effect</span>(<span class="param">MALOCONSTANTS.EFFECTS.BOUNCE</span>, <span class="param">{ element: '.sample-div.bounce .sample-div-content' , iteration: 1, duration: 500 }</span>);</span>
-                        </code>
-                    </div>
-                    <div class="sample-div bounce"onclick="runEffect('bounce', { element: '.sample-div.bounce .sample-div-content' , iteration: 1, duration: 500 });">
-                        <div class="sample-div-content">Apply Effect Here</div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-<section id="operations" class="section">
-    <div class="section-sub-header">
-        Operations
-    </div>
-    <div class="section-body">
-        <div class="doc-li">
-            <div class="doc-list-item-container" id="operationHide">
-                <div class="doc-list-item-content">
-                    <div class="opr-name">HIDE</div>
-                    <code>
-                        <span class="line"><span class="variable">MALOCONSTANTS</span>.<span class="variable">OPERATIONS</span>.<span class="variable">HIDE</span>; <span class="comment">// Returns "hide"</span></span>
-                    </code>
-                </div>
-            </div>
-            <div class="doc-list-item-container" id="operationShow">
-                <div class="doc-list-item-content">
-                    <div class="opr-name">SHOW</div>
-                    <code>
-                        <span class="line"><span class="variable">MALOCONSTANTS</span>.<span class="variable">OPERATIONS</span>.<span class="variable">SHOW</span>; <span class="comment">// Returns "show"</span></span>
-                    </code>
-                </div>
+            <div class="modal-header-end icon-modal-close" onclick="docModal.hideWith();">
+                <img src="/icons/close_24dp_WHITE_FILL0_wght400_GRAD0_opsz24.svg" height="28" width="28" alt="Close" />
             </div>
         </div>
+        <div class="modal-body">
+            <p class="text-color-greyish">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+        </div>
     </div>
-</section>
+</div>

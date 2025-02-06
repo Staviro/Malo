@@ -1,0 +1,36 @@
+@import '../../shared/_variables.scss';
+
+.banner-content {
+    display: flex;
+    max-width: 768px;
+    margin: auto;
+    padding: 0 32px;
+    flex-direction: column;
+    gap: $size-default;
+    justify-content: center;
+}
+
+.text-banner-main {
+    font-size: 54px;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.banner-splitter {
+    height: 2px;
+    width: $size-max;
+    background-color: #ddd;
+    border-radius: 3px;
+    padding: 2px;
+    margin: auto;
+}
+
+.banner-actions {
+    display: flex;
+    justify-content: center;
+    gap: $size-small;
+}
+
+@import './_banner.responsive.scss';

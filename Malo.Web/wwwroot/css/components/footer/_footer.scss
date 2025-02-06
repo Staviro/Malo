@@ -1,0 +1,31 @@
+@import '../../shared/_variables.scss';
+
+footer {
+    padding: $size-max 0;
+    border-top: 1px solid #eee;
+
+    .footer-links {
+        padding: $size-smaller;
+    }
+
+    .footer-links-li {
+        display: flex;
+        padding: 0;
+        list-style: none;
+        gap: $size-larger;
+        margin: auto;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        li {
+            a {
+                padding: $size-smallest $size-smallest;
+                text-decoration: none;
+                font-weight: 500;
+                font-size: 14px;
+            }
+        }
+    }
+}
+
+@import '_footer.responsive.scss';

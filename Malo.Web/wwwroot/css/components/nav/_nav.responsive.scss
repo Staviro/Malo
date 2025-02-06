@@ -1,0 +1,17 @@
+@import '../../shared/_variables.scss';
+
+@media (max-width: $phone-lg-max) {
+    .nav-links {
+        display: none;
+    }
+
+    .nav-splitter {
+        display: none;
+    }
+
+    .nav-icon-container {
+        &.icon-menu {
+            display: flex;
+        }
+    }
+}

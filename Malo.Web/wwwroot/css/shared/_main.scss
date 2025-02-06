@@ -1,0 +1,24 @@
+@import './_variables.scss';
+
+html {
+    background-color: #FAFAFA;
+    color: black;
+    font-size: 16px;
+    font-family: "primary", Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-display: swap;
+    text-rendering: optimizeSpeed;
+
+    button, select, input, textarea, code {
+        font-size: 16px;
+        font-family: "primary", Arial, Helvetica, sans-serif;
+        font-weight: 400;
+        font-display: swap;
+    }
+}
+
+body {
+    margin: 0;
+}
+
+@import '_main.dark.scss';

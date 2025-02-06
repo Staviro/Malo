@@ -1,0 +1,16 @@
+html.dark {
+    .mobile-nav-content {
+        border-color: #222;
+        background-color: black;
+    }
+
+    .mobile-nav-body {
+        border-color: #222;
+    }
+
+    .icon-mobile-nav-close {
+        img {
+            filter: invert(0);
+        }
+    }
+}

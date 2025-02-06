@@ -1,0 +1,19 @@
+@import '../../shared/_variables.scss';
+
+.card-release {
+    padding: $size-max;
+    background-color: white;
+    border: 1px solid #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    max-width: 412px;
+    box-sizing: border-box;
+    border-radius: $size-default;
+    flex-direction: column;
+    gap: $size-default;
+    margin: $size-default auto;
+}
+
+@import './_release.dark.scss';

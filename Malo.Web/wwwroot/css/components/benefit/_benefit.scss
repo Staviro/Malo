@@ -1,0 +1,32 @@
+@import '../../shared/_variables.scss';
+
+.benefits-li {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $size-default;
+    padding: $size-default 0;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.card-benefit {
+    box-sizing: border-box;
+    padding: $size-default;
+    border-radius: $size-small;
+    border: 1px solid #eee;
+    background-color: white;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: $size-smallest;
+    min-width: calc(100% / 3 - 11px);
+    max-width: calc(100% / 3 - 11px);
+}
+
+.card-benefit-number {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+@import './_benefit.responsive.scss';
+@import './_benefit.dark.scss';

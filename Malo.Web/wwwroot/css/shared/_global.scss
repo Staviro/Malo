@@ -1,0 +1,90 @@
+@import './_variables.scss';
+
+.text-color-black {
+    color: black;
+}
+
+.text-color-greyish {
+    color: #555;
+}
+
+.text-color-primary {
+    color: $color-primary;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.container {
+    max-width: 1024px;
+    margin: auto;
+    padding: 0 16px;
+    box-sizing: border-box;
+}
+
+.section-splitter {
+    padding: 2px;
+    max-width: 212px;
+    margin: auto;
+    height: 2px;
+    padding: 2px;
+    background-color: #eee;
+    border-radius: 2px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+section {
+    padding: 72px 0;
+}
+
+.section-header {
+    padding: 12px 0;
+    p {
+        font-size: 24px;
+        font-weight: 500;
+    }
+}
+
+p {
+    margin: 0;
+}
+
+.font-size-fine {
+    font-size: 12px;
+}
+
+img {
+    display: flex;
+}
+
+.my-smallest {
+    margin-top: $size-smallest;
+    margin-bottom: $size-smallest;
+}
+
+.text {
+    padding: $size-smallest 0;
+}
+
+.mx-auto {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.splitter {
+    height: 2px;
+    width: 152px;
+    padding: 1px;
+    border-radius: 4px;
+    background-color: #eee;
+    margin: $size-default auto;
+}
+
+a {
+    &:visited {
+        color: $color-primary;
+    }
+}
+@import './_global.dark.scss';

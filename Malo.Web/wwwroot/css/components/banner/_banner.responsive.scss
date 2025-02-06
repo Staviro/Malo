@@ -1,0 +1,7 @@
+@import '../../shared/_variables.scss';
+
+@media (max-width: $phone-lg-max) {
+    .text-banner-main {
+        font-size: calc(48px - 1vw);
+    }
+}

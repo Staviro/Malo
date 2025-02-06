@@ -1,0 +1,35 @@
+﻿<header>
+    <nav>
+        <div class="nav-content">
+            <a class="nav-brand" href="/" title="Home">
+                <img src="/images/Malo Logo_Blue120x120.png" height="32" width="32" alt="logo" />
+            </a>
+            <div class="nav-end">
+                <div class="nav-links">
+                    <ul class="nav-links-li">
+                        <li>
+                            <a href="/documentation" title="Documentation">Documentation</a>
+                        </li>
+                        <li>
+                            <a href="/history" title="History">History</a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/Staviro/Malo/blob/master/LICENSE.txt" target="_blank" title="License">License</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="nav-splitter"></div>
+                <div class="nav-actions">
+                    <a href="https://github.com/Staviro/Malo" target="_blank" class="btn">GitHub</a>
+                    <div class="nav-icon-container" onclick="themeHandler.switch()">
+                        <img src="/icons/brightness_6_24dp_WHITE_FILL0_wght400_GRAD0_opsz24.svg" alt="Mode" width="20" height="20" />
+                    </div>
+                    <div class="nav-icon-container icon-menu" onclick="mobileNav.show()">
+                        <img src="/icons//menu_24dp_WHITE_FILL0_wght400_GRAD0_opsz24.svg" alt="Menu" width="20" height="20" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+@await Html.PartialAsync("_MobileNav")

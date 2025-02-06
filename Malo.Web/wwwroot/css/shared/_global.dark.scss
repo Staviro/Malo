@@ -1,0 +1,18 @@
+@import './_variables.scss';
+
+html.dark {
+    .text-color-black {
+        color: white;
+    }
+
+    .text-color-greyish {
+        color: #ccc;
+    }
+
+    .section-splitter {
+        background-color: #333;
+    }
+    .splitter {
+        background-color: #333;
+    }
+}

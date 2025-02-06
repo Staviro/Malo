@@ -1,0 +1,32 @@
+@import '../../shared/_variables.scss';
+
+code {
+    padding: $size-default;
+    border: 1px solid #eee;
+    border-radius: $size-smaller;
+    display: block;
+    background-color: white;
+    color: #666;
+}
+
+.c-o {
+    color: #298558;
+}
+
+.c-m {
+    color: #07629d;
+}
+
+.c-v {
+    color: #ad5b16;
+}
+
+.c-f {
+    color: #8433a0;
+}
+
+.c-v {
+    color: #a15412;
+}
+
+@import './_code.dark.scss';

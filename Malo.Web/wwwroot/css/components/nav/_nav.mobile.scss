@@ -1,0 +1,59 @@
+@import '../../shared/_variables.scss';
+
+.mobile-nav {
+    position: fixed;
+    display: none;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(black, 80%);
+    height: 100vh;
+    width: 100vw;
+    z-index: 5;
+    box-sizing: border-box;
+    justify-content: end;
+}
+
+.mobile-nav-content {
+    border-left: 1px solid #eee;
+    max-width: 290px;
+    width: 100%;
+    background-color: white;
+}
+
+.mobile-nav-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: $size-default;
+    box-sizing: border-box;
+}
+
+.mobile-nav-body {
+    padding: $size-default;
+    border-top: 1px solid #eee;
+}
+
+.mobile-nav-links {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+        a {
+            display: block;
+            padding: $size-small;
+        }
+    }
+}
+
+.icon-mobile-nav-close {
+    img {
+        filter: invert(1);
+    }
+}
+
+@import './_nav.mobile.dark.scss';

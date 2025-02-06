@@ -1,47 +1,33 @@
-﻿@using Malo.Web.Helpers.Bundles
-<!DOCTYPE html>
-<html lang="en-ZA" class="dark">
+﻿<!DOCTYPE html>
+<html lang="en" class="dark">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Malo is a Javascript library used to perform animations and transitions on HTML. It requires a basic understanding of HTML and CSS" />
-    <meta name="keywords" content="malo, malo js, malo library, malo ui library, malo javascript library, javascript library, ui library, opensource, lightweight library, js library, js ui library, github" />
-    <meta name="google-site-verification" content="l80CBXW38XaCAlQ0MI4kr43XDWe_mCskG_u4nXa4Prw" />
-    <meta name="msvalidate.01" content="E022E46C829383C377C8E235B354F648" />
-    <link rel="apple-touch-icon" href="/images/Malo Logo_Blue120x120.png" sizes="120x120" type="image/png"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Malo is a Javascript library used to perform animations and transitions on HTML" />
+    <meta name="keywords" content="malo, malo js, malo library, malo ui library, malo javascript library, javascript library, ui library, js ui library">
+    <meta name="google-site-verification" content="l80CBXW38XaCAlQ0MI4kr43XDWe_mCskG_u4nXa4Prw">
+    <meta name="msvalidate.01" content="E022E46C829383C377C8E235B354F648">
+    <link rel="apple-touch-icon" href="/images/Malo Logo_Blue120x120.png" sizes="120x120" type="image/png" />
     <link rel="apple-touch-icon" href="/images/Malo Logo_Blue180x180.png" sizes="180x180" type="image/png" />
-    <link rel="mask-icon" href="/images/Malo Logo_Blue180x180.png" type="image/png" />
-    <link rel="icon" href="/images/Malo Logo_Blue180x180.png" type="image/png" />
-    <link rel="stylesheet" href="@AppBundles.GetCSSBundleName()" />
+    <link rel="mask-icon" href="/images/Malo Logo_Blue180x180.png" sizes="180x180" type="image/png" />
+    <link rel="icon" href="/images/Malo Logo_Blue180x180.png" sizes="180x180" type="image/png" />
+    <!--Open Graph Protocol-->
+    <meta property="og:type" content="website"/>
+    <meta property="og:description" content="Malo is a Javascript library used to perform animations and transitions on HTML" />
+    <meta property="og:image" content="/images/Malo Logo_Blue180x180.png" />
+    <meta property="og:title" content="Malo"/>
+    <meta property="og:url" content="https://www.malo-library.com/" />
+    <!--Open Graph Protocol-->
+    <link rel="stylesheet" href="@AppBundle.GetBundle("styles", "css")"/>
     <title>@ViewData["Title"]</title>
 </head>
 <body>
-    <div id="main">
-        @await Html.PartialAsync("~/Views/Shared/_Header.cshtml")
-        <div class="app-container">
-            @await Html.PartialAsync("~/Views/Shared/_Sidebar.cshtml")
-            <div class="app-body">
-                @RenderBody()
-            </div>
-        </div>
-    </div>
-
-    <div class="sample-modal">
-        <div class="sample-modal-content">
-            <div class="sample-modal-header">
-                <div class="text">Malo</div>
-                <img id="sampleModalClose" src="/icons/x.svg" class="close-icon" alt="close" />
-            </div>
-            <div class="sample-modal-body">
-                <div class="sample-modal-message">
-                    <img src="/icons/verified-symbol-icon.svg" atl="check">
-                    <div>Completed</div>
-                </div>
-            </div>
-        </div>
-    </div>
-    @await Html.PartialAsync("~/Views/Shared/_Footer.cshtml")
-    @await Html.PartialAsync("~/Views/Shared/_ShortcutModal.cshtml")
-    <script src="@AppBundles.GetJSBundleName()"></script>
+    @await Html.PartialAsync("/Views/Partials/_Preload.cshtml")
+    @await Html.PartialAsync("_Nav")
+    <main>
+        @RenderBody()
+    </main>
+    @await Html.PartialAsync("_Footer")
+    <script src="@AppBundle.GetBundle("scripts", "js")"></script>
 </body>
 </html>

@@ -1,0 +1,17 @@
+﻿<script>
+    const appKeys = {
+        theme: "theme"
+    };
+
+    const preload = {
+        getTheme() {
+            const value = localStorage.getItem(appKeys.theme);
+            let set = "";
+            if (value !== null) set = value;
+            else set = "dark";
+            document.querySelector("html").className = set;
+        }
+    }
+
+    preload.getTheme();
+</script>

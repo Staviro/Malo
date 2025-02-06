@@ -1,0 +1,23 @@
+@import '../../shared/_variables.scss';
+
+html.dark {
+    .btn {
+        background-color: white;
+        border: 1px solid white;
+        color: black;
+
+        &:is(:hover, :active, :focus) {
+            background-color: #eee;
+        }
+    }
+
+    .btn-white {
+        background-color: black;
+        color: white;
+        border-color: white;
+
+        &:is(:hover, :active, :focus) {
+            background-color: #333;
+        }
+    }
+}

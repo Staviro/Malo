@@ -1,11 +1,16 @@
-@import '_home.scss';
-@import '_sidemenu.scss';
-@import '_nav.scss';
-@import '_note.scss';
-@import '_shared.scss';
-@import '_button.scss';
-@import '_shortcut.scss';
-@import '_documentation.scss';
-@import '_samples.scss';
-@import '_dark.scss';
-@import '_responsive.scss';
+@import '_font.scss';
+@import './shared/_main.scss';
+
+//global
+@import './shared/_global.scss';
+@import './components/nav/_nav.scss';
+@import './components/button/_button.scss';
+@import './components/code/_code.scss';
+@import './components/footer/_footer.scss';
+@import './components/modal/_modal.scss';
+
+//components
+@import './components/banner/_banner.scss';
+@import './components/latest-release/_release.scss';
+@import './components/benefit/_benefit.scss';
+@import './components/documentation/_doc.scss';
