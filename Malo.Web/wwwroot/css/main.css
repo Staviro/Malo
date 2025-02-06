@@ -109,10 +109,6 @@ img {
   margin: 16px auto;
 }
 
-a:visited {
-  color: #55F;
-}
-
 html.dark .text-color-black {
   color: white;
 }
@@ -301,8 +297,9 @@ html.dark .nav-icon-container:hover {
   padding: 8px 16px;
   cursor: pointer;
 }
-.btn:is(:hover, :active, :focus) {
+.btn:is(:hover, :active, :focus, :visited) {
   background-color: #3f3f3f;
+  color: white;
 }
 
 .btn-white {
@@ -310,8 +307,9 @@ html.dark .nav-icon-container:hover {
   color: black;
   border-color: black;
 }
-.btn-white:is(:hover, :active, :focus) {
+.btn-white:is(:hover, :active, :focus, :visited) {
   background-color: #ddd;
+  color: black;
 }
 
 .btn-md {
@@ -323,16 +321,18 @@ html.dark .btn {
   border: 1px solid white;
   color: black;
 }
-html.dark .btn:is(:hover, :active, :focus) {
+html.dark .btn:is(:hover, :active, :focus, :visited) {
   background-color: #eee;
+  color: black;
 }
 html.dark .btn-white {
   background-color: black;
   color: white;
   border-color: white;
 }
-html.dark .btn-white:is(:hover, :active, :focus) {
+html.dark .btn-white:is(:hover, :active, :focus, :visited) {
   background-color: #333;
+  color: white;
 }
 
 code {

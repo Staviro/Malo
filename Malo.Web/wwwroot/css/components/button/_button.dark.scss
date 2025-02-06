@@ -6,8 +6,9 @@ html.dark {
         border: 1px solid white;
         color: black;
 
-        &:is(:hover, :active, :focus) {
+        &:is(:hover, :active, :focus, :visited) {
             background-color: #eee;
+            color: black;
         }
     }
 
@@ -16,8 +17,9 @@ html.dark {
         color: white;
         border-color: white;
 
-        &:is(:hover, :active, :focus) {
+        &:is(:hover, :active, :focus, :visited) {
             background-color: #333;
+            color: white;
         }
     }
 }

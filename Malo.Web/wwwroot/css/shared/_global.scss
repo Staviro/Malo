@@ -82,9 +82,4 @@ img {
     margin: $size-default auto;
 }
 
-a {
-    &:visited {
-        color: $color-primary;
-    }
-}
 @import './_global.dark.scss';

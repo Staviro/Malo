@@ -9,8 +9,9 @@
     padding: $size-smaller $size-default;
     cursor: pointer;
 
-    &:is(:hover, :active, :focus) {
+    &:is(:hover, :active, :focus, :visited) {
         background-color: #3f3f3f;
+        color: white;
     }
 }
 
@@ -19,8 +20,9 @@
     color: black;
     border-color: black;
 
-    &:is(:hover, :active, :focus) {
+    &:is(:hover, :active, :focus, :visited) {
         background-color: #ddd;
+        color: black;
     }
 }
 
