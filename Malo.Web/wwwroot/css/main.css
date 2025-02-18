@@ -109,6 +109,10 @@ img {
   margin: 16px auto;
 }
 
+.invert {
+  filter: invert(1);
+}
+
 html.dark .text-color-black {
   color: white;
 }
@@ -604,4 +608,141 @@ html.dark .card-benefit {
 
 html.dark .doc-item .doc-item-fields div {
   background-color: #222;
+}
+
+#ex-registration {
+  color: black;
+}
+#ex-registration a {
+  color: #0AA17D;
+}
+
+.ex-registration-modal-header {
+  font-size: 22px;
+  font-weight: 500;
+  text-align: center;
+  display: flex;
+  justify-content: flex-start;
+  gap: 16px;
+  align-items: center;
+}
+.ex-registration-modal-header img {
+  cursor: pointer;
+}
+.ex-registration-modal-header img:hover {
+  transform: scale(1.1);
+}
+
+.ex-registration-modal {
+  display: flex;
+  max-width: 480px;
+  justify-content: center;
+  align-items: stretch;
+  margin: auto;
+  background-color: white;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 32px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  border: 2px solid #eaeaea;
+}
+
+.ex-registration-background {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #efefef;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 16px;
+}
+
+.ex-registration-control-container {
+  display: flex;
+  gap: 4px;
+  flex-direction: column;
+  padding: 4px 0;
+}
+.ex-registration-control-container label {
+  color: #333;
+}
+.ex-registration-control-container input {
+  padding: 8px;
+  border-radius: 8px;
+  border: 2px solid #efefef;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: white;
+}
+.ex-registration-control-container input:is(:focus, :active, :hover) {
+  border-color: #0AA17D;
+  background-color: rgba(10, 161, 125, 0.05);
+}
+
+.ex-registration-btn {
+  padding: 8px 16px;
+  border-radius: 8px;
+  background-color: #0AA17D;
+  color: white;
+  outline: none;
+  border: 2px solid #0AA17D;
+  margin: auto;
+  width: 100%;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.ex-registration-btn:is(:focus, :active, :hover) {
+  background-color: transparent;
+  color: #0AA17D;
+}
+
+.ex-registration-actions {
+  margin-top: 8px;
+}
+
+.ex-registration-text {
+  color: #777;
+  font-size: 14px;
+}
+
+.ex-registration-line {
+  height: 2px;
+  width: 100%;
+  background-color: #efefef;
+  border-radius: 2px;
+}
+
+.ex-registration-progress {
+  height: 4px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.ex-registration-progress-line {
+  position: relative;
+  left: -64px;
+  background-color: #0AA17D;
+  height: 8px;
+  filter: blur(12px);
+  width: 64px;
+  animation-name: progress;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  right: auto;
+}
+
+@keyframes progress {
+  100% {
+    left: calc(100% + 64px);
+  }
 }

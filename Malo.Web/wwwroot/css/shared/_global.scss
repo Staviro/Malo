@@ -82,4 +82,8 @@ img {
     margin: $size-default auto;
 }
 
+.invert {
+    filter: invert(1);
+}
+
 @import './_global.dark.scss';

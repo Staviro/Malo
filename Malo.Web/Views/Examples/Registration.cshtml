@@ -1,0 +1,166 @@
+﻿<section class="ex-registration-modals" id="ex-registration">
+    <div class="ex-registration-background">
+        <div id="ex-registration-account" class="ex-registration-modal">
+            <div class="ex-registration-modal-header">
+                Create Account
+            </div>
+            <p class="ex-registration-text">
+                Enter your details below to get started with creating your account.
+            </p>
+            <div class="ex-registration-form">
+                <div class="ex-registration-control-container">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" value="user123913413" />
+                </div>
+                <div class="ex-registration-control-container">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" value="user123913413" />
+                </div>
+                <div class="ex-registration-actions">
+                    <button type="button" class="ex-registration-btn" onclick="functions.moveNext('#ex-registration-account', '#ex-registration-personal')">Continue</button>
+                </div>
+            </div>
+            <div class="ex-registration-line"></div>
+            <p class="ex-registration-text text-center">
+                Already have an account? <a href="#">log in</a>
+            </p>
+        </div>
+        <div id="ex-registration-personal" class="ex-registration-modal" style="display: none">
+            <div class="ex-registration-modal-header">
+                <img onclick="functions.moveBack('#ex-registration-personal', '#ex-registration-account')" src="/icons/arrow_back_24dp_WHITE_FILL0_wght400_GRAD0_opsz24.svg" class="invert" height="24" width="24" /><div>Personal Information</div>
+            </div>
+            <p class="ex-registration-text">
+                We need your personal details in order to identify and verify your account.
+            </p>
+            <div class="ex-registration-form">
+                <div class="ex-registration-control-container">
+                    <label for="firstname">First Name</label>
+                    <input type="text" id="firstname" name="firstname" />
+                </div>
+                <div class="ex-registration-control-container">
+                    <label for="lastname">Last Name</label>
+                    <input type="text" id="lastname" name="lastname" value="Doe" />
+                </div>
+                <div class="ex-registration-control-container">
+                    <label for="dob">Date of Birth</label>
+                    <input type="date" id="dob" name="dob" value="1999-01-02" />
+                </div>
+                <div class="ex-registration-actions">
+                    <button type="button" class="ex-registration-btn" onclick="functions.moveNext('#ex-registration-personal', '#ex-registration-contact')">Continue</button>
+                </div>
+            </div>
+            <div class="ex-registration-line"></div>
+            <p class="ex-registration-text text-center">
+                Already have an account? <a href="#">log in</a>
+            </p>
+        </div>
+        <div id="ex-registration-contact" class="ex-registration-modal" style="display: none">
+            <div class="ex-registration-modal-header">
+                <img onclick="functions.moveBack('#ex-registration-contact', '#ex-registration-personal')" src="/icons/arrow_back_24dp_WHITE_FILL0_wght400_GRAD0_opsz24.svg" class="invert" height="24" width="24" />
+                <div>Contact Information</div>
+            </div>
+            <p class="ex-registration-text">
+                We want to get your communication details and preferences
+            </p>
+            <div class="ex-registration-form">
+                <div class="ex-registration-control-container">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" value="johndoe@@example.com" />
+                </div>
+                <div class="ex-registration-control-container">
+                    <label for="contact">Contact Number</label>
+                    <input type="text" id="contact" name="contact" value="+27 71 234 5678" />
+                </div>
+                <div class="ex-registration-actions">
+                    <button type="button" class="ex-registration-btn" onclick="functions.complete()">Complete</button>
+                </div>
+            </div>
+            <div class="ex-registration-line"></div>
+            <p class="ex-registration-text text-center">
+                Already have an account? <a href="#">log in</a>
+            </p>
+        </div>
+        <div id="ex-registration-verification" class="ex-registration-modal" style="display: none">
+            <div class="ex-registration-modal-header">
+                Processing...
+            </div>
+            <div class="ex-registration-text">
+                Hang on while we verify your information and create your account
+            </div>
+            <div class="ex-registration-progress">
+                <div class="ex-registration-progress-line"></div>
+            </div>
+        </div>
+        <div id="ex-registration-verification-failed" class="ex-registration-modal" style="display: none">
+            <div class="ex-registration-modal-header">
+                Oops
+            </div>
+            <div class="ex-registration-text">
+                There seems to be some missing required information, please check your entries again. If issues persists, please contact administrator or support.
+            </div>
+            <div class="ex-registration-actions">
+                <button type="button" class="ex-registration-btn" onclick="functions.moveBack('#ex-registration-verification-failed', '#ex-registration-account')">Verify Entries</button>
+            </div>
+        </div>
+        <div id="ex-registration-verification-passed" class="ex-registration-modal" style="display: none">
+            <div class="ex-registration-modal-header">
+                Account Created
+            </div>
+            <div class="ex-registration-text">
+                You have successfully created your account!
+            </div>
+            <div class="ex-registration-actions">
+                <button type="button" class="ex-registration-btn" onclick="functions.moveNext('#ex-registration-verification-passed', '#ex-registration-login')">Login</button>
+            </div>
+        </div>
+        <div id="ex-registration-login" class="ex-registration-modal" style="display: none">
+            <div class="ex-registration-modal-header">
+                Login
+            </div>
+            <div class="ex-registration-form">
+                <div class="ex-registration-control-container">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" value="user123913413" />
+                </div>
+                <div class="ex-registration-control-container">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" value="user123913413" />
+                </div>
+                <div class="ex-registration-actions">
+                    <button type="button" class="ex-registration-btn">Login</button>
+                </div>
+            </div>
+            <div class="ex-registration-line"></div>
+            <p class="ex-registration-text text-center">
+                Don't have an account? <a href="#">Sign up</a>
+            </p>
+        </div>
+    </div>
+</section>
+<script async>
+    const functions = {
+        moveNext(currentId, nextId) {
+            malo.animate({ element: currentId, animation: "float-out", direction: "left", callback: function() {
+                malo.animate({ element: nextId, animation: "float-in", direction: "right", display: "flex" });
+            }});
+        },
+       moveBack(currentId, nextId) {
+            malo.animate({ element: currentId, animation: "float-out", direction: "right", callback: function() {
+                malo.animate({ element: nextId, animation: "float-in", direction: "left", display: "flex" });
+            }});
+        },
+        complete() {
+            malo.animate({ element: "#ex-registration-contact", animation: "float-out", direction: "left", callback: function() {
+                malo.animate({ element: "#ex-registration-verification", animation: "float-in", direction: "right", display: "flex" });
+            }});
+            setTimeout(function() {
+                let firstname = document.getElementById("firstname").value;
+                if (firstname == "") {
+                    functions.moveNext("#ex-registration-verification", "#ex-registration-verification-failed");
+                } else {
+                    functions.moveNext("#ex-registration-verification", "#ex-registration-verification-passed");
+                }
+            }, 3000);
+        }
+    }
+</script>
