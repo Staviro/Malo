@@ -29,5 +29,10 @@
     </main>
     @await Html.PartialAsync("_Footer")
     <script src="@AppBundle.GetBundle("scripts", "js")"></script>
+    <script async>
+        DomFlowt.defaults.duration = 1000;
+        DomFlowt.watch();
+        window.addEventListener("scroll", function() { DomFlowt.watch(); });
+    </script>
 </body>
 </html>

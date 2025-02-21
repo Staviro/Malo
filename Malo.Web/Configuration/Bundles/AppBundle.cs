@@ -13,6 +13,7 @@
         {
             return new string[]
                 {
+                    "/lib/dom-flowt/dom-flowt.js",
                     "/lib/latest/malo.js",
                     "/js/main.js"
                 };
@@ -22,6 +23,7 @@
         {
             return new string[]
                 {
+                    "/lib/dom-flowt/dom-flowt.css",
                     "/lib/latest/malo.css",
                     "/css/main.css"
                 };
