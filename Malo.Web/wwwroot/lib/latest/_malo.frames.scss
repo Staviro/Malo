@@ -430,6 +430,31 @@ $translate-float-y-by: 100vh;
     }
 }
 
+$bubble-base-size: 0px;
+@keyframes malo-frame-bubble-in {
+    0% {
+        opacity: 0;
+        filter: opacity(0);
+        width: $bubble-base-size;
+        height: $bubble-base-size;
+        min-width: $bubble-base-size;
+        min-height: $bubble-base-size;
+        border-radius: 50%;
+    }
+}
+
+@keyframes malo-frame-bubble-out {
+    100% {
+        opacity: 0;
+        filter: opacity(0);
+        max-width: $bubble-base-size;
+        max-height: $bubble-base-size;
+        width: $bubble-base-size;
+        height: $bubble-base-size;
+        border-radius: 50%;
+    }
+}
+
 @keyframes malo-effect-blink {
     0% {
         opacity: 1;

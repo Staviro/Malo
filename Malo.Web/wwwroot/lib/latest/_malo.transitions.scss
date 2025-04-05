@@ -169,6 +169,24 @@ $default-duration: 500ms;
     animation-name: malo-frame-float-right-out;
 }
 
+.malo-bubble-in {
+    @extend .extend-animation-defaults;
+    animation-name: malo-frame-bubble-in;
+    -ms-overflow-style: none;
+    overflow-y: hidden !important;
+    overflow-x: hidden !important;
+}
+
+.malo-bubble-out {
+    @extend .extend-animation-defaults;
+    animation-name: malo-frame-bubble-out;
+    -ms-overflow-style: none;
+    overflow-y: hidden !important;
+    overflow-x: hidden !important;
+    min-height: 0px !important;
+    min-width: 0px !important;
+}
+
 .malo-blink {
     @extend .extend-effect-defaults;
     animation-name: malo-effect-blink;

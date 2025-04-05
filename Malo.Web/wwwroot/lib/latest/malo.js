@@ -23,7 +23,9 @@ const maloConfig = {
         slideIn: "slide-in",
         slideOut: "slide-out",
         floatIn: "float-in",
-        floatOut: "float-out"
+        floatOut: "float-out",
+        bubbleIn: "bubble-in",
+        bubbleOut: "bubble-out"
     },
     effects: {
         blink: "blink",
@@ -86,6 +88,7 @@ maloHelpers.startFrame = function(el, cls, cf, display) {
         maloHelpers.checkCallback(cf.hasCallback, cf.callback);
         maloHelpers.endFrame(el, cls);
         el.style.height = null;
+        el.style.width = null;
     }
 };
 
@@ -290,7 +293,7 @@ maloMethods.bounceOut = function(cf) {
 maloMethods.floatIn = function(cf) {
     try {
         let cls = "";
-        let style = typeof(cf.style) == "undefined" ? "" : "-" + concffig.style;
+        let style = typeof (cf.style) == "undefined" ? "" : "-" + cf.style;
         switch (cf.direction) {
             case "up": cls = "malo-float-up-in" + style; break;
             case "down": cls = "malo-float-down-in" + style; break;
@@ -386,6 +389,59 @@ maloMethods.slideOut = function(cf) {
     }
 };
 
+maloMethods.bubbleIn = function (cf) {
+    try {
+        if (maloHelpers.isValidConfig(cf)) {
+            cf = maloHelpers.applyDefaults(cf);
+            let el = maloHelpers.getElement(cf.element);
+            if (maloHelpers.isAnimating(el)) { return; }
+            let display = maloHelpers.assignDisplay(cf);
+            let c = 'malo-bubble-in';
+            let clone = document.querySelector('body').cloneNode(true);
+            clone.classList.add('malo-hidden');
+            document.querySelector('body').appendChild(clone);
+            let cloneEl = clone.querySelector(cf.element);
+            cloneEl.style.display = display;
+            cloneEl.style.animationDuration = "0s !important";
+            el.style.height = getComputedStyle(cloneEl).height;
+            el.style.width = getComputedStyle(cloneEl).width;
+            clone.remove();
+            maloHelpers.startFrame(el, c, cf, display);
+        } else {
+            if (!maloHelpers.hasProperty(cf, "axis")) {
+                return maloErrors.logError(maloErrors.missingAxis);
+            } else {
+                return maloErrors.logError(maloErrors.notFound);
+            }
+        }
+    } catch (err) {
+        maloErrors.log(err);
+    }
+};
+
+maloMethods.bubbleOut = function (cf) {
+    try {
+        if (maloHelpers.isValidConfig(cf)) {
+            cf = maloHelpers.applyDefaults(cf);
+            let el = maloHelpers.getElement(cf.element);
+            if (maloHelpers.isAnimating(el)) { return; }
+            let c = "malo-bubble-out";
+            //fix height and width
+            el.style.width = getComputedStyle(el).width;
+            el.style.height = getComputedStyle(el).height;
+            function onComplete() {
+                el.style.height = null;
+                el.style.width = null;
+            }
+            maloMethods.sharedOut({ animation: c, onComplete }, cf);
+        } else {
+            return maloErrors.logError(maloErrors.notFound);
+        }
+    } catch (err) {
+        maloErrors.log(err);
+    }
+};
+
 maloMethods.blink = function(cf) {
     maloMethods.sharedEffect({ effect: "malo-blink"}, cf);
 };
@@ -420,6 +476,8 @@ malo.animate = function(cf) {
                 case "float-out": maloMethods.floatOut(cf); break;
                 case "slide-in": maloMethods.slideIn(cf); break;
                 case "slide-out": maloMethods.slideOut(cf); break;
+                case "bubble-in": maloMethods.bubbleIn(cf); break;
+                case "bubble-out": maloMethods.bubbleOut(cf); break;
                 default: return maloErrors.logError(maloErrors.invalidAnmType);
             }
         } else {
@@ -429,7 +487,6 @@ malo.animate = function(cf) {
         maloErrors.log(err);
     }
 };
-
 
 /**
  * Malo method for effects

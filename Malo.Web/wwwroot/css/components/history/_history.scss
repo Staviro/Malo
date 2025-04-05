@@ -1,0 +1,38 @@
+@import '../../shared/_variables.scss';
+
+.history-list {
+    display: flex;
+    flex-direction: column;
+    gap: $size-small;
+}
+
+.history-item-date {
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.history-item-header {
+    display: flex;
+    align-items: center;
+    gap: $size-smaller;
+    flex-wrap: wrap;
+    padding: $size-smaller 0;
+}
+
+.history-item-type, .history-item-version {
+    padding: $size-min $size-default;
+    border-radius: $size-default;
+    background-color: rgba(#888, 10%);
+}
+
+.history-item-type {
+    &.bug {
+        background-color: #F33;
+        color: white;
+    }
+
+    &.minor {
+        background-color: #383;
+        color: white;
+    }
+}

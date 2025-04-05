@@ -429,6 +429,7 @@ html.dark footer {
   box-sizing: border-box;
   width: 100vw;
   height: 100vh;
+  background-color: rgba(0, 0, 0, 0.1);
 }
 .modal .modal-content {
   max-width: 480px;
@@ -608,6 +609,40 @@ html.dark .card-benefit {
 
 html.dark .doc-item .doc-item-fields div {
   background-color: #222;
+}
+
+.history-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.history-item-date {
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.history-item-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding: 8px 0;
+}
+
+.history-item-type, .history-item-version {
+  padding: 2px 16px;
+  border-radius: 16px;
+  background-color: rgba(136, 136, 136, 0.1);
+}
+
+.history-item-type.bug {
+  background-color: #F33;
+  color: white;
+}
+.history-item-type.minor {
+  background-color: #383;
+  color: white;
 }
 
 #ex-registration {

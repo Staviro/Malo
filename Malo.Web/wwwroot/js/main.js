@@ -1,5 +1,4 @@
 ﻿var hideDocModalWith = {};
-
 const themeHandler = {
     switch() {
         const value = localStorage.getItem(appKeys.theme);
