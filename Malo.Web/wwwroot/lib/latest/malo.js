@@ -1,6 +1,6 @@
 'use strict'
 /*!
-    *Malo
+    *Malo JS v1.2.0
     *(c) 2024 Joseph Morukhuladi
     *Licensed under MIT (https://malo-library.com/license)
 */

@@ -233,7 +233,8 @@ $translate-pop-y-by: 50vh;
 }
 
 $translate-float-x-by: 100vw;
-$translate-float-y-by: 100vh;
+$translate-float-y-by: 100dvh;
+
 @keyframes malo-frame-float-up-in {
     0% {
         opacity: 0;
@@ -254,18 +255,29 @@ $translate-float-y-by: 100vh;
         -webkit-transform: translateY($translate-float-y-by);
     }
 
-    25% {
-        transform: translateY(-4vh);
-        -webkit-transform: translateY(-4vh);
+    20% {
+        transform: translateY(-4dvh);
+        -webkit-transform: translateY(-4dvh);
     }
 
-    50% {
-        transform: translateY(1vh);
-        -webkit-transform: translateY(1vh);
+    40% {
+        transform: translateY(2dvh);
+        -webkit-transform: translateY(2dvh);
     }
+
+    60% {
+        transform: translateY(-1vh);
+        -webkit-transform: translateY(-1vh);
+    }
+
+    80% {
+        transform: translateY(0.5dvh);
+        -webkit-transform: translateY(0.5dvh);
+    }
+
     100% {
         transform: translateY(0);
-        -webkit-transform: translateY(1vh);
+        -webkit-transform: translateY(0);
     }
 }
 
@@ -303,14 +315,24 @@ $translate-float-y-by: 100vh;
         -webkit-transform: translateY(-$translate-float-y-by);
     }
 
-    25% {
-        transform: translateY(4vh);
-        -webkit-transform: translateY(4vh);
+    20% {
+        transform: translateY(4dvh);
+        -webkit-transform: translateY(4dvh);
     }
 
-    50% {
-        transform: translateY(-1vh);
-        -webkit-transform: translateY(-1vh);
+    40% {
+        transform: translateY(-2dvh);
+        -webkit-transform: translateY(-2dvh);
+    }
+
+    60% {
+        transform: translateY(1dvh);
+        -webkit-transform: translateY(1dvh);
+    }
+
+    80% {
+        transform: translateY(-0.5dvh);
+        -webkit-transform: translateY(-0.5dvh);
     }
 
     100% {
@@ -353,14 +375,24 @@ $translate-float-y-by: 100vh;
         -webkit-transform: translateX($translate-float-x-by);
     }
 
-    25% {
+    20% {
         transform: translateX(-4vw);
         -webkit-transform: translateX(-4vw);
     }
 
-    50% {
-        transform: translateX(1vw);
-        -webkit-transform: translateX(1vw);
+    40% {
+        transform: translateX(2vw);
+        -webkit-transform: translateX(2vw);
+    }
+
+    60% {
+        transform: translateX(-1vw);
+        -webkit-transform: translateX(-1vw);
+    }
+
+    80% {
+        transform: translateX(0.5vw);
+        -webkit-transform: translateX(0.5vw);
     }
 
     100% {
@@ -375,6 +407,7 @@ $translate-float-y-by: 100vh;
         transform: translateX(0);
         -webkit-transform: translateX(0);
     }
+
     100% {
         opacity: 0;
         transform: translateX($translate-float-x-by);
@@ -388,6 +421,7 @@ $translate-float-y-by: 100vh;
         transform: translateX(-$translate-float-x-by);
         -webkit-transform: translateX(-$translate-float-x-by);
     }
+
     100% {
         transform: translateX(0);
         -webkit-transform: translateX(0);
@@ -402,14 +436,24 @@ $translate-float-y-by: 100vh;
         -webkit-transform: translateX(-$translate-float-x-by);
     }
 
-    25% {
+    20% {
         transform: translateX(4vw);
         -webkit-transform: translateX(4vw);
     }
 
-    50% {
-        transform: translateX(-1vw);
-        -webkit-transform: translateX(-1vw);
+    40% {
+        transform: translateX(-2vw);
+        -webkit-transform: translateX(-2vw);
+    }
+
+    60% {
+        transform: translateX(1vw);
+        -webkit-transform: translateX(1vw);
+    }
+
+    80% {
+        transform: translateX(-0.5vw);
+        -webkit-transform: translateX(-0.5vw);
     }
 
     100% {
@@ -423,6 +467,7 @@ $translate-float-y-by: 100vh;
         transform: translateX(0);
         -webkit-transform: translateX(0);
     }
+
     100% {
         opacity: 0;
         transform: translateX(-$translate-float-x-by);
@@ -431,6 +476,7 @@ $translate-float-y-by: 100vh;
 }
 
 $bubble-base-size: 0px;
+
 @keyframes malo-frame-bubble-in {
     0% {
         opacity: 0;
@@ -475,7 +521,7 @@ $bubble-base-size: 0px;
         transform: translateY(0);
         -webkit-transform: translateY(0);
     }
-    
+
     20% {
         transform: translateY(-20%);
         -webkit-transform: translateY(-20%);
