@@ -1,5 +1,12 @@
 @import '../../shared/_variables.scss';
 
+header {
+    position: sticky;
+    top: -2px;
+    left: 0;
+    right: 0;
+    z-index: 4;
+}
 nav {
     border-bottom: 1px solid #eee;
     background-color: white;

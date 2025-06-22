@@ -29,3 +29,7 @@ const mobileNav = {
         malo.animate({ element: ".mobile-nav", animation: "fade-out" });
     }
 }
+
+window.addEventListener('load', function () {
+    malo.effect({ element: ".nav-brand", effect: "jump", duration: 1000 });
+})

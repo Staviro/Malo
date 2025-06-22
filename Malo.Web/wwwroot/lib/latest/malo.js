@@ -1,6 +1,6 @@
 'use strict'
 /*!
-    *Malo JS v1.2.0
+    *Malo JS v1.3.0
     *(c) 2024 Joseph Morukhuladi
     *Licensed under MIT (https://malo-library.com/license)
 */
@@ -39,10 +39,10 @@ const maloConfig = {
  */
 const maloErrors = {
     log: function(err) {
-        console.error("Malo Error: ", err);
+        if (!malo.defaults.suppressErrors) console.error("Malo Error: ", err);
     },
     logError: function(msg) {
-        console.error(msg);
+        if (!malo.defaults.suppressErrors) console.error(msg);
     },
     notFound: "Malo: No element was found",
     invalidAxis: "Malo: The provided value for property 'axis' is not allowed",
@@ -61,7 +61,8 @@ malo.defaults = {
     useAnimations: true,
     iteration: 1,
     delay: 0,
-    timingFunction: "ease"
+    timingFunction: "ease",
+    suppressErrors: false
 };
 
 /**
@@ -152,16 +153,18 @@ maloHelpers.checkCallback = function(has, callback) {
     if (has) { callback(); }
 };
 
-maloHelpers.isValidConfig = function(cf) {
+maloHelpers.isValidConfig = function (cf) {
+    let mh = maloHelpers;
+    let me = maloErrors;
     let isValid = true;
     if (typeof(cf) == 'undefined') {
-        maloErrors.logError(maloErrors.invalidConfig);
+        me.logError(me.invalidConfig);
         return false;
     }
-    let el = maloHelpers.hasProperty(cf, 'element') ? maloHelpers.getElement(cf.element) : null;
-    if (el == null || typeof(el) == 'undefined' || !maloHelpers.isValidElement(cf.element)) {
+    let el = mh.hasProperty(cf, 'element') ? mh.getElement(cf.element) : null;
+    if (el == null || typeof (el) == 'undefined' || !mh.isValidElement(cf.element)) {
         isValid = false;
-        maloErrors.logError(maloErrors.notFound);
+        me.logError(me.notFound);
     }
     return isValid;
 };
@@ -170,16 +173,17 @@ maloHelpers.assignDisplay = function(cf) {
     return !maloHelpers.hasProperty(cf, "display") ? "block" : cf.display;
 };
 
-maloHelpers.applyDefaults = function(cf) {
-    let duration = !maloHelpers.hasProperty(cf, "duration") ? malo.defaults.duration : cf.duration;
+maloHelpers.applyDefaults = function (cf) {
+    let mh = maloHelpers;
+    let duration = !mh.hasProperty(cf, "duration") ? malo.defaults.duration : cf.duration;
     cf.duration = duration;
-    let iteration = !maloHelpers.hasProperty(cf, "duration") ? malo.defaults.iteration : cf.iteration;
+    let iteration = !mh.hasProperty(cf, "duration") ? malo.defaults.iteration : cf.iteration;
     cf.iteration = iteration;
-    let delay = !maloHelpers.hasProperty(cf, "delay") ? 0 : cf.delay;
+    let delay = !mh.hasProperty(cf, "delay") ? 0 : cf.delay;
     cf.delay = delay;
-    let timingFunction = !maloHelpers.hasProperty(cf, "timingFunction") ?  malo.defaults.timingFunction : cf.timingFunction;
+    let timingFunction = !mh.hasProperty(cf, "timingFunction") ?  malo.defaults.timingFunction : cf.timingFunction;
     cf.timingFunction = timingFunction;
-    let hasCallback = maloHelpers.hasProperty(cf, "callback") ?  true : false;
+    let hasCallback = mh.hasProperty(cf, "callback") ?  true : false;
     cf.hasCallback = hasCallback;
     return cf;
 };
@@ -189,75 +193,82 @@ maloHelpers.applyDefaults = function(cf) {
  */
 const maloMethods = {};
 
-maloMethods.sharedIn = function(options, cf) {
+maloMethods.sharedIn = function (options, cf) {
+    let mh = maloHelpers;
+    let me = maloErrors;
     try {
-        if (maloHelpers.isValidConfig(cf)) {
-            cf = maloHelpers.applyDefaults(cf);
-            let el = maloHelpers.getElement(cf.element);
-            if (maloHelpers.isAnimating(el)) { return; }
-            let display = maloHelpers.assignDisplay(cf);
-            maloHelpers.startFrame(el, options.animation, cf, display);
+        if (mh.isValidConfig(cf)) {
+            cf = mh.applyDefaults(cf);
+            let el = mh.getElement(cf.element);
+            if (mh.isAnimating(el)) { return; }
+            let display = mh.assignDisplay(cf);
+            mh.startFrame(el, options.animation, cf, display);
         } else {
-            return maloErrors.logError(maloErrors.notFound);
+            return me.logError(me.notFound);
         }
     } catch(err) {
-        maloErrors.log(err);
+        me.log(err);
     }
 };
 
-maloMethods.sharedOut = function(options, cf) {
+maloMethods.sharedOut = function (options, cf) {
+    let mh = maloHelpers;
+    let me = maloErrors;
     try {
-        if (maloHelpers.isValidConfig(cf)) {
-            cf = maloHelpers.applyDefaults(cf);
-            let el = maloHelpers.getElement(cf.element);
-            if (maloHelpers.isAnimating(el)) { return; }
+        if (mh.isValidConfig(cf)) {
+            cf = mh.applyDefaults(cf);
+            let el = mh.getElement(cf.element);
+            if (mh.isAnimating(el)) { return; }
             let display = 'none';
-            maloHelpers.startFrame(el, options.animation, cf, display);
+            mh.startFrame(el, options.animation, cf, display);
         } else {
-            return maloErrors.logError(maloErrors.notFound);
+            return me.logError(me.notFound);
         }
+    } catch (err) {
+        me.log(err);
+    }
+};
+
+maloMethods.sharedEffect = function (options, cf) {
+    let mh = maloHelpers;
+    try {
+        if (mh.isValidConfig(cf)) {
+            cf = mh.applyDefaults(cf);
+            let el = mh.getElement(cf.element);
+            if (mh.isUsingEffect(el)) { return; }
+        }
+        let el = mh.getElement(cf.element);
+        let display = mh.assignDisplay(cf);
+        mh.startEffect(el, options.effect, cf, display);
     } catch (err) {
         maloErrors.log(err);
     }
 };
 
-maloMethods.sharedEffect = function(options, cf) {
+maloMethods.noAnimation = function (cf) {
+    let mh = maloHelpers;
     try {
-        if (maloHelpers.isValidConfig(cf)) {
-            cf = maloHelpers.applyDefaults(cf);
-            let el = maloHelpers.getElement(cf.element);
-            if (maloHelpers.isUsingEffect(el)) { return; }
-        }
-        let el = maloHelpers.getElement(cf.element);
-        let display = maloHelpers.assignDisplay(cf);
-        maloHelpers.startEffect(el, options.effect, cf, display);
-    } catch (err) {
-        maloErrors.log(err);
-    }
-};
-
-maloMethods.noAnimation = function(cf) {
-    try {
-        if (maloHelpers.isValidConfig(cf)) {
-            let el = maloHelpers.getElement(cf.element);
-            let display = !maloHelpers.hasProperty(cf, "display") ? "block" : cf.display;
-            let hasCallback = maloHelpers.hasProperty(cf, "callback");
+        if (mh.isValidConfig(cf)) {
+            let el = mh.getElement(cf.element);
+            let display = !mh.hasProperty(cf, "display") ? "block" : cf.display;
+            let hasCallback = mh.hasProperty(cf, "callback");
             el.style.display = display;
-            maloHelpers.checkCallback(hasCallback, cf.callback);
+            mh.checkCallback(hasCallback, cf.callback);
         }
     } catch (err) {
         maloErrors.log(err);
     }
 };
 
-maloMethods.noEffect = function(cf) {
+maloMethods.noEffect = function (cf) {
+    let mh = maloHelpers;
     try {
-        if (maloHelpers.isValidConfig(cf)) {
-            let el = maloHelpers.getElement(cf.element);
-            let display = !maloHelpers.hasProperty(cf, "display") ? "block" : T.display;
-            let hasCallback = maloHelpers.hasProperty(cf, "callback");
+        if (mh.isValidConfig(cf)) {
+            let el = mh.getElement(cf.element);
+            let display = !mh.hasProperty(cf, "display") ? "block" : T.display;
+            let hasCallback = mh.hasProperty(cf, "callback");
             el.style.display = display;
-            maloHelpers.checkCallback(hasCallback, cf.callback);
+            mh.checkCallback(hasCallback, cf.callback);
         }
     } catch (err) {
         maloErrors.log(err);
@@ -323,14 +334,17 @@ maloMethods.floatOut = function(cf) {
     }
 };
 
-maloMethods.slideIn = function(cf) {
+maloMethods.slideIn = function (cf) {
+    let me = maloErrors;
+    let mh = maloHelpers;
     try {
-        if (maloHelpers.isValidConfig(cf) && maloHelpers.hasProperty(cf, "axis")) {
-            cf = maloHelpers.applyDefaults(cf);
-            let el = maloHelpers.getElement(cf.element);
-            if (maloHelpers.isAnimating(el)) { return; }
-            let display = maloHelpers.assignDisplay(cf);
+        if (mh.isValidConfig(cf) && mh.hasProperty(cf, "axis")) {
+            cf = mh.applyDefaults(cf);
+            let el = mh.getElement(cf.element);
+            if (mh.isAnimating(el)) { return; }
+            let display = mh.assignDisplay(cf);
             let selectedClass = '';
+            let style = typeof (cf.style) === "undefined" ? "" : "-" + cf.style;
             let clone = document.querySelector('body').cloneNode(true);
             clone.classList.add('malo-hidden');
             document.querySelector('body').appendChild(clone);
@@ -345,27 +359,31 @@ maloMethods.slideIn = function(cf) {
                 el.style.width = getComputedStyle(cloneEl).width;
                 selectedClass = "malo-slide-x-in";
             }
+            if (style !== "") selectedClass = selectedClass + style;
             clone.remove();
-            maloHelpers.startFrame(el, selectedClass, cf, display);
+            mh.startFrame(el, selectedClass, cf, display);
         } else {
-            if (!maloHelpers.hasProperty(cf, "axis")) {
-                return maloErrors.logError(maloErrors.missingAxis);
+            if (!mh.hasProperty(cf, "axis")) {
+                return me.logError(me.missingAxis);
             } else {
-                return maloErrors.logError(maloErrors.notFound);
+                return me.logError(me.notFound);
             }
         }
     } catch (err) {
-        maloErrors.log(err);
+        me.log(err);
     }
 };
 
-maloMethods.slideOut = function(cf) {
+maloMethods.slideOut = function (cf) {
+    let me = maloErrors;
+    let mh = maloHelpers;
     try {
-        if (maloHelpers.isValidConfig(cf) && maloHelpers.hasProperty(cf, "axis")) {
-            cf = maloHelpers.applyDefaults(cf);
-            let el = maloHelpers.getElement(cf.element);
-            if (maloHelpers.isAnimating(el)) { return; }
+        if (mh.isValidConfig(cf) && mh.hasProperty(cf, "axis")) {
+            cf = mh.applyDefaults(cf);
+            let el = mh.getElement(cf.element);
+            if (mh.isAnimating(el)) { return; }
             let selectedClass = "";
+            let style = typeof (cf.style) === "undefined" ? "" : "-" + cf.style;
             if (cf.axis == 'y') {
                 el.style.height = getComputedStyle(el).height;
                 selectedClass = "malo-slide-y-out";
@@ -373,8 +391,9 @@ maloMethods.slideOut = function(cf) {
                 el.style.width = getComputedStyle(el).width;
                 selectedClass = "malo-slide-x-out";
             } else {
-                return maloErrors.logError(maloErrors.invalidAxis);
+                return me.logError(me.invalidAxis);
             }
+            if (style !== "") selectedClass = selectedClass + style;
             function onComplete() {
                 if (cf.axis == 'y') { el.style.height = null }
                 else if (cf.axis == 'x') { el.style.width = null }
@@ -382,20 +401,22 @@ maloMethods.slideOut = function(cf) {
             maloMethods.sharedOut({ animation: selectedClass, onComplete }, cf);
             
         } else {
-            return maloErrors.logError(maloErrors.notFound);
+            return me.logError(me.notFound);
         }
     } catch (err) {
-        maloErrors.log(err);
+        me.log(err);
     }
 };
 
 maloMethods.bubbleIn = function (cf) {
+    let me = maloErrors;
+    let mh = maloHelpers;
     try {
-        if (maloHelpers.isValidConfig(cf)) {
-            cf = maloHelpers.applyDefaults(cf);
-            let el = maloHelpers.getElement(cf.element);
-            if (maloHelpers.isAnimating(el)) { return; }
-            let display = maloHelpers.assignDisplay(cf);
+        if (mh.isValidConfig(cf)) {
+            cf = mh.applyDefaults(cf);
+            let el = mh.getElement(cf.element);
+            if (mh.isAnimating(el)) { return; }
+            let display = mh.assignDisplay(cf);
             let c = 'malo-bubble-in';
             let clone = document.querySelector('body').cloneNode(true);
             clone.classList.add('malo-hidden');
@@ -406,27 +427,28 @@ maloMethods.bubbleIn = function (cf) {
             el.style.height = getComputedStyle(cloneEl).height;
             el.style.width = getComputedStyle(cloneEl).width;
             clone.remove();
-            maloHelpers.startFrame(el, c, cf, display);
+            mh.startFrame(el, c, cf, display);
         } else {
-            if (!maloHelpers.hasProperty(cf, "axis")) {
-                return maloErrors.logError(maloErrors.missingAxis);
+            if (!mh.hasProperty(cf, "axis")) {
+                return me.logError(me.missingAxis);
             } else {
-                return maloErrors.logError(maloErrors.notFound);
+                return me.logError(me.notFound);
             }
         }
     } catch (err) {
-        maloErrors.log(err);
+        me.log(err);
     }
 };
 
 maloMethods.bubbleOut = function (cf) {
+    let me = maloErrors;
+    let mh = maloHelpers;
     try {
-        if (maloHelpers.isValidConfig(cf)) {
-            cf = maloHelpers.applyDefaults(cf);
-            let el = maloHelpers.getElement(cf.element);
-            if (maloHelpers.isAnimating(el)) { return; }
+        if (mh.isValidConfig(cf)) {
+            cf = mh.applyDefaults(cf);
+            let el = mh.getElement(cf.element);
+            if (mh.isAnimating(el)) { return; }
             let c = "malo-bubble-out";
-            //fix height and width
             el.style.width = getComputedStyle(el).width;
             el.style.height = getComputedStyle(el).height;
             function onComplete() {
@@ -435,10 +457,10 @@ maloMethods.bubbleOut = function (cf) {
             }
             maloMethods.sharedOut({ animation: c, onComplete }, cf);
         } else {
-            return maloErrors.logError(maloErrors.notFound);
+            return me.logError(me.notFound);
         }
     } catch (err) {
-        maloErrors.log(err);
+        me.log(err);
     }
 };
 
@@ -458,33 +480,36 @@ maloMethods.bounce = function(cf) {
  * Malo method for animations
  * @param {object} cf
  */
-malo.animate = function(cf) {
+malo.animate = function (cf) {
+    let me = maloErrors;
+    let mh = maloHelpers;
     try {
-        if (maloHelpers.isValidConfig(cf)) {
-            cf = maloHelpers.applyDefaults(cf);
+        if (mh.isValidConfig(cf)) {
+            let mm = maloMethods;
+            cf = mh.applyDefaults(cf);
             if (malo.defaults.useAnimations == false) {
-                return maloMethods.noAnimation(cf);
+                return mm.noAnimation(cf);
             }
             switch (cf.animation) {
-                case "fade-in": maloMethods.fadeIn(cf); break;
-                case "fade-out": maloMethods.fadeOut(cf); break;
-                case "pop-in": maloMethods.popIn(cf); break;
-                case "pop-out": maloMethods.popOut(cf); break;
-                case "bounce-in": maloMethods.bounceIn(cf); break;
-                case "bounce-out": maloMethods.bounceOut(cf); break;
-                case "float-in": maloMethods.floatIn(cf); break;
-                case "float-out": maloMethods.floatOut(cf); break;
-                case "slide-in": maloMethods.slideIn(cf); break;
-                case "slide-out": maloMethods.slideOut(cf); break;
-                case "bubble-in": maloMethods.bubbleIn(cf); break;
-                case "bubble-out": maloMethods.bubbleOut(cf); break;
-                default: return maloErrors.logError(maloErrors.invalidAnmType);
+                case "fade-in": mm.fadeIn(cf); break;
+                case "fade-out": mm.fadeOut(cf); break;
+                case "pop-in": mm.popIn(cf); break;
+                case "pop-out": mm.popOut(cf); break;
+                case "bounce-in": mm.bounceIn(cf); break;
+                case "bounce-out": mm.bounceOut(cf); break;
+                case "float-in": mm.floatIn(cf); break;
+                case "float-out": mm.floatOut(cf); break;
+                case "slide-in": mm.slideIn(cf); break;
+                case "slide-out": mm.slideOut(cf); break;
+                case "bubble-in": mm.bubbleIn(cf); break;
+                case "bubble-out": mm.bubbleOut(cf); break;
+                default: return me.logError(me.invalidAnmType);
             }
         } else {
-            maloErrors.logError(maloErrors.invalidConfig);
+            me.logError(me.invalidConfig);
         }
     } catch(err) {
-        maloErrors.log(err);
+        me.log(err);
     }
 };
 
@@ -492,23 +517,26 @@ malo.animate = function(cf) {
  * Malo method for effects
  * @param {Object} cf
  */
-malo.effect = function(cf) {
+malo.effect = function (cf) {
+    let me = maloErrors;
+    let mh = maloHelpers;
     try {
-        if (maloHelpers.isValidConfig(cf)) {
-            cf = maloHelpers.applyDefaults(cf);
+        if (mh.isValidConfig(cf)) {
+            cf = mh.applyDefaults(cf);
+            let mm = maloMethods;
             if (malo.defaults.useAnimations == false) {
-                return maloMethods.noEffect(cf);
+                return mm.noEffect(cf);
             }
             switch (cf.effect) {
-                case "blink": maloMethods.blink(cf); break;
-                case "jump": maloMethods.jump(cf); break;
-                case "bounce": maloMethods.bounce(cf); break;
-                default: return maloErrors.logError(maloErrors.invalidEffType);
+                case "blink": mm.blink(cf); break;
+                case "jump": mm.jump(cf); break;
+                case "bounce": mm.bounce(cf); break;
+                default: return me.logError(me.invalidEffType);
             }
         } else {
-            maloErrors.logError(maloErrors.invalidConfig);
+            me.logError(me.invalidConfig);
         }
     } catch(err) {
-        maloErrors.log(err);
+        me.log(err);
     }
 };

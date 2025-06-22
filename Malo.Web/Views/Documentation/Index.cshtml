@@ -119,7 +119,7 @@
                     <div class="splitter"></div>
                     <div class="doc-item" id="slide">
                         <div class="doc-item-name">
-                            <p class="text text-color-black">slide</p>
+                            <p class="text text-color-black">slide y</p>
                         </div>
                         <div class="doc-item-fields-container">
                             <p class="text text-color-greyish">Acceptable Fields:</p>
@@ -127,6 +127,7 @@
                                 <div>*animation: string</div>
                                 <div>*element: string</div>
                                 <div>*axis: string</div>
+                                <div>style: string</div>
                                 <div>callback: function</div>
                                 <div>display: string</div>
                                 <div>duration: number</div>
@@ -135,6 +136,7 @@
                         </div>
                         <p class="text text-color-greyish font-size-fine">All fields marked with "*" are required.</p>
                         <p class="text">Slide allows "y" and "x" as values for the "axis" field</p>
+                        <p class="text">Style allows "all" as a value for the "style" field</p>
                         <div class="my-smallest">
                             <p class="text text-color-black">Example "slide-in"</p>
                             <code>
@@ -147,9 +149,67 @@
                                     Try
                                 </button>
                             </div>
+                            <br />
+                            <code>
+                                <span class="c-o">malo</span>.<span class="c-m">animate</span>({ <span class="c-f">element</span>: <span class="c-v">'#doc-modal'</span>, <span class="c-f">animation</span>: <span class="c-v">'slide-in'</span>, <span class="c-f">axis</span>: <span class="c-v">'y'</span>, <span class="c-f">display</span>: <span class="c-v">'flex'</span>,  <span class="c-f">style</span>: <span class="c-v">'all'</span> });
+                            </code>
+                            <div class="my-smallest">
+                                <button type="button" class="btn btn-white"
+                                        onclick="malo.animate({ element: '#doc-modal', animation: 'slide-in', axis: 'y', display: 'flex', style: 'all' });
+                                        docModal.setHideWith({ element: '#doc-modal', animation: 'slide-out', axis: 'y', style: 'all' })">
+                                    Try
+                                </button>
+                            </div>
                             <p class="text text-color-greyish font-size-fine">To hide the element you need to change the animation field value to "slide-out" and remove the display field.</p>
                         </div>
                     </div>
+                    <div class="doc-item" id="slide">
+                        <div class="doc-item-name">
+                            <p class="text text-color-black">slide x</p>
+                        </div>
+                        <div class="doc-item-fields-container">
+                            <p class="text text-color-greyish">Acceptable Fields:</p>
+                            <div class="doc-item-fields">
+                                <div>*animation: string</div>
+                                <div>*element: string</div>
+                                <div>*axis: string</div>
+                                <div>style: string</div>
+                                <div>callback: function</div>
+                                <div>display: string</div>
+                                <div>duration: number</div>
+                                <div>timingFunction: string</div>
+                            </div>
+                        </div>
+                        <p class="text text-color-greyish font-size-fine">All fields marked with "*" are required.</p>
+                        <p class="text">Slide allows "y" and "x" as values for the "axis" field</p>
+                        <p class="text">Style allows "all" as a value for the "style" field</p>
+                        <div class="my-smallest">
+                            <p class="text text-color-black">Example "slide-in"</p>
+                            <code>
+                                <span class="c-o">malo</span>.<span class="c-m">animate</span>({ <span class="c-f">element</span>: <span class="c-v">'#doc-modal'</span>, <span class="c-f">animation</span>: <span class="c-v">'slide-in'</span>, <span class="c-f">axis</span>: <span class="c-v">'x'</span>, <span class="c-f">display</span>: <span class="c-v">'flex'</span> });
+                            </code>
+                            <div class="my-smallest">
+                                <button type="button" class="btn btn-white"
+                                        onclick="malo.animate({ element: '#doc-modal', animation: 'slide-in', axis: 'x', display: 'flex' });
+                                        docModal.setHideWith({ element: '#doc-modal', animation: 'slide-out', axis: 'x' })">
+                                    Try
+                                </button>
+                            </div>
+                            <br />
+                            <code>
+                                <span class="c-o">malo</span>.<span class="c-m">animate</span>({ <span class="c-f">element</span>: <span class="c-v">'#doc-modal'</span>, <span class="c-f">animation</span>: <span class="c-v">'slide-in'</span>, <span class="c-f">axis</span>: <span class="c-v">'x'</span>, <span class="c-f">display</span>: <span class="c-v">'flex'</span>, <span class="c-f">style</span>: <span class="c-v">'all'</span> });
+                            </code>
+                            <div class="my-smallest">
+                                <button type="button" class="btn btn-white"
+                                        onclick="malo.animate({ element: '#doc-modal', animation: 'slide-in', axis: 'x', display: 'flex', style: 'all' });
+                                        docModal.setHideWith({ element: '#doc-modal', animation: 'slide-out', axis: 'x', style: 'all' })">
+                                    Try
+                                </button>
+                            </div>
+                            <p class="text text-color-greyish font-size-fine">To hide the element you need to change the animation field value to "slide-out" and remove the display field.</p>
+                        </div>
+                    </div>
+
                     <div class="splitter"></div>
                     <div class="doc-item" id="float">
                         <div class="doc-item-name">

@@ -16,9 +16,10 @@
 }
 
 .doc-item {
+    padding: $size-max 0;
+
     .doc-item-name {
-        font-size: 18px;
-        font-weight: bold;
+        font-size: 26px;
     }
 
     .doc-item-fields-container {

@@ -90,9 +90,19 @@ $default-duration: 500ms;
     animation-name: malo-frame-slide-x-in;
 }
 
+.malo-slide-x-in-all {
+    @extend .extend-animation-defaults;
+    animation-name: malo-frame-slide-x-in-all;
+}
+
 .malo-slide-y-in {
     @extend .extend-animation-defaults;
     animation-name: malo-frame-slide-y-in;
+}
+
+.malo-slide-y-in-all {
+    @extend .extend-animation-defaults;
+    animation-name: malo-frame-slide-y-in-all;
 }
 
 .malo-slide-x-out {
@@ -101,9 +111,21 @@ $default-duration: 500ms;
     overflow-x: hidden;
 }
 
+.malo-slide-x-out-all {
+    @extend .extend-animation-defaults;
+    animation-name: malo-frame-slide-x-out-all;
+    overflow-x: hidden;
+}
+
 .malo-slide-y-out {
     @extend .extend-animation-defaults;
     animation-name: malo-frame-slide-y-out;
+    overflow-y: hidden;
+}
+
+.malo-slide-y-out-all {
+    @extend .extend-animation-defaults;
+    animation-name: malo-frame-slide-y-out-all;
     overflow-y: hidden;
 }
 

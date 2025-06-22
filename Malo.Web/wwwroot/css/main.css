@@ -126,6 +126,14 @@ html.dark .splitter {
   background-color: #333;
 }
 
+header {
+  position: sticky;
+  top: -2px;
+  left: 0;
+  right: 0;
+  z-index: 4;
+}
+
 nav {
   border-bottom: 1px solid #eee;
   background-color: white;
@@ -294,8 +302,8 @@ html.dark .nav-icon-container:hover {
 }
 .btn {
   background-color: black;
-  border-radius: 8px;
-  font-size: 13px;
+  border-radius: 12px;
+  font-size: 14px;
   border: 1px solid black;
   color: white;
   padding: 8px 16px;
@@ -342,7 +350,7 @@ html.dark .btn-white:is(:hover, :active, :focus, :visited) {
 code {
   padding: 16px;
   border: 1px solid #eee;
-  border-radius: 8px;
+  border-radius: 16px;
   display: block;
   background-color: white;
   color: #666;
@@ -515,7 +523,7 @@ html.dark .modal .modal-body {
   text-align: center;
   max-width: 412px;
   box-sizing: border-box;
-  border-radius: 16px;
+  border-radius: 32px;
   flex-direction: column;
   gap: 16px;
   margin: 16px auto;
@@ -585,9 +593,11 @@ html.dark .card-benefit {
   font-weight: bold;
 }
 
+.doc-item {
+  padding: 32px 0;
+}
 .doc-item .doc-item-name {
-  font-size: 18px;
-  font-weight: bold;
+  font-size: 26px;
 }
 .doc-item .doc-item-fields-container {
   display: flex;

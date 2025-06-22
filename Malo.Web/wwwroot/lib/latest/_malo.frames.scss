@@ -190,8 +190,38 @@ $translate-pop-y-by: 50vh;
     }
 }
 
+@keyframes malo-frame-slide-x-in-all {
+    0% {
+        transform: scaleY(0px);
+        width: 0px;
+        padding-right: 0px;
+        padding-left: 0px;
+        margin-right: 0px;
+        margin-left: 0px;
+        overflow-x: hidden;
+        border-right-width: 0px;
+        border-left-width: 0px;
+        opacity: 0;
+    }
+}
+
 @keyframes malo-frame-slide-y-in {
     0% {
+        height: 0px;
+        padding-top: 0px;
+        padding-bottom: 0px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        overflow-y: hidden;
+        border-top-width: 0px;
+        border-bottom-width: 0px;
+        opacity: 0;
+    }
+}
+
+@keyframes malo-frame-slide-y-in-all {
+    0% {
+        transform: scaleX(0px);
         height: 0px;
         padding-top: 0px;
         padding-bottom: 0px;
@@ -218,8 +248,38 @@ $translate-pop-y-by: 50vh;
     }
 }
 
+@keyframes malo-frame-slide-x-out-all {
+    100% {
+        transform: scaleY(0px);
+        width: 0px;
+        overflow-x: hidden;
+        padding-right: 0px;
+        padding-left: 0px;
+        margin-right: 0px;
+        margin-left: 0px;
+        border-right-width: 0px;
+        border-left-width: 0px;
+        opacity: 0;
+    }
+}
+
 @keyframes malo-frame-slide-y-out {
     100% {
+        height: 0px;
+        overflow-y: hidden;
+        padding-top: 0px;
+        padding-bottom: 0px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        border-top-width: 0px;
+        border-bottom-width: 0px;
+        opacity: 0;
+    }
+}
+
+@keyframes malo-frame-slide-y-out-all {
+    100% {
+        transform: scaleX(0px);
         height: 0px;
         overflow-y: hidden;
         padding-top: 0px;
