@@ -1,6 +1,6 @@
 'use strict'
 /*!
-    *Malo JS v1.3.0
+    *Malo JS v1.3.1
     *(c) 2024 Joseph Morukhuladi
     *Licensed under MIT (https://malo-library.com/license)
 */
@@ -76,6 +76,7 @@ maloHelpers.isValidElement = function(el) {
 };
 
 maloHelpers.startFrame = function(el, cls, cf, display) {
+    if (el.style.display == display) return;
     el.style.animationDuration = `${cf.duration}ms`;
     el.style.animationTimingFunction = cf.timingFunction;
 
