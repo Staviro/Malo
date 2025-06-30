@@ -31,6 +31,10 @@ html.dark {
   color: black;
 }
 
+.text-color-white {
+  color: white;
+}
+
 .text-color-greyish {
   color: #555;
 }
@@ -627,6 +631,13 @@ html.dark .doc-item .doc-item-fields div {
   gap: 12px;
 }
 
+.history-item {
+  padding: 20px;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  background-color: white;
+}
+
 .history-item-date {
   font-weight: 600;
   font-size: 18px;
@@ -653,6 +664,30 @@ html.dark .doc-item .doc-item-fields div {
 .history-item-type.minor {
   background-color: #383;
   color: white;
+}
+
+html.dark .history-item {
+  border: 1px solid #222;
+  background-color: black;
+}
+
+#modules {
+  background-image: linear-gradient(-122deg, #55F, #FAFAFA);
+  margin: 32px 0;
+}
+
+.modules-content {
+  padding: 32px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: rgba(0, 0, 0, 0.15);
+}
+.modules-content p {
+  color: white;
+}
+
+html.dark #modules {
+  background-image: linear-gradient(-122deg, #55F, #0A0A0A);
 }
 
 #ex-registration {

@@ -1,0 +1,8 @@
+﻿@import '../../shared/_variables.scss';
+
+html.dark {
+    .history-item {
+        border: 1px solid #222;
+        background-color: black;
+    }
+}

@@ -6,6 +6,13 @@
     gap: $size-small;
 }
 
+.history-item {
+    padding: $size-large;
+    border: 1px solid #eee;
+    border-radius: $size-smaller;
+    background-color: white;
+}
+
 .history-item-date {
     font-weight: 600;
     font-size: 18px;
@@ -36,3 +43,5 @@
         color: white;
     }
 }
+
+@import './_history.dark.scss';

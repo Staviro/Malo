@@ -1,0 +1,7 @@
+﻿@import '../../shared/_variables.scss';
+
+html.dark {
+    #modules {
+        background-image: linear-gradient(-122deg, $color-primary, #0A0A0A);
+    }
+}
