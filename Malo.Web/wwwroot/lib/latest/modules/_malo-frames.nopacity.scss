@@ -34,8 +34,8 @@ $translate-pop-y-by: 50vh;
 
 @keyframes malo-frame-pop-in {
     0% {
-        transform: scale(80%);
-        -webkit-transform: scale(80%);
+        transform: scale(0%);
+        -webkit-transform: scale(0%);
     }
 
     100% {
@@ -46,8 +46,8 @@ $translate-pop-y-by: 50vh;
 
 @keyframes malo-frame-pop-in-down {
     0% {
-        transform: translateY(-50%) scale(80%);
-        -webkit-transform: translateY(-50%) scale(80%);
+        transform: translateY(-50%) scale(0%);
+        -webkit-transform: translateY(-50%) scale(0%);
     }
 
     100% {
@@ -59,8 +59,8 @@ $translate-pop-y-by: 50vh;
 @keyframes malo-frame-pop-in-up {
     0% {
         opacity: 0;
-        transform: translateY(50%) scale(80%);
-        -webkit-transform: translateY(50%) scale(80%);
+        transform: translateY(50%) scale(0%);
+        -webkit-transform: translateY(50%) scale(0%);
     }
 
     100% {
@@ -71,8 +71,8 @@ $translate-pop-y-by: 50vh;
 
 @keyframes malo-frame-pop-in-left {
     0% {
-        transform: translateX(50%) scale(80%);
-        -webkit-transform: translateX(50%) scale(80%);
+        transform: translateX(50%) scale(0%);
+        -webkit-transform: translateX(50%) scale(0%);
     }
 
     100% {
@@ -83,8 +83,8 @@ $translate-pop-y-by: 50vh;
 
 @keyframes malo-frame-pop-in-right {
     0% {
-        transform: translateX(-50%) scale(80%);
-        -webkit-transform: translateX(-50%) scale(80%);
+        transform: translateX(-50%) scale(0%);
+        -webkit-transform: translateX(-50%) scale(0%);
     }
 
     100% {
@@ -95,37 +95,37 @@ $translate-pop-y-by: 50vh;
 
 @keyframes malo-frame-pop-out {
     100% {
-        transform: scale(80%);
-        -webkit-transform: scale(80%);
+        transform: scale(0%);
+        -webkit-transform: scale(0%);
     }
 }
 
 @keyframes malo-frame-pop-out-down {
     100% {
-        transform: translateY(-50%) scale(80%);
-        -webkit-transform: translateY(-50%) scale(80%);
+        transform: translateY(-50%) scale(0%);
+        -webkit-transform: translateY(-50%) scale(0%);
     }
 }
 
 @keyframes malo-frame-pop-out-up {
     100% {
         opacity: 0;
-        transform: translateY(50%) scale(80%);
-        -webkit-transform: translateY(50%) scale(80%);
+        transform: translateY(50%) scale(0%);
+        -webkit-transform: translateY(50%) scale(0%);
     }
 }
 
 @keyframes malo-frame-pop-out-left {
     100% {
-        transform: translateX(50%) scale(80%);
-        -webkit-transform: translateX(50%) scale(80%);
+        transform: translateX(50%) scale(0%);
+        -webkit-transform: translateX(50%) scale(0%);
     }
 }
 
 @keyframes malo-frame-pop-out-right {
     100% {
-        transform: translateX(-50%) scale(80%);
-        -webkit-transform: translateX(-50%) scale(80%);
+        transform: translateX(-50%) scale(0%);
+        -webkit-transform: translateX(-50%) scale(0%);
     }
 }
 
@@ -159,9 +159,13 @@ $translate-pop-y-by: 50vh;
 
 
 @keyframes malo-frame-bounce-out {
+    25% {
+        transform: scale(120%);
+        -webkit-transform: scale(120%);
+    }
     100% {
-        transform: scale(80%);
-        -webkit-transform: scale(80%);
+        transform: scale(0%);
+        -webkit-transform: scale(0%);
     }
 }
 

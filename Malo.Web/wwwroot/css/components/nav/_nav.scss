@@ -5,7 +5,7 @@ header {
     top: -2px;
     left: 0;
     right: 0;
-    z-index: 4;
+    z-index: 3;
 }
 nav {
     border-bottom: 1px solid #eee;
@@ -21,7 +21,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: $size-default;
+    padding: $size-smaller $size-default;
 }
 
 .nav-links-li {
@@ -36,7 +36,6 @@ nav {
             padding: $size-smallest $size-smallest;
             color: #555;
             text-decoration: none;
-            font-weight: 500;
             font-size: 14px;
 
             &:hover {
@@ -66,19 +65,18 @@ nav {
 }
 
 .nav-icon-container {
-    background-color: black;
+    background-color: #eee;
     padding: 8px;
-    border-radius: $size-smaller;
+    border-radius: $size-small;
     display: flex;
     cursor: pointer;
 
     &.icon-menu {
         display: none;
-        background-color: black;
     }
-    
+
     &:hover {
-        background-color: #222;
+        background-color: #ccc;
     }
 }
 @import './_nav.mobile.scss';

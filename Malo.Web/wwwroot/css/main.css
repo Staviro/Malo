@@ -135,7 +135,7 @@ header {
   top: -2px;
   left: 0;
   right: 0;
-  z-index: 4;
+  z-index: 3;
 }
 
 nav {
@@ -152,7 +152,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 16px;
+  padding: 8px 16px;
 }
 
 .nav-links-li {
@@ -166,7 +166,6 @@ nav {
   padding: 4px 4px;
   color: #555;
   text-decoration: none;
-  font-weight: 500;
   font-size: 14px;
 }
 .nav-links-li li a:hover {
@@ -193,18 +192,17 @@ nav {
 }
 
 .nav-icon-container {
-  background-color: black;
+  background-color: #eee;
   padding: 8px;
-  border-radius: 8px;
+  border-radius: 12px;
   display: flex;
   cursor: pointer;
 }
 .nav-icon-container.icon-menu {
   display: none;
-  background-color: black;
 }
 .nav-icon-container:hover {
-  background-color: #222;
+  background-color: #ccc;
 }
 
 .mobile-nav {
@@ -233,7 +231,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 16px;
+  padding: 12px 16px;
   box-sizing: border-box;
 }
 
@@ -284,6 +282,9 @@ html.dark .nav-splitter {
 }
 html.dark .nav-icon-container {
   background-color: #333;
+}
+html.dark .nav-icon-container img {
+  filter: invert(0);
 }
 html.dark .nav-icon-container.icon-menu {
   background-color: transparent;
@@ -439,9 +440,10 @@ html.dark footer {
   align-items: center;
   padding: 16px;
   box-sizing: border-box;
-  width: 100vw;
-  height: 100vh;
+  width: 100dvw;
+  height: 100dvh;
   background-color: rgba(0, 0, 0, 0.1);
+  z-index: 5;
 }
 .modal .modal-content {
   max-width: 480px;
@@ -655,6 +657,7 @@ html.dark .doc-item .doc-item-fields div {
   padding: 2px 16px;
   border-radius: 16px;
   background-color: rgba(136, 136, 136, 0.1);
+  font-size: 13px;
 }
 
 .history-item-type.bug {
@@ -672,22 +675,21 @@ html.dark .history-item {
 }
 
 #modules {
-  background-image: linear-gradient(-122deg, #55F, #FAFAFA);
+  background-image: linear-gradient(-122deg, #55F, #43a, #338faa, #FAFAFA);
   margin: 32px 0;
 }
 
 .modules-content {
   padding: 32px;
-  border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  background-color: rgba(0, 0, 0, 0.15);
+  border-radius: 32px;
+  background-color: rgba(0, 0, 0, 0.2);
 }
 .modules-content p {
   color: white;
 }
 
 html.dark #modules {
-  background-image: linear-gradient(-122deg, #55F, #0A0A0A);
+  background-image: linear-gradient(-122deg, #55F, #43a, #6e33aa, #338faa, #0a0a0a);
 }
 
 #ex-registration {

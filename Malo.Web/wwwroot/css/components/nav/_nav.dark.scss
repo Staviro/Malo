@@ -25,6 +25,9 @@ html.dark {
     .nav-icon-container {
         background-color: #333;
 
+        img {
+            filter: invert(0);
+        }
         &.icon-menu {
             background-color: transparent;
             outline: 1px solid #222;
