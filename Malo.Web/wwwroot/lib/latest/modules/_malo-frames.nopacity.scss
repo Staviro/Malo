@@ -1,31 +1,26 @@
 ﻿/*
     Added: 2025/06/30
+    Last Update: 2025/08/05
     Title: Nopacity
-    Description: This modules removes opacity from all keyframes excluding fade
+    Description: This modules removes opacity from all keyframes excluding fade. Also adjusts the starting and endings points of animations to 0% scale, 0px height, 0px width.
 */
 @keyframes malo-frame-fade-in {
     0% {
-        filter: opacity(0);
-        -webkit-filter: opacity(0);
         opacity: 0;
     }
 
     100% {
-        filter: opacity(1);
-        -webkit-filter: opacity(1);
         opacity: 1;
     }
 }
 
 @keyframes malo-frame-fade-out {
     0% {
-        filter: opacity(1);
-        -webkit-filter: opacity(1);
+        opacity: 1;
     }
 
     100% {
-        filter: opacity(0);
-        -webkit-filter: opacity(0);
+        opacity: 0;
     }
 }
 

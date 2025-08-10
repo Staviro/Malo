@@ -10,13 +10,35 @@
             <div class="history-list">
                 <div class="history-item">
                     <div class="history-item-header">
+                        <p class="history-item-date">2025 August 10</p>
+                        <p class="history-item-type major">Major Release</p>
+                        <p class="history-item-version">2.0</p>
+                    </div>
+                    <p class="text">Changes include</p>
+                    <ul>
+                        <li>New: HTML Elements can be passed as a value for the "element" key in the <b>animate</b> and <b>effect</b> functions.</li>
+                        <li>New: Allowing <b>delay</b> key for animate method.</li>
+                        <li>
+                            New: <b>slide-in</b> animation now requires both the <b>element</b> and  <b>elementSelector</b> keys, where "element"
+                            can be a selector string or an HTML Element, "elementSelector" will be a string representing the query selector.
+                        <li>Improvemet: Updated <b>pop</b> animation key frames to start and stop from scale of 0%.</li>
+                        <li>Improvemet: Removing <b>filter: opacity()</b> from all keyframes and using only the <b>"opacity"</b> property to resolve animations failing to start on certain operations and reduce browser computation for animations.</li>
+                    </ul>
+                    Breaking changes
+                    <ul>
+                        <li>For applications using any variant of version 1, the <b>slide-in</b> animation will need to be updated to include the <b>elementSelector</b> key.</li>
+                    </ul>
+                </div>
+
+                <div class="history-item">
+                    <div class="history-item-header">
                         <p class="history-item-date">2025 June 25</p>
                         <p class="history-item-type bug">Bug Fix</p>
                         <p class="history-item-version">1.3.1</p>
                     </div>
                     <p class="text">Changes include</p>
                     <ul>
-                        <li>Bug Fix:  Prevent animations on startFrame function when the element has the same display value as the passed display value</li>
+                        <li>Bug Fix:  Prevent animations on startFrame function when the element has the same display value as the passed display value.</li>
                     </ul>
                 </div>
                 <div class="history-item">
@@ -27,9 +49,9 @@
                     </div>
                     <p class="text">Changes include</p>
                     <ul>
-                        <li>New:  Adding "style" field for slide animation</li>
-                        <li>New:  Adding "suppressErrors" property to malo.defaults object</li>
-                        <li>Improvement:  Using short variable alias' to reduce malo.js file size</li>
+                        <li>New:  Adding "style" field for slide animation.</li>
+                        <li>New:  Adding "suppressErrors" property to malo.defaults object.</li>
+                        <li>Improvement:  Using short variable alias' to reduce malo.js file size.</li>
                     </ul>
                 </div>
                 <div class="history-item">
@@ -40,7 +62,7 @@
                     </div>
                     <p class="text">Changes include</p>
                     <ul>
-                        <li>Improvement: Using more robust key frames for "float-in" animation bounce variations</li>
+                        <li>Improvement: Using more robust key frames for "float-in" animation bounce variations.</li>
                     </ul>
                 </div>
 
@@ -53,7 +75,7 @@
                     <p class="text">Changes include</p>
                     <ul>
                         <li>New: Adding new animation "bubble"</li>
-                        <li>Bug: Fixing invalid object reference in float in function when using the "style" field</li>
+                        <li>Bug: Fixing invalid object reference in float in function when using the "style" field.</li>
                     </ul>
                 </div>
                 <div class="history-item">
@@ -62,7 +84,7 @@
                         <p class="history-item-type">Release</p>
                         <p class="history-item-version">1.0</p>
                     </div>
-                    <p class="text">Record of the first release of Malo JS</p>
+                    <p class="text">Record of the first release of Malo JS.</p>
                 </div>
             </div>
         </div>

@@ -1,26 +1,20 @@
 @keyframes malo-frame-fade-in {
     0% {
-        filter: opacity(0);
-        -webkit-filter: opacity(0);
         opacity: 0;
     }
 
     100% {
-        filter: opacity(1);
-        -webkit-filter: opacity(1);
         opacity: 1;
     }
 }
 
 @keyframes malo-frame-fade-out {
     0% {
-        filter: opacity(1);
-        -webkit-filter: opacity(1);
+        opacity: 1;
     }
 
     100% {
-        filter: opacity(0);
-        -webkit-filter: opacity(0);
+        opacity: 0;
     }
 }
 
@@ -29,8 +23,8 @@ $translate-pop-y-by: 50vh;
 @keyframes malo-frame-pop-in {
     0% {
         opacity: 0;
-        transform: scale(80%);
-        -webkit-transform: scale(80%);
+        transform: scale(0%);
+        -webkit-transform: scale(0%);
     }
 
     100% {
@@ -43,8 +37,8 @@ $translate-pop-y-by: 50vh;
 @keyframes malo-frame-pop-in-down {
     0% {
         opacity: 0;
-        transform: translateY(-50%) scale(80%);
-        -webkit-transform: translateY(-50%) scale(80%);
+        transform: translateY(-100dvh) scale(0%);
+        -webkit-transform: translateY(-100dvh) scale(0%);
     }
 
     100% {
@@ -57,8 +51,8 @@ $translate-pop-y-by: 50vh;
 @keyframes malo-frame-pop-in-up {
     0% {
         opacity: 0;
-        transform: translateY(50%) scale(80%);
-        -webkit-transform: translateY(50%) scale(80%);
+        transform: translateY(100dvh) scale(0%);
+        -webkit-transform: translateY(100dvh) scale(0%);
     }
 
     100% {
@@ -71,68 +65,68 @@ $translate-pop-y-by: 50vh;
 @keyframes malo-frame-pop-in-left {
     0% {
         opacity: 0;
-        transform: translateX(50%) scale(80%);
-        -webkit-transform: translateX(50%) scale(80%);
+        transform: translateX(100dvw) scale(0%);
+        -webkit-transform: translateX(100dvw) scale(0%);
     }
 
     100% {
         opacity: 1;
-        transform: translateY(0%) scale(100%);
-        -webkit-transform: translateY(0%) scale(100%);
+        transform: translateX(0%) scale(100%);
+        -webkit-transform: translateX(0%) scale(100%);
     }
 }
 
 @keyframes malo-frame-pop-in-right {
     0% {
         opacity: 0;
-        transform: translateX(-50%) scale(80%);
-        -webkit-transform: translateX(-50%) scale(80%);
+        transform: translateX(-100dvw) scale(0%);
+        -webkit-transform: translateX(-100dvw) scale(0%);
     }
 
     100% {
         opacity: 1;
-        transform: translateY(0%) scale(100%);
-        -webkit-transform: translateY(0%) scale(100%);
+        transform: translateX(0%) scale(100%);
+        -webkit-transform: translateX(0%) scale(100%);
     }
 }
 
 @keyframes malo-frame-pop-out {
     100% {
         opacity: 0;
-        transform: scale(80%);
-        -webkit-transform: scale(80%);
+        transform: scale(0%);
+        -webkit-transform: scale(0%);
     }
 }
 
 @keyframes malo-frame-pop-out-down {
     100% {
         opacity: 0;
-        transform: translateY(-50%) scale(80%);
-        -webkit-transform: translateY(-50%) scale(80%);
+        transform: translateY(-100dvh) scale(0%);
+        -webkit-transform: translateY(-100dvh) scale(0%);
     }
 }
 
 @keyframes malo-frame-pop-out-up {
     100% {
         opacity: 0;
-        transform: translateY(50%) scale(80%);
-        -webkit-transform: translateY(50%) scale(80%);
+        transform: translateY(100dvh) scale(0%);
+        -webkit-transform: translateY(100dvh) scale(0%);
     }
 }
 
 @keyframes malo-frame-pop-out-left {
     100% {
         opacity: 0;
-        transform: translateX(50%) scale(80%);
-        -webkit-transform: translateX(50%) scale(80%);
+        transform: translateX(100dvw) scale(0%);
+        -webkit-transform: translateX(100dvw) scale(0%);
     }
 }
 
 @keyframes malo-frame-pop-out-right {
     100% {
         opacity: 0;
-        transform: translateX(-50%) scale(80%);
-        -webkit-transform: translateX(-50%) scale(80%);
+        transform: translateX(-100dvw) scale(0%);
+        -webkit-transform: translateX(-100dvw) scale(0%);
     }
 }
 
@@ -140,8 +134,8 @@ $translate-pop-y-by: 50vh;
 @keyframes malo-frame-bounce-in {
     0% {
         opacity: 0;
-        transform: scale(60%);
-        -webkit-transform: scale(60%);
+        transform: scale(0%);
+        -webkit-transform: scale(0%);
     }
 
     25% {
@@ -170,8 +164,8 @@ $translate-pop-y-by: 50vh;
 @keyframes malo-frame-bounce-out {
     100% {
         opacity: 0;
-        transform: scale(80%);
-        -webkit-transform: scale(80%);
+        transform: scale(0%);
+        -webkit-transform: scale(0%);
     }
 }
 
@@ -540,7 +534,6 @@ $bubble-base-size: 0px;
 @keyframes malo-frame-bubble-in {
     0% {
         opacity: 0;
-        filter: opacity(0);
         width: $bubble-base-size;
         height: $bubble-base-size;
         min-width: $bubble-base-size;
@@ -552,7 +545,6 @@ $bubble-base-size: 0px;
 @keyframes malo-frame-bubble-out {
     100% {
         opacity: 0;
-        filter: opacity(0);
         max-width: $bubble-base-size;
         max-height: $bubble-base-size;
         width: $bubble-base-size;

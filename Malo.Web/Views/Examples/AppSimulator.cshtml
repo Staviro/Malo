@@ -1,0 +1,131 @@
+﻿<div class="app-shell">
+    <div>Click on each of the app icons to see different animations</div>
+    <br>
+    <div class="app-grid">
+        <div class="app-item" onclick="sim.openDefault('Camera')">
+            <div class="app-icon"></div>
+            <div class="app-name">Camera</div>
+        </div>
+        <div class="app-item" onclick="sim.openDefault('Translator', { element: '#overlay-shell-default', animation: 'float-in', direction: 'right' })">
+            <div class="app-icon"></div>
+            <div class="app-name">Translator</div>
+        </div>
+        <div class="app-item" onclick="sim.openCustom('#overlay-shell-settings')">
+            <div class="app-icon"></div>
+            <div class="app-name">Settings</div>
+        </div>
+        <div class="app-item" onclick="sim.openDefault('Music', { element: '#overlay-shell-default', animation: 'float-in', direction: 'left' })">
+            <div class="app-icon"></div>
+            <div class="app-name">Music</div>
+        </div>
+        <div class="app-item" onclick="sim.openDefault('Health', { element: '#overlay-shell-default', animation: 'float-in', direction: 'up' })">
+            <div class="app-icon"></div>
+            <div class="app-name">Health</div>
+        </div>
+        <div class="app-item" onclick="sim.openDefault('Calender', { element: '#overlay-shell-default', animation: 'float-in', direction: 'down' })">
+            <div class="app-icon"></div>
+            <div class="app-name">Calender</div>
+        </div>
+        <div class="app-item" onclick="sim.openDefault('Store', { element: '#overlay-shell-default', animation: 'fade-in' })">
+            <div class="app-icon"></div>
+            <div class="app-name">Store</div>
+        </div>
+        <div class="app-item" onclick="sim.openDefault('Wallet', { element: '#overlay-shell-default', animation: 'slide-in', axis: 'x', elementSelector: '#overlay-shell-default'})">
+            <div class="app-icon"></div>
+            <div class="app-name">Wallet</div>
+        </div>
+        <div class="app-item" onclick="sim.openDefault('Notes', { element: '#overlay-shell-default', animation: 'slide-in', axis: 'x', elementSelector: '#overlay-shell-default', style: 'all'})">
+            <div class="app-icon"></div>
+            <div class="app-name">Notes</div>
+        </div>
+        <div class="app-item" onclick="sim.openDefault('Mail', { element: '#overlay-shell-default', animation: 'slide-in', axis: 'y', elementSelector: '#overlay-shell-default' })">
+            <div class="app-icon"></div>
+            <div class="app-name">Mail</div>
+        </div>
+        <div class="app-item" onclick="sim.openDefault('Home', { element: '#overlay-shell-default', animation: 'slide-in', axis: 'y', elementSelector: '#overlay-shell-default', style: 'all' })">
+            <div class="app-icon"></div>
+            <div class="app-name">Home</div>
+        </div>
+        <div class="app-item" onclick="sim.openDefault('Fitness')">
+            <div class="app-icon"></div>
+            <div class="app-name">Fitness</div>
+        </div>
+        <div class="app-item" onclick="sim.openDefault('Map')">
+            <div class="app-icon"></div>
+            <div class="app-name">Map</div>
+        </div>
+    </div>
+    <div class="overlay-shell" id="overlay-shell-default">
+        <div class="overlay-shell-header">
+             <div class="overlay-shell-name">Settings</div>
+            <div onclick="sim.closeDefault()" class="overlay-shell-back">< back</div>
+        </div>
+        <div class="overlay-shell-body">
+            <div class="overlay-shell-body-name">Settings</div>
+        </div>
+    </div>
+    <div class="overlay-shell" id="overlay-shell-settings">
+        <div class="overlay-shell-header">
+            <div onclick="sim.closeCustom('#overlay-shell-settings')" class="overlay-shell-back">< back</div>
+            <div class="overlay-shell-name">Settings</div>
+        </div>
+        <div class="overlay-shell-body">
+            <div class="shell-settings">
+                <div class="shell-settings-item">Wi-Fi</div>
+                <div class="shell-settings-item">Bluetooth</div>
+                <div class="shell-settings-item">Network</div>
+            </div>
+            <div class="shell-settings">
+                <div class="shell-settings-item">General</div>
+            </div>
+            <div class="shell-settings">
+                <div class="shell-settings-item">Display</div>
+                <div class="shell-settings-item">Battery</div>
+            </div>
+            <div class="shell-settings">
+                <div class="shell-settings-item">About</div>
+                <div class="shell-settings-item">Software</div>
+                <div class="shell-settings-item">Options</div>
+            </div>
+        </div>
+    </div>
+</div>
+<script async>
+    window.addEventListener("load", function() {
+        let appItems = document.querySelectorAll(".app-item");
+        let delay = 0;
+        appItems.forEach(function(ai) {
+            malo.animate({ element: ai, animation: "pop-in", style: "up ", display: "block", delay});
+            delay += 50;
+        });
+    });
+
+    const sim = {
+        openDefault(title, props = null) {
+            document.querySelector("#overlay-shell-default .overlay-shell-name").textContent = title;
+            document.querySelector("#overlay-shell-default .overlay-shell-body-name").textContent = title;
+            if (props != null) malo.animate(props);
+            else malo.animate({ element: "#overlay-shell-default", animation: "pop-in" });
+            
+        },
+        closeDefault() {
+            malo.animate({ element: '#overlay-shell-default', animation: 'pop-out' });
+        },
+        openCustom(selector) {
+            let el =document.querySelector(selector);
+            let delay = 100;
+            let children = el.children;
+            for(let i = 0; i < children.length; i++) {
+                children[i].style.display = "none";
+            }
+            malo.animate({ element: selector, animation: "pop-in" });
+            for(let i = 0; i < children.length; i++) {
+                malo.animate({ element: children[i], animation: "pop-in", delay });
+                delay += 100;
+            }
+        },
+        closeCustom(selector) {
+            malo.animate({ element: selector, animation: "pop-out" });
+        }
+    }
+</script>

@@ -1,6 +1,6 @@
 'use strict'
 /*!
-    *Malo JS v1.3.1
+    *Malo JS v2.0
     *(c) 2024 Joseph Morukhuladi
     *Licensed under MIT (https://malo-library.com/license)
 */
@@ -70,28 +70,32 @@ malo.defaults = {
  */
 const maloHelpers = {};
 
-maloHelpers.isValidElement = function(el) {
+maloHelpers.isValidElement = function (el) {
+    if (typeof (el) === "object") return true;
     let _el = document.querySelector(el);
     return _el != null && _el != undefined && _el != '';
 };
 
-maloHelpers.startFrame = function(el, cls, cf, display) {
-    if (el.style.display == display) return;
-    el.style.animationDuration = `${cf.duration}ms`;
-    el.style.animationTimingFunction = cf.timingFunction;
+maloHelpers.startFrame = function (el, cls, cf, display) {
+    if (el.style.display == display || (getComputedStyle(el).display == "none" && display == "none")) return;
+    let delay = setTimeout(function () {
+        el.style.animationDuration = `${cf.duration}ms`;
+        el.style.animationTimingFunction = cf.timingFunction;
+        el.setAttribute("is-malo-animating", 'true');
+        el.classList.add(cls);
+        if (display != 'none') { el.style.display = display; }
 
-    if (display != 'none') { el.style.display = display; }
-    el.classList.add(cls);
-    el.setAttribute("is-malo-animating", 'true');
-
-    el.onanimationend = function() {
-        if (display == 'none') el.style.display = 'none';
-        if (typeof(cf.onComplete) !== 'undefined') cf.onComplete(); 
-        maloHelpers.checkCallback(cf.hasCallback, cf.callback);
-        maloHelpers.endFrame(el, cls);
-        el.style.height = null;
-        el.style.width = null;
-    }
+        el.onanimationend = function () {
+            if (display == 'none') el.style.display = 'none';
+            if (typeof (cf.onComplete) !== 'undefined') cf.onComplete();
+            maloHelpers.checkCallback(cf.hasCallback, cf.callback);
+            maloHelpers.endFrame(el, cls);
+            el.style.height = null;
+            el.style.width = null;
+        }
+        clearTimeout(delay);
+    }, cf.delay);
+    
 };
 
 maloHelpers.startEffect = function(el, cls, cf, display) {
@@ -146,7 +150,9 @@ maloHelpers.isUsingEffect = function(el) {
 
 maloHelpers.hasProperty = function(obj, name) { return typeof(obj[name]) != 'undefined'; };
 
-maloHelpers.getElement = function(el) {
+maloHelpers.getElement = function (el) {
+    let isObject = typeof (el) === "object";
+    if (isObject) return el;
     return document.querySelector(el);
 };
 
@@ -186,6 +192,8 @@ maloHelpers.applyDefaults = function (cf) {
     cf.timingFunction = timingFunction;
     let hasCallback = mh.hasProperty(cf, "callback") ?  true : false;
     cf.hasCallback = hasCallback;
+    let display = !mh.hasProperty(cf, "display") ? "block" : cf.display;
+    cf.display = display;
     return cf;
 };
 
@@ -349,7 +357,7 @@ maloMethods.slideIn = function (cf) {
             let clone = document.querySelector('body').cloneNode(true);
             clone.classList.add('malo-hidden');
             document.querySelector('body').appendChild(clone);
-            let cloneEl = clone.querySelector(cf.element);
+            let cloneEl = clone.querySelector(cf.elementSelector);
             cloneEl.style.display = display;
             cloneEl.style.animationDuration = "0s !important";
                        

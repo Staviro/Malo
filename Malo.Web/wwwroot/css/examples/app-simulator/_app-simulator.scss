@@ -1,0 +1,102 @@
+.app-shell {
+    min-height: calc(100dvh - 52px);
+    background-color: white;
+    max-width: 370px;
+    margin: auto;
+    padding: 16px;
+    box-sizing: border-box;
+    color: black;
+    position: relative;
+    overflow: hidden;
+}
+
+.app-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+}
+
+.app-icon {
+    height: 54px;
+    width: 100%;
+    border-radius: 16px;
+    background-image: linear-gradient(45deg, #11f, #77f);
+}
+
+.app-item {
+    display: none;
+    font-size: 11px;
+    color: #666;
+    text-align: center;
+}
+
+.overlay-shell {
+    z-index: 10;
+    background-color: white;
+    max-width: 370px;
+    margin: auto;
+    box-sizing: border-box;
+    color: black;
+    position: absolute;
+    right: auto;
+    left: 0;
+    width: 100%;
+    top: 0;
+    bottom: auto;
+    height: 100%;
+    display: none;
+    color: cornflowerblue;
+}
+
+.overlay-shell-header {
+    padding: 16px;
+    position: relative;
+    display: flex;
+
+    > div {
+        display: inline-block;
+        cursor: pointer;
+    }
+}
+
+.overlay-shell-name {
+    text-align: center;
+    font-weight: 500;
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+
+.overlay-shell-body-name {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.overlay-shell-body {
+    height: calc(100% - 53px);
+    padding: 16px;
+    box-sizing: border-box;
+}
+
+.overlay-shell-back {
+    z-index: 4;
+    display: inline-block;
+    position: relative;
+    left: 0;
+}
+
+.shell-settings {
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: #eee;
+    margin-bottom: 16px;
+    font-size: 14px;
+}
+.shell-settings-item {
+    padding: 8px 16px;
+}

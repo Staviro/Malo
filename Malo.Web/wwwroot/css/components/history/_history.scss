@@ -43,6 +43,11 @@
         background-color: #383;
         color: white;
     }
+
+    &.major {
+        background-color: #338;
+        color: white;
+    }
 }
 
 @import './_history.dark.scss';
